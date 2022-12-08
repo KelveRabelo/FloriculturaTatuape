@@ -1,0 +1,53 @@
+@use 'variables'
+
+@mixin flex-center
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+@mixin btn
+    display: inline-block
+    margin-top: 1.5rem
+    padding: 1rem 2.5rem
+    border-radius: 5rem
+    background-color: #333
+    font-size: 1.7rem
+    font-weight: 700
+    color: #fff
+    cursor: pointer
+
+@mixin title
+    margin: 3rem 0
+    font-size: 6rem
+    color: #dc56d6
+    text-align: center
+    @media ( max-width: 768px )
+        font-size: 5rem
+        @media ( max-width: 425px )
+            font-size: 4rem
+@mixin sub
+    @include title
+    color: #333
+
+@mixin sub-home
+    font-size: 3.5rem
+    color: #333
+    @media ( max-width: 768px )
+        font-size: 2.5rem
+        @media ( max-width: 425px )
+            font-size: 2rem
+
+@mixin text
+        font-size: 1.5rem
+        color: #999
+        padding-top: 2rem
+        line-height: 1.6
+
+@mixin aspas
+    content: ''
+    position: absolute
+    height: 2.5rem
+    width: 2.5rem
+    border-top: .4rem solid #333
+    border-left: .4rem solid #333
+    padding: .3rem .3rem
