@@ -714,6 +714,7 @@ body .footer-container h3 {
   color: #999;
   font-size: 1.4rem;
   font-weight: bolder;
+  text-align: center;
   padding: 1rem 0;
   border-bottom: 0.1rem solid #dc56d6;
 }
@@ -728,6 +729,9 @@ body .footer-container a {
 }
 body .footer-container a:hover {
   color: #dc56d6;
+}
+body .footer-container .footer-links {
+  text-align: center;
 }
 body .footer-container img {
   margin-top: 1rem;
