@@ -162,6 +162,7 @@ body .main-home {
 body .main-home #theme-btn {
   height: 35px;
   width: 35px;
+  padding-top: 0.2rem;
   border-radius: 50%;
   border: 0.2rem solid #dc56d6;
   background-color: #333;
