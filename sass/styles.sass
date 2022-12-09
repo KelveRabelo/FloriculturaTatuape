@@ -29,11 +29,12 @@ html
         font-size: 50%
 //BODY
 body
+    background-color: variables.$bg-dark
     //////////////////////HEADER//////////////////////
     .header
         @include mixins.flex-center
         position: fixed
-        background-color: #fff
+        background-color: variables.$bg-dark
         padding: 2rem 9% //4rem
         top: 0
         left: 0
@@ -46,7 +47,7 @@ body
         &-brand
             font-size: 3rem
             font-weight: bolder
-            color: #333
+            color: variables.$color-light
             @media ( max-width: 425px )
                 font-size: 2.5rem
         //SUB LOGO
@@ -123,6 +124,7 @@ body
 
     //////////////////////MAIN//////////////////////
     .main
+        background-color: variables.$bg-dark
         //SECTION GENERAL
         section
             padding: 2rem 9%
@@ -131,6 +133,11 @@ body
                 
         //////////////////////SECTION HOME//////////////////////        
         &-home
+            //CHANGE THEME
+            #theme-btn
+                @include mixins.theme-btn
+
+
             //BANNER
             @include mixins.flex-center
             min-height: 100vh
@@ -155,6 +162,7 @@ body
                 //TEXT
                 p
                     @include mixins.text
+                    color: variables.$color-secondary
                 //BUTTON BUY NOW
                 a
                     @include mixins.btn
@@ -200,7 +208,7 @@ body
                         transform: translateY(-50%)
                         text-align: center
                         font-size: 3rem
-                        color: #000
+                        color: variables.$color-dark
                         background: #ffffffad
                         width: 100%
                         padding: 1rem 0rem
@@ -210,7 +218,7 @@ body
                     @include mixins.flex-center
                     justify-content: center
                     flex-direction: column
-                    padding-left: 3rem
+                    padding: 3rem
                     
                     //SUB TITLE
                     h3
@@ -221,9 +229,10 @@ body
                     //BUTTON SAIBA MAIS
                     a 
                         @include mixins.btn
+                        border: 0.3rem solid variables.$color-primary
                         
                         &:hover
-                            background-color: #dc56dc
+                            background-color: variables.$color-primary
         ///////////////////////////END///////////////////////////
 
         //////////////////////SECTION ICONS //////////////////////
@@ -231,11 +240,11 @@ body
             width: 100vw
 
             .container-icons
+                background-color: variables.$bg-dark
                 @include mixins.flex-center
                 justify-content: space-evenly
                 flex-wrap: wrap
                 gap: 1rem
-                background: #fff
                 
                 .icons
                     @include mixins.flex-center
@@ -272,10 +281,11 @@ body
                 @include mixins.sub
             //PRODUCTS CONTAINER
             .box-container
+                background-color: variables.$bg-dark
                 display: flex
                 flex-wrap: wrap
                 gap: 1.5rem
-
+                //CARD
                 .box
                     flex: 1 1 30rem
                     box-shadow: 0.5rem .5rem rgba(0, 0, 0, .1)
@@ -288,12 +298,13 @@ body
                         left: 1rem
                         padding: .6rem 1rem
                         font-size: 2rem
-                        color: #dc56dc
+                        color: variables.$color-primary
                         background: #222
                         z-index: 1
                         border-radius: 0.5rem
                     //IMAGE PRODUCT
                     .image
+                        background-color: variables.$bg-light
                         position: relative
                         text-align: center
                         padding-top: 2rem
@@ -301,12 +312,15 @@ body
 
                         img
                             height: 25rem
-                
+                    //CONTENT
+                    .content
+                        background-color: variables.$bg-light
+                //HOVER CARD
                 &:hover
                     .image
                         img
                             transform: scale(1.1)
-                
+                //CARD
                 .box
                     .image
                         .icons
@@ -337,7 +351,7 @@ body
                             .icons
                                 bottom: 0
                                 color: #333
-                
+                //CARD
                 .box
                     .content
                         padding: 2rem
@@ -362,6 +376,7 @@ body
 
         //////////////////////SECTION REVIEW ////////////////////// 
         &-review
+            
             //SUB-TITLE
             h2
                 @include mixins.title 
@@ -375,6 +390,7 @@ body
                 gap: 1.5rem
                 //BOX
                 .box
+                    background-color: variables.$bg-light
                     flex: 1 1 30rem
                     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1)
                     border: .1rem solid rgba(0, 0, 0, .1)
@@ -384,7 +400,7 @@ body
                     //STARS
                     .stars
                         i
-                            color: #dc56d6
+                            color: variables.$color-primary
                             font-size: 2rem
                     //TEXT DEPOIMENT
                     p
@@ -396,6 +412,8 @@ body
                         padding-top: 2rem
 
                         //IMG USER
+                        .img
+                            background-color: variables.$bg-light
                         img
                             width: 10rem
                             height: 10rem
@@ -405,8 +423,8 @@ body
                         //INFO USER
                         .user-info
                             h3
-                            font-size: 2rem
-                            color: #333
+                                font-size: 2rem
+                                color: #333
                             span
                                 font-size: 1.5rem
                                 color: #666
@@ -439,20 +457,20 @@ body
                     padding: 2rem 2.5rem
                     border: .1rem solid rgba(0, 0, 0, .1)
                     border-radius: .5rem
-                    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1)
-                    background: #fff
+                    box-shadow: 0 .1rem .5rem
+                    background: variables.$bg-dark
 
                     .box
                         border: .1rem solid rgba(0, 0, 0, .1)
                         border-radius: .5rem
                         margin: 0.5rem
                         font-size: 2rem
-                        color: #333
+                        color: variables.$color-dark
                         padding: 1rem
                         margin: .7rem 0
                         width: 100%
                         &:focus
-                            border-color: #dc56d6
+                            border-color: variables.$color-primary
 
                     textarea
                         height: 15rem
@@ -460,38 +478,47 @@ body
 
                     .btn
                         @include mixins.btn
+                        border: 0.2rem solid variables.$color-primary
                 
                 .img-contact
                     flex: 1 1 40rem
+                    
                     img
                         width: 100%
                         height: 100%
                         object-fit: cover
+                        border-radius: .5rem
                        
         ///////////////////////////END///////////////////////////
     ///////////////////////END///////////////////////
 
     //////////////////////FOOTER//////////////////////
     .footer
+        background-color: variables.$bg-dark
         padding: 2rem 9%
+        box-shadow: 2rem 0 1rem 0
         &-container
             display: flex
-            flex: wrap
             gap: 3rem
+            text-align: left
+            justify-content: stretch
 
             .footer-links
                 flex: 1 1 25rem
             
             h3
-                color: #333
+                color: variables.$color-secondary
                 font-size: 2rem
+                font-weight: bolder
                 padding: 1rem 0
+                border-bottom: 0.1rem solid variables.$color-primary
 
             a
                 @include mixins.text
+                color: variables.$color-secondary
                 display: block
                 &:hover
-                    color: #dc56dc
+                    color: variables.$color-primary
 
             img
                 margin-top: 1rem
@@ -499,14 +526,14 @@ body
         p
             text-align: center
             font-size: 2rem
-            color: #333
+            color: variables.$color-secondary
             padding: 1.5rem
             padding-top: 2.5rem
             margin-top: 1.5rem
             border-top: .1rem solid rgba(0, 0, 0, .1)
 
         .credit
-            color: #dc56dc
+            color: variables.$color-primary
             &:hover
-                color: #333
+                color: variables.$color-dark
     ///////////////////////END///////////////////////                     
