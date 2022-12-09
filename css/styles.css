@@ -455,10 +455,7 @@ body .main-products .box-container .box .image {
 body .main-products .box-container .box .image img {
   height: 25rem;
 }
-body .main-products .box-container .box .content {
-  background-color: #fff;
-}
-body .main-products .box-container:hover .image img {
+body .main-products .box-container .box .image img:hover {
   transform: scale(1.1);
 }
 body .main-products .box-container .box .image .icons {
