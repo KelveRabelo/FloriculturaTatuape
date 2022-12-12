@@ -222,6 +222,7 @@ body
                     //SUB TITLE
                     h3
                         @include mixins.sub-home
+                        color: variables.$color-light
                     //TEXT
                     p
                         @include mixins.text
@@ -315,17 +316,9 @@ body
                             &:hover
                                 transform: scale(1.1)
                 //CARD
-                    //CONTENT
-                    .content
-                        background-color: variables.$bg-light
-                //HOVER CARD
-                //&:hover
-                 //   .image
-                //        img
-                //            transform: scale(1.1)
-                //CARD
                 .box
                     .image
+                        //BUTTON ICONS
                         .icons
                             display: flex
                             position: absolute
@@ -333,27 +326,29 @@ body
                             left: 0
                             right: 0
 
+                            //LINKS CART
                             a
                                 height: 3rem
                                 line-height: 3rem
                                 font-size: 2rem
                                 width: 50%
-                                background: #dc56dc
-                                color: #fff
+                                background: variables.$color-primary
+                                color: variables.$color-light
 
+                            //ADD CART
                             .cart-btn
-                                border-left: .1rem solid #fff7
-                                border-right: .1rem solid #fff7
+                                border-left: .1rem solid variables.$color-secondary
+                                border-right: .1rem solid variables.$color-secondary
                                 width: 100%
-
+                                //HOVER CART
                                 &:hover
-                                    background: #333
-                            
+                                    background: variables.$bg-dark
+                    //HOVER IMG PRODUCT
                     &:hover
                         .image
                             .icons
                                 bottom: 0
-                                color: #333
+                                color: variables.$color-dark
                 //CARD
                 .box
                     .content
@@ -361,17 +356,17 @@ body
                         text-align: center
                         
                         .sub-title
-                            @include mixins.title
-                            font-size: 2.5rem
+                            @include mixins.sub
                             margin: 0
-                            color: #333
+                            font-size: 2rem
+                            color: variables.$color-light
                         .price
                             font-size: 2rem
-                            color: #dc56dc
+                            color: variables.$color-primary
                             font-weight: bolder
                             padding-top: 1rem
                         span
-                            color: #999
+                            color: variables.$color-secondary
                             font-size: 1.5rem
                             font-weight: lighter
                             text-decoration: line-through
@@ -408,6 +403,7 @@ body
                     //TEXT DEPOIMENT
                     p
                         @include mixins.text
+                        color: variables.$color-secondary
                     //USER
                     .user
                         @include mixins.flex-center
@@ -415,22 +411,21 @@ body
                         padding-top: 2rem
 
                         //IMG USER
-                        .img
-                            background-color: variables.$bg-light
                         img
                             width: 10rem
                             height: 10rem
                             border-radius: 50%
                             object-fit: cover
                             margin-right: 1rem
+
                         //INFO USER
                         .user-info
                             h3
                                 font-size: 2rem
-                                color: #333
+                                color: variables.$color-dark
                             span
                                 font-size: 1.5rem
-                                color: #666
+                                color: variables.$color-secondary
                     //bi-quote
                     .bi-quote
                         position: absolute
@@ -546,5 +541,5 @@ body
         .credit
             color: variables.$color-primary
             &:hover
-                color: variables.$color-dark
+                color: variables.$color-secondary
     ///////////////////////END///////////////////////                     

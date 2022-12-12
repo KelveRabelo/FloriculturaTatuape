@@ -319,6 +319,7 @@ body .main-about .row .about-text {
 body .main-about .row .about-text h3 {
   font-size: 3.5rem;
   color: #333;
+  color: #fff;
 }
 @media (max-width: 768px) {
   body .main-about .row .about-text h3 {
@@ -470,12 +471,12 @@ body .main-products .box-container .box .image .icons a {
   line-height: 3rem;
   font-size: 2rem;
   width: 50%;
-  background: #dc56dc;
+  background: #dc56d6;
   color: #fff;
 }
 body .main-products .box-container .box .image .icons .cart-btn {
-  border-left: 0.1rem solid rgba(255, 255, 255, 0.4666666667);
-  border-right: 0.1rem solid rgba(255, 255, 255, 0.4666666667);
+  border-left: 0.1rem solid #999;
+  border-right: 0.1rem solid #999;
   width: 100%;
 }
 body .main-products .box-container .box .image .icons .cart-btn:hover {
@@ -494,9 +495,10 @@ body .main-products .box-container .box .content .sub-title {
   font-size: 6rem;
   color: #dc56d6;
   text-align: center;
-  font-size: 2.5rem;
+  color: #fff;
   margin: 0;
-  color: #333;
+  font-size: 2rem;
+  color: #fff;
 }
 @media (max-width: 768px) {
   body .main-products .box-container .box .content .sub-title {
@@ -510,7 +512,7 @@ body .main-products .box-container .box .content .sub-title {
 }
 body .main-products .box-container .box .content .price {
   font-size: 2rem;
-  color: #dc56dc;
+  color: #dc56d6;
   font-weight: bolder;
   padding-top: 1rem;
 }
@@ -576,6 +578,7 @@ body .main-review .box-container .box p {
   color: #fff;
   padding-top: 2rem;
   line-height: 1.6;
+  color: #999;
 }
 body .main-review .box-container .box .user {
   display: flex;
@@ -583,9 +586,6 @@ body .main-review .box-container .box .user {
   align-items: center;
   justify-content: left;
   padding-top: 2rem;
-}
-body .main-review .box-container .box .user .img {
-  background-color: #fff;
 }
 body .main-review .box-container .box .user img {
   width: 10rem;
@@ -600,7 +600,7 @@ body .main-review .box-container .box .user .user-info h3 {
 }
 body .main-review .box-container .box .user .user-info span {
   font-size: 1.5rem;
-  color: #666;
+  color: #999;
 }
 body .main-review .box-container .box .bi-quote {
   position: absolute;
@@ -750,7 +750,7 @@ body .footer .credit {
   color: #dc56d6;
 }
 body .footer .credit:hover {
-  color: #333;
+  color: #999;
 }
 
 /*# sourceMappingURL=styles.css.map */
