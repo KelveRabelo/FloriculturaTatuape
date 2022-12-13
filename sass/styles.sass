@@ -133,9 +133,12 @@ body
                 
         //////////////////////SECTION HOME//////////////////////        
         &-home
+
             //CHANGE THEME
             #theme-btn
                 @include mixins.theme-btn
+            #theme-btn:checked ~ section
+                background: #6d5c
 
             //BANNER
             @include mixins.flex-center
@@ -304,7 +307,7 @@ body
                         border-radius: 0.5rem
                     //IMAGE PRODUCT
                     .image
-                        background-color: variables.$bg-light
+                        background-color: #fff
                         position: relative
                         text-align: center
                         padding-top: 2rem

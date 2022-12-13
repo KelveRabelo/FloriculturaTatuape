@@ -175,6 +175,9 @@ body .main-home #theme-btn {
   right: 1rem;
   z-index: 1;
 }
+body .main-home #theme-btn:checked ~ section {
+  background: rgba(102, 221, 85, 0.8);
+}
 @media (max-width: 425px) {
   body .main-home {
     background-position: left;
