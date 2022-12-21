@@ -1,5 +1,5 @@
 //npm install -g sass
-//
+//sass --watch sass/styles.sass:css/styles.css
 
 @use 'variables'
 @use 'mixins'
@@ -45,6 +45,7 @@ body
             padding: 2rem
         //LOGO
         &-brand
+            //margin-left: -90px
             font-size: 3rem
             font-weight: bolder
             color: variables.$font-color
@@ -84,7 +85,38 @@ body
                         color: variables.$color-secondary
         //ICONS HEART/CART/USER
         &-icons
-            #dark-mode
+            .changeTheme
+                top: -6px
+                left: 70px
+                width: 50px
+                height: 20px
+                display: block
+                background-color: #ccc
+                position: relative
+                transition: .5s
+                border-radius: 30px
+                cursor: pointer
+                //SLIDE
+                &::before
+                    content: ''
+                    width: 19px
+                    height: 19px
+                    left: 2px
+                    position: absolute
+                    background-color: #fff
+                    border-radius: 50%
+                    transition: .5s
+                    box-shadow: 0 5px 10px #cdcdcd
+                
+                &:has(input:checked) 
+                    background-color: variables.$color-primary
+
+                    &::before 
+                        left: calc(100% - 21px)
+
+            //HIDDEN CHECK
+            input
+                display: none
                     
             a
                 font-size: 2.5rem
@@ -261,12 +293,12 @@ body
                         margin-right: 2rem
                     
                     h3                   
-                        color: #222
+                        color: #333
                         font-size: 1.5rem
                         padding-bottom: 1rem
                         
                     span
-                        color: #555
+                        color: variables.$color-secondary
                         font-size: 1.3rem
         ///////////////////////////END///////////////////////////
 
@@ -449,7 +481,7 @@ body
                 flex-wrap: wrap-reverse
                 gap: 1.5rem
                 margin-bottom: 6rem
-                
+                //FORMULARIO
                 form
                     flex: 1 1 40rem
                     padding: 2rem 2.5rem
@@ -464,7 +496,7 @@ body
                         border-radius: .5rem
                         margin: 0.5rem
                         font-size: 2rem
-                        color: variables.$font-color
+                        color: variables.$color-primary
                         padding: 1rem
                         margin: .7rem 0
                         width: 100%
@@ -478,7 +510,10 @@ body
                     .btn
                         @include mixins.btn
                         border: 0.2rem solid variables.$color-primary
-                
+                        &:hover
+                            background-color: variables.$color-primary
+                                
+                //IMAGEM CONTATO
                 .img-contact
                     flex: 1 1 40rem
                     
@@ -493,7 +528,7 @@ body
 
     //////////////////////FOOTER//////////////////////
     .footer
-        background-color: variables.$bg-color
+        background-color: #fff
         padding: 2rem 9%
         margin-top: 3rem
         box-shadow: 2rem 0 1rem 0
@@ -541,4 +576,145 @@ body
             color: variables.$color-primary
             &:hover
                 color: variables.$color-secondary
-    ///////////////////////END///////////////////////                     
+    ///////////////////////END///////////////////////                    
+
+
+    ///////////////////////DARK-MODE///////////////////////
+    //$bg-color: #333
+    //$font-color: #fff
+    &:has(input:checked)
+        background: #333
+        .header
+            background-color: #333
+            &-brand
+                color: #fff
+        .main
+            background-color: #333
+            //SECTION GERAL
+            section
+                background-color: #333
+                span
+                    color: #fff
+            //ABOUT
+            &-about
+                //CONTAINER ABOUT
+                .row
+                    .about-text
+                        //SUB TITLE
+                        h3
+                            color: #fff
+                        //TEXT
+                        p
+                            color: #fff
+                            
+                        //BUTTON SAIBA MAIS
+                        a
+                            background: #333
+                            color: #fff
+                            &:hover
+                                background-color: variables.$color-primary
+            //ICONS            
+            &-icons
+                .container-icons
+                    background: #333
+                    .icons
+                        background: #333
+        
+                        &:hover
+                            background: #dc56d6
+
+                        h3                   
+                            color: #fff
+                            
+
+            
+            
+
+                //////////////////////FOOTER//////////////////////
+                .footer
+                    background-color: variables.$bg-color
+                    padding: 2rem 9%
+                    margin-top: 3rem
+                    box-shadow: 2rem 0 1rem 0
+                    &-container
+                        display: flex
+                        gap: 3rem
+                        text-align: left
+                        justify-content: stretch
+
+                        .footer-links
+                            flex: 1 1 25rem
+                        
+                        h3
+                            color: variables.$color-secondary
+                            font-size: 1.4rem
+                            font-weight: bolder
+                            text-align: center
+                            padding: 1rem 0
+                            border-bottom: 0.1rem solid variables.$color-primary
+
+                        a
+                            @include mixins.text
+                            color: variables.$color-secondary
+                            font-size: 1.4rem
+                            display: block
+                            &:hover
+                                color: variables.$color-primary
+
+                        .footer-links
+                            text-align: center
+
+                        img
+                            margin-top: 1rem
+                    
+                    p
+                        text-align: center
+                        font-size: 2rem
+                        color: variables.$color-secondary
+                        padding: 1.5rem
+                        padding-top: 2.5rem
+                        margin-top: 1.5rem
+                        border-top: .1rem solid rgba(0, 0, 0, .1)
+
+                    .credit
+                        color: variables.$color-primary
+                        &:hover
+                            color: variables.$color-secondary
+                ///////////////////////END///////////////////////                     
+            //PRODUCTS
+            &-products
+                //PRODUCTS CONTAINER
+                .box-container
+                    background-color: #333
+                    //CARD
+                    .box
+                        .content
+                            .sub-title
+                                color: #fff
+            //REVIEW
+            &-review
+                //CUSTOMER'S CONTAINER
+                .box-container
+                    //BOX
+                    .box
+                        background-color: #333
+                        //USER
+                        .user
+                            //INFO USER
+                            .user-info
+                                h3
+                                    color: #fff
+            //CONTACT
+            &-contact
+                .row
+                    form
+                        background: #333
+
+                        .btn
+                            background: #333
+                            color: #fff
+                            &:hover
+                                background-color: variables.$color-primary                     
+        .footer
+            background: #333          
+                    
