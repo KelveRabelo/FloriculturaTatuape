@@ -66,7 +66,7 @@ body .header span {
 @media (max-width: 768px) {
   body .header-navbar {
     position: absolute;
-    top: 9.3rem;
+    top: 7.6rem;
     left: 0;
     right: 0;
     background-color: #dc56d6;
@@ -97,12 +97,15 @@ body .header-navbar a:hover {
     color: #999;
   }
 }
+body .header-icons {
+  align-self: stretch;
+}
 body .header-icons .changeTheme {
-  top: -6px;
-  left: calc(50px - 9%);
-  width: 50px;
-  height: 20px;
-  display: block;
+  width: 6rem;
+  height: 2rem;
+  top: 0.5rem;
+  left: 1rem;
+  display: inline-block;
   background-color: #ccc;
   position: relative;
   transition: 0.5s;
@@ -111,14 +114,15 @@ body .header-icons .changeTheme {
 }
 @media (max-width: 425px) {
   body .header-icons .changeTheme {
-    width: 30px;
-    height: 15px;
+    width: 4rem;
+    height: 2rem;
   }
 }
 body .header-icons .changeTheme::before {
   content: "";
-  width: 19px;
-  height: 19px;
+  top: 0.1rem;
+  width: 1.8rem;
+  height: 1.8rem;
   left: 2px;
   position: absolute;
   background-color: #fff;
@@ -126,17 +130,11 @@ body .header-icons .changeTheme::before {
   transition: 0.5s;
   box-shadow: 0 5px 10px #cdcdcd;
 }
-@media (max-width: 425px) {
-  body .header-icons .changeTheme::before {
-    width: 14px;
-    height: 14px;
-  }
-}
 body .header-icons .changeTheme:has(input:checked) {
   background-color: #dc56d6;
 }
 body .header-icons .changeTheme:has(input:checked)::before {
-  left: calc(100% - 16px);
+  left: calc(100% - 2rem);
 }
 body .header-icons input {
   display: none;
@@ -163,10 +161,8 @@ body .header-hamburguer:checked ~ .header-navbar {
 body .header .bi-flower1 {
   animation: animate 4s linear infinite;
   display: none;
-  font-size: 3.5rem;
+  font-size: 3rem;
   cursor: pointer;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
   color: #d56cdf;
 }
 @media (max-width: 768px) {
@@ -178,7 +174,7 @@ body .header .bi-flower1 {
   0% {
     transform: rotate(0deg);
   }
-  100% {
+  50% {
     transform: rotate(360deg);
   }
 }

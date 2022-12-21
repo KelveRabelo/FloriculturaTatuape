@@ -45,7 +45,6 @@ body
             padding: 2rem
         //LOGO
         &-brand
-            //margin-left: -90px
             font-size: 3rem
             font-weight: bolder
             color: variables.$font-color
@@ -58,7 +57,7 @@ body
         &-navbar
             @media ( max-width: 768px )
                 position: absolute
-                top: 9.3rem
+                top: 7.6rem
                 left: 0
                 right: 0
                 background-color: variables.$color-primary
@@ -85,48 +84,44 @@ body
                         color: variables.$color-secondary
         //ICONS HEART/CART/USER
         &-icons
+            align-self: stretch
             .changeTheme
-                top: -6px
-                left: calc(50px - 9%)
-                width: 50px
-                height: 20px
-                display: block
+                width: 6rem
+                height: 2rem
+                top: .5rem
+                left: 1rem
+                display: inline-block
                 background-color: #ccc
                 position: relative
                 transition: .5s
                 border-radius: 30px
                 cursor: pointer
                 @media ( max-width:  425px)
-                    width: 30px
-                    height: 15px
+                    width: 4rem
+                    height: 2rem
                     
                 //SLIDE
                 &::before
                     content: ''
-                    width: 19px
-                    height: 19px
+                    top: .1rem
+                    width: 1.8rem
+                    height: 1.8rem
                     left: 2px
                     position: absolute
                     background-color: #fff
                     border-radius: 50%
                     transition: .5s
                     box-shadow: 0 5px 10px #cdcdcd
-                    @media ( max-width:  425px)
-                        width: 14px
-                        height: 14px
                         
-                    
-                
                 &:has(input:checked) 
                     background-color: variables.$color-primary
 
                     &::before 
-                        left: calc(100% - 16px)
-
+                        left: calc(100% - 2rem)
             //HIDDEN CHECK
             input
                 display: none
-                    
+            //SEARCH|HEART|CART       
             a
                 font-size: 2.5rem
                 color: variables.$color-secondary
@@ -147,10 +142,8 @@ body
         .bi-flower1
             animation: animate 4s linear infinite
             display: none
-            font-size: 3.5rem
+            font-size: 3rem
             cursor: pointer
-            border-radius: .5rem
-            padding: 0.5rem 1.0rem
             color: #d56cdf
             @media ( max-width: 768px )
                 //SHOW HAMBURGUER
@@ -161,7 +154,7 @@ body
                 0%
                     transform: rotate(0deg)
                     
-                100%
+                50%
                     transform: rotate(360deg)
     ///////////////////////END///////////////////////
 
