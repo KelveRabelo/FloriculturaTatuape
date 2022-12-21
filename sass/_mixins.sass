@@ -10,10 +10,10 @@
     margin-top: 1.5rem
     padding: 1rem 2.5rem
     border-radius: 5rem
-    background-color: variables.$bg-dark
+    background-color: variables.$bg-color
     font-size: 1.7rem
     font-weight: 700
-    color: variables.$color-light
+    color: variables.$font-color
     cursor: pointer
 
 @mixin theme-btn
@@ -22,8 +22,8 @@
     padding-top: .4rem
     border-radius: 50%
     border: 0.2rem solid variables.$color-secondary
-    background-color: variables.$color-dark
-    color: variables.$color-light
+    background-color: variables.$color-secondary
+    color: variables.$font-color
     font-size: 2.8rem
     text-align: center
     cursor: pointer
@@ -44,11 +44,11 @@
             
 @mixin sub
     @include title
-    color: variables.$color-light
+    color: variables.$font-color
 
 @mixin sub-home
     font-size: 3.5rem
-    color: variables.$color-dark
+    color: variables.$color-secondary
     @media ( max-width: 768px )
         font-size: 2.5rem
         @media ( max-width: 425px )
@@ -56,7 +56,7 @@
 
 @mixin text
         font-size: 1.5rem
-        color: variables.$color-light
+        color: variables.$font-color
         padding-top: 2rem
         line-height: 1.6
 
@@ -65,6 +65,6 @@
     position: absolute
     height: 2.5rem
     width: 2.5rem
-    border-top: .4rem solid variables.$color-dark
-    border-left: .4rem solid variables.$color-dark
+    border-top: .4rem solid variables.$color-secondary
+    border-left: .4rem solid variables.$color-secondary
     padding: .3rem .3rem

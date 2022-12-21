@@ -30,14 +30,14 @@ html {
 }
 
 body {
-  background-color: #333;
+  background-color: #fff;
 }
 body .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  background-color: #333;
+  background-color: #fff;
   padding: 2rem 9%;
   top: 0;
   left: 0;
@@ -53,7 +53,7 @@ body .header {
 body .header-brand {
   font-size: 3rem;
   font-weight: bolder;
-  color: #fff;
+  color: #333;
 }
 @media (max-width: 425px) {
   body .header-brand {
@@ -139,7 +139,7 @@ body .header .bi-flower1 {
   }
 }
 body .main {
-  background-color: #333;
+  background-color: #fff;
 }
 body .main section {
   padding: 2rem 9%;
@@ -158,25 +158,6 @@ body .main-home {
   background-size: cover;
   background-position: left;
   transition: 1.5s linear;
-}
-body .main-home #theme-btn {
-  height: 35px;
-  width: 35px;
-  padding-top: 0.4rem;
-  border-radius: 50%;
-  border: 0.2rem solid #999;
-  background-color: #333;
-  color: #fff;
-  font-size: 2.8rem;
-  text-align: center;
-  cursor: pointer;
-  position: fixed;
-  top: 10rem;
-  right: 1rem;
-  z-index: 1;
-}
-body .main-home #theme-btn:checked ~ section {
-  background: rgba(102, 221, 85, 0.8);
 }
 @media (max-width: 425px) {
   body .main-home {
@@ -207,7 +188,7 @@ body .main-home .home-content h2 {
 }
 body .main-home .home-content span {
   font-size: 3.5rem;
-  color: #333;
+  color: #999;
 }
 @media (max-width: 768px) {
   body .main-home .home-content span {
@@ -221,7 +202,7 @@ body .main-home .home-content span {
 }
 body .main-home .home-content p {
   font-size: 1.5rem;
-  color: #fff;
+  color: #333;
   padding-top: 2rem;
   line-height: 1.6;
   color: #999;
@@ -231,11 +212,13 @@ body .main-home .home-content a {
   margin-top: 1.5rem;
   padding: 1rem 2.5rem;
   border-radius: 5rem;
-  background-color: #333;
+  background-color: #fff;
   font-size: 1.7rem;
   font-weight: 700;
-  color: #fff;
+  color: #333;
   cursor: pointer;
+  background: #333;
+  color: #fff;
 }
 body .main-home .home-content a:hover {
   background-color: #dc56dc;
@@ -262,7 +245,7 @@ body .main-about span {
   font-size: 6rem;
   color: #dc56d6;
   text-align: center;
-  color: #fff;
+  color: #333;
 }
 @media (max-width: 768px) {
   body .main-about span {
@@ -321,8 +304,8 @@ body .main-about .row .about-text {
 }
 body .main-about .row .about-text h3 {
   font-size: 3.5rem;
+  color: #999;
   color: #333;
-  color: #fff;
 }
 @media (max-width: 768px) {
   body .main-about .row .about-text h3 {
@@ -336,7 +319,7 @@ body .main-about .row .about-text h3 {
 }
 body .main-about .row .about-text p {
   font-size: 1.5rem;
-  color: #fff;
+  color: #333;
   padding-top: 2rem;
   line-height: 1.6;
 }
@@ -345,10 +328,10 @@ body .main-about .row .about-text a {
   margin-top: 1.5rem;
   padding: 1rem 2.5rem;
   border-radius: 5rem;
-  background-color: #333;
+  background-color: #fff;
   font-size: 1.7rem;
   font-weight: 700;
-  color: #fff;
+  color: #333;
   cursor: pointer;
   border: 0.3rem solid #dc56d6;
 }
@@ -359,7 +342,7 @@ body .main-icons {
   width: 100vw;
 }
 body .main-icons .container-icons {
-  background-color: #333;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -414,7 +397,7 @@ body .main-products span {
   font-size: 6rem;
   color: #dc56d6;
   text-align: center;
-  color: #fff;
+  color: #333;
 }
 @media (max-width: 768px) {
   body .main-products span {
@@ -427,7 +410,7 @@ body .main-products span {
   }
 }
 body .main-products .box-container {
-  background-color: #333;
+  background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -475,7 +458,7 @@ body .main-products .box-container .box .image .icons a {
   font-size: 2rem;
   width: 50%;
   background: #dc56d6;
-  color: #fff;
+  color: #333;
 }
 body .main-products .box-container .box .image .icons .cart-btn {
   border-left: 0.1rem solid #999;
@@ -483,7 +466,7 @@ body .main-products .box-container .box .image .icons .cart-btn {
   width: 100%;
 }
 body .main-products .box-container .box .image .icons .cart-btn:hover {
-  background: #333;
+  background: #fff;
 }
 body .main-products .box-container .box:hover .image .icons {
   bottom: 0;
@@ -498,10 +481,10 @@ body .main-products .box-container .box .content .sub-title {
   font-size: 6rem;
   color: #dc56d6;
   text-align: center;
-  color: #fff;
+  color: #333;
   margin: 0;
   font-size: 2rem;
-  color: #fff;
+  color: #333;
 }
 @media (max-width: 768px) {
   body .main-products .box-container .box .content .sub-title {
@@ -546,7 +529,7 @@ body .main-review span {
   font-size: 6rem;
   color: #dc56d6;
   text-align: center;
-  color: #fff;
+  color: #333;
 }
 @media (max-width: 768px) {
   body .main-review span {
@@ -578,7 +561,7 @@ body .main-review .box-container .box .stars i {
 }
 body .main-review .box-container .box p {
   font-size: 1.5rem;
-  color: #fff;
+  color: #333;
   padding-top: 2rem;
   line-height: 1.6;
   color: #999;
@@ -634,7 +617,7 @@ body .main-contact span {
   font-size: 6rem;
   color: #dc56d6;
   text-align: center;
-  color: #fff;
+  color: #333;
 }
 @media (max-width: 768px) {
   body .main-contact span {
@@ -659,7 +642,7 @@ body .main-contact .row form {
   border-bottom: none;
   border-radius: 0.5rem;
   box-shadow: 0rem 0rem 0.2rem 0.1rem;
-  background: #333;
+  background: #fff;
 }
 body .main-contact .row form .box {
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
@@ -683,10 +666,10 @@ body .main-contact .row form .btn {
   margin-top: 1.5rem;
   padding: 1rem 2.5rem;
   border-radius: 5rem;
-  background-color: #333;
+  background-color: #fff;
   font-size: 1.7rem;
   font-weight: 700;
-  color: #fff;
+  color: #333;
   cursor: pointer;
   border: 0.2rem solid #dc56d6;
 }
@@ -700,7 +683,7 @@ body .main-contact .row .img-contact img {
   border-radius: 0.5rem;
 }
 body .footer {
-  background-color: #333;
+  background-color: #fff;
   padding: 2rem 9%;
   margin-top: 3rem;
   box-shadow: 2rem 0 1rem 0;
@@ -724,7 +707,7 @@ body .footer-container h3 {
 }
 body .footer-container a {
   font-size: 1.5rem;
-  color: #fff;
+  color: #333;
   padding-top: 2rem;
   line-height: 1.6;
   color: #999;
