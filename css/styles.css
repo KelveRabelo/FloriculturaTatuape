@@ -109,6 +109,12 @@ body .header-icons .changeTheme {
   border-radius: 30px;
   cursor: pointer;
 }
+@media (max-width: 425px) {
+  body .header-icons .changeTheme {
+    width: 30px;
+    height: 15px;
+  }
+}
 body .header-icons .changeTheme::before {
   content: "";
   width: 19px;
@@ -120,11 +126,17 @@ body .header-icons .changeTheme::before {
   transition: 0.5s;
   box-shadow: 0 5px 10px #cdcdcd;
 }
+@media (max-width: 425px) {
+  body .header-icons .changeTheme::before {
+    width: 14px;
+    height: 14px;
+  }
+}
 body .header-icons .changeTheme:has(input:checked) {
   background-color: #dc56d6;
 }
 body .header-icons .changeTheme:has(input:checked)::before {
-  left: calc(100% - 21px);
+  left: calc(100% - 16px);
 }
 body .header-icons input {
   display: none;

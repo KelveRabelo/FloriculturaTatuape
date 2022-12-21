@@ -96,6 +96,10 @@ body
                 transition: .5s
                 border-radius: 30px
                 cursor: pointer
+                @media ( max-width:  425px)
+                    width: 30px
+                    height: 15px
+                    
                 //SLIDE
                 &::before
                     content: ''
@@ -107,12 +111,17 @@ body
                     border-radius: 50%
                     transition: .5s
                     box-shadow: 0 5px 10px #cdcdcd
+                    @media ( max-width:  425px)
+                        width: 14px
+                        height: 14px
+                        
+                    
                 
                 &:has(input:checked) 
                     background-color: variables.$color-primary
 
                     &::before 
-                        left: calc(100% - 21px)
+                        left: calc(100% - 16px)
 
             //HIDDEN CHECK
             input
