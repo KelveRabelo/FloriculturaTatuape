@@ -210,7 +210,7 @@ body .header-cart {
 }
 body .header-cart .cart-title {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 600;
   margin-top: 2rem;
 }
@@ -284,7 +284,7 @@ body .header-cart .btn-buy {
   cursor: pointer;
   border: 0.3rem solid #dc56d6;
   background: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-left: 50%;
   transform: translate(-50%, 50%);
 }
@@ -391,7 +391,7 @@ body .main-home .home-content a {
   color: #fff;
 }
 body .main-home .home-content a:hover {
-  background-color: #dc56dc;
+  background-color: #dc56d6;
 }
 body .main-about h2 {
   margin: 3rem 0;
@@ -896,6 +896,9 @@ body .footer .credit:hover {
 body:has(#changeTheme:checked) {
   background: #333;
 }
+body:has(#changeTheme:checked) ::hover {
+  color: #dc56d6;
+}
 body:has(#changeTheme:checked) .header {
   background-color: #333;
 }
@@ -904,6 +907,9 @@ body:has(#changeTheme:checked) .header-brand {
 }
 body:has(#changeTheme:checked) .main {
   background-color: #333;
+}
+body:has(#changeTheme:checked) .main ::hover {
+  color: #dc56d6;
 }
 body:has(#changeTheme:checked) .main section {
   background-color: #333;

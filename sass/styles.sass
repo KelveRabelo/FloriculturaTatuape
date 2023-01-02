@@ -194,7 +194,7 @@ body
 
             .cart-title
                 text-align: center
-                font-size: 1.6rem
+                font-size: 1.8rem
                 font-weight: 600
                 margin-top: 2rem
           
@@ -260,7 +260,7 @@ body
                 @include mixins.btn
                 border: 0.3rem solid variables.$color-primary
                 background: none
-                font-size: 1rem
+                font-size: 1.5rem
                 margin-left: 50%
                 transform: translate(-50%, 50%)
                 
@@ -330,7 +330,7 @@ body
                     background: #333
                     color: #fff
                     &:hover
-                        background-color: #dc56dc
+                        background-color: variables.$color-primary
         ///////////////////////////END///////////////////////////
 
         //////////////////////SECTION ABOUT//////////////////////        
@@ -418,7 +418,7 @@ body
                     cursor: pointer
                     
                     &:hover
-                        background: #dc56d6
+                        background: variables.$color-primary
 
                     img
                         height: 10rem
@@ -693,12 +693,16 @@ body
     //$font-color: #fff
     &:has(#changeTheme:checked)
         background: #333
+        ::hover
+            color: variables.$color-primary
         .header
             background-color: #333
             &-brand
                 color: #fff
         .main
             background-color: #333
+            ::hover
+                color: variables.$color-primary
             //SECTION GERAL
             section
                 background-color: #333
@@ -730,7 +734,8 @@ body
                         background: #333
         
                         &:hover
-                            background: #dc56d6
+                            background: variables.$color-primary
+
 
                         h3                   
                             color: #fff
