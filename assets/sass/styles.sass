@@ -483,6 +483,9 @@ body
                         font-size: 2rem
                         color: variables.$color-secondary
                         margin-bottom: 0
+                        @media ( max-width: 425px )
+                            font-size: 2.5rem
+                            
 
                     .detail
                         display: flex
@@ -491,13 +494,15 @@ body
                         padding: 0rem 2rem
 
                         .product-price
-                            font-size: 1.8rem
+                            font-size: 2rem
                             color: variables.$color-primary
-                            font-weight: bolder
+                            font-weight: 600
                         
                         .add-cart
                             font-size: 4rem
                             cursor: pointer
+                            @media ( max-width: 425px )
+                                font-size: 2.5rem
                             &:hover
                                 color: variables.$color-primary
         ///////////////////////////END///////////////////////////
