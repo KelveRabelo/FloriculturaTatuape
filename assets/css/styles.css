@@ -132,7 +132,7 @@ body .header-icons .changeTheme {
 @media (max-width: 425px) {
   body .header-icons .changeTheme {
     width: 4rem;
-    height: 2rem;
+    height: 1.8rem;
   }
 }
 body .header-icons .changeTheme::before {
@@ -144,6 +144,13 @@ body .header-icons .changeTheme::before {
   background-color: #fff;
   border-radius: 50%;
   box-shadow: 0 5px 10px #cdcdcd;
+}
+@media (max-width: 425px) {
+  body .header-icons .changeTheme::before {
+    top: -0.1rem;
+    width: 2rem;
+    height: 2rem;
+  }
 }
 body .header-icons .changeTheme:has(input:checked) {
   background-color: #dc56d6;
