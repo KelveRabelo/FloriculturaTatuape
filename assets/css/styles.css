@@ -202,7 +202,6 @@ body .header-cart {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 2rem;
   background-color: #fff;
   box-shadow: 0px 2px 4px #666;
   transition: 1.5s;
@@ -328,7 +327,7 @@ body .main-home {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background-image: url("../assets/img/fundo-3.jpg");
+  background-image: url("../img/fundo-3.jpg");
   background-size: cover;
   background-position: left;
   transition: 1.5s linear;
@@ -940,53 +939,18 @@ body:has(#changeTheme:checked) .main-icons .container-icons .icons h3 {
 }
 body:has(#changeTheme:checked) .main-icons .footer {
   background-color: #fff;
-  padding: 2rem 9%;
-  margin-top: 3rem;
-  box-shadow: 2rem 0 1rem 0;
-}
-body:has(#changeTheme:checked) .main-icons .footer-container {
-  display: flex;
-  gap: 3rem;
-  text-align: left;
-  justify-content: stretch;
-}
-body:has(#changeTheme:checked) .main-icons .footer-container .footer-links {
-  flex: 1 1 25rem;
 }
 body:has(#changeTheme:checked) .main-icons .footer-container h3 {
   color: #999;
-  font-size: 1.4rem;
-  font-weight: bolder;
-  text-align: center;
-  padding: 1rem 0;
-  border-bottom: 0.1rem solid #dc56d6;
 }
 body:has(#changeTheme:checked) .main-icons .footer-container a {
-  font-size: 1.5rem;
-  color: #333;
-  padding-top: 2rem;
-  line-height: 1.6;
   color: #999;
-  font-size: 1.4rem;
-  display: block;
 }
 body:has(#changeTheme:checked) .main-icons .footer-container a:hover {
   color: #dc56d6;
 }
-body:has(#changeTheme:checked) .main-icons .footer-container .footer-links {
-  text-align: center;
-}
-body:has(#changeTheme:checked) .main-icons .footer-container img {
-  margin-top: 1rem;
-}
 body:has(#changeTheme:checked) .main-icons .footer p {
-  text-align: center;
-  font-size: 2rem;
   color: #999;
-  padding: 1.5rem;
-  padding-top: 2.5rem;
-  margin-top: 1.5rem;
-  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
 }
 body:has(#changeTheme:checked) .main-icons .footer .credit {
   color: #dc56d6;

@@ -45,9 +45,10 @@ html
     ::-webkit-scrollbar-thumb:hover 
         background: variables.$color-primary
 
-//BODY
+//////////////////////BODY//////////////////////
 body
     background-color: variables.$bg-color
+
     //////////////////////HEADER//////////////////////
     .header
         @include mixins.flex-center
@@ -185,7 +186,6 @@ body
             height: 100vh
             overflow-y: auto
             overflow-x: hidden
-            padding: 2rem
             background-color: #fff
             box-shadow: 0px 2px 4px #666
             transition: 1.5s
@@ -285,7 +285,6 @@ body
             transform: .5s
     ///////////////////////END///////////////////////
 
-
     //////////////////////MAIN//////////////////////
     .main
         background-color: variables.$bg-color
@@ -300,7 +299,7 @@ body
             //BANNER
             @include mixins.flex-center
             min-height: 100vh
-            background-image: url("../assets/img/fundo-3.jpg")
+            background-image: url("../img/fundo-3.jpg")
             background-size: cover
             background-position: left
             transition: 1.5s linear
@@ -678,7 +677,6 @@ body
                 color: variables.$color-secondary
     ///////////////////////END///////////////////////                    
 
-
     ///////////////////////DARK-MODE///////////////////////
     //$bg-color: #333
     //$font-color: #fff
@@ -731,55 +729,24 @@ body
                         h3                   
                             color: #fff
                             
-
-            
-            
-
                 //////////////////////FOOTER//////////////////////
                 .footer
                     background-color: variables.$bg-color
-                    padding: 2rem 9%
-                    margin-top: 3rem
-                    box-shadow: 2rem 0 1rem 0
-                    &-container
-                        display: flex
-                        gap: 3rem
-                        text-align: left
-                        justify-content: stretch
 
-                        .footer-links
-                            flex: 1 1 25rem
+                    &-container
                         
                         h3
                             color: variables.$color-secondary
-                            font-size: 1.4rem
-                            font-weight: bolder
-                            text-align: center
-                            padding: 1rem 0
-                            border-bottom: 0.1rem solid variables.$color-primary
 
                         a
-                            @include mixins.text
                             color: variables.$color-secondary
-                            font-size: 1.4rem
-                            display: block
+
                             &:hover
                                 color: variables.$color-primary
 
-                        .footer-links
-                            text-align: center
-
-                        img
-                            margin-top: 1rem
-                    
                     p
-                        text-align: center
-                        font-size: 2rem
+
                         color: variables.$color-secondary
-                        padding: 1.5rem
-                        padding-top: 2.5rem
-                        margin-top: 1.5rem
-                        border-top: .1rem solid rgba(0, 0, 0, .1)
 
                     .credit
                         color: variables.$color-primary
@@ -797,7 +764,6 @@ body
                             color: variables.$color-secondary
                         
                         .detail
-
                             .product-price
                                 color: variables.$color-primary
             //REVIEW
@@ -826,4 +792,4 @@ body
                                 background-color: variables.$color-primary                     
         .footer
             background: #333          
-                    
+                    //////////////////////BODY//////////////////////
