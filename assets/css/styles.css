@@ -323,7 +323,7 @@ body .main-home {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background-image: url("/assets/img/fundo-3.jpg");
+  background-image: url("../assets/img/fundo-3.jpg");
   background-size: cover;
   background-position: left;
   transition: 1.5s linear;

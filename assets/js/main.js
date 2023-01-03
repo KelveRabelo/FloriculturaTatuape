@@ -67,7 +67,6 @@ function handle_addCartItem() {
     let imgSrc = product.querySelector(".product-img").src;
     let title = product.querySelector(".product-title").innerHTML;
     let price = product.querySelector(".product-price").innerHTML;
-    console.log(title, price, imgSrc);
 
     let newToAdd = {
         imgSrc,
@@ -120,6 +119,7 @@ function handle_buyOrder() {
     itemsAdded = [];
 
     update();
+    
 }
 
 
