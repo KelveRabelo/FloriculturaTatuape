@@ -301,7 +301,7 @@ body
             //BANNER
             @include mixins.flex-center
             min-height: 100vh
-            background: url("../img/fundo-3.jpg") no-repeat
+            background-image: url("/assets/img/fundo-3.jpg")
             background-size: cover
             background-position: left
             transition: 1.5s linear
@@ -443,70 +443,62 @@ body
             span
                 @include mixins.sub
             //PRODUCTS CONTAINER
-            .box-container
-                background-color: variables.$bg-color
+            .products-container
+                //background-color: variables.$bg-color
                 display: flex
                 flex-wrap: wrap
                 gap: 1.5rem
+                
                 //CARD
-                .box
-                    flex: 1 1 30rem
-                    box-shadow: 0.5rem .5rem rgba(0, 0, 0, .1)
+                .product-box
+                    flex: 1 1 20rem
+                    box-shadow: 0.3rem .3rem rgba(0, 0, 0, .1)
                     border-radius: .5rem
                     border: .1rem solid rgba(0, 0, 0, .1)
                     position: relative
+                    display: flex
+                    flex-direction: column
+
                     //DESCONTO
                     .discount
                         position: absolute
                         left: 1rem
+                        top: -2rem
                         padding: .6rem 1rem
                         font-size: 2rem
                         color: variables.$color-primary
                         background: #222
                         z-index: 1
                         border-radius: 0.5rem
-                    //BOX IMAGE PRODUCT
-                    .image
-                        position: relative
-                        text-align: center
-                        padding-top: 2rem
-                        overflow: hidden
-                        background: #fff
-                        //IMAGE
-                        img
-                            height: 25rem
-                            aspect-ratio: 1/1
-                            //HOVER IMAGE
-                            &:hover
-                                transform: scale(1.1)
+
+                    img
+                        height: 25rem
+                        width: 100%
+                        aspect-ratio: 1/1
+                        //HOVER IMAGE
+                        &:hover
+                            transform: scale(1.1)
 
                     .product-title
                         @include mixins.sub
                         color: variables.$font-color
-                        margin: 0
+                        font-size: 2rem
+                        color: variables.$color-secondary
+                        margin-bottom: 0
 
-                    .content
+                    .detail
                         display: flex
                         justify-content: space-between
-                        padding: 2rem 3rem
-                        
+                        align-items: center
+                        padding: 0rem 2rem
+
                         .product-price
-                            font-size: 2rem
+                            font-size: 1.8rem
                             color: variables.$color-primary
                             font-weight: bolder
-                            padding-top: 1rem
-
-                        span
-                            color: variables.$color-secondary
-                            font-size: 1.5rem
-                            font-weight: lighter
-                            text-decoration: line-through
                         
                         .add-cart
                             font-size: 4rem
-                            align-self: flex-end
-                    
-                    
                             cursor: pointer
                             &:hover
                                 color: variables.$color-primary
@@ -798,12 +790,17 @@ body
             //PRODUCTS
             &-products
                 //PRODUCTS CONTAINER
-                .box-container
+                .products-container
                     background-color: #333
                     //CARD
-                    .box
+                    .product-box
                         .product-title
-                            color: #fff
+                            color: variables.$color-secondary
+                        
+                        .detail
+
+                            .product-price
+                                color: variables.$color-primary
             //REVIEW
             &-review
                 //CUSTOMER'S CONTAINER

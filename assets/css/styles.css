@@ -323,7 +323,7 @@ body .main-home {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background: url("../img/fundo-3.jpg") no-repeat;
+  background-image: url("/assets/img/fundo-3.jpg");
   background-size: cover;
   background-position: left;
   transition: 1.5s linear;
@@ -579,22 +579,24 @@ body .main-products span {
     font-size: 4rem;
   }
 }
-body .main-products .box-container {
-  background-color: #fff;
+body .main-products .products-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-body .main-products .box-container .box {
-  flex: 1 1 30rem;
-  box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+body .main-products .products-container .product-box {
+  flex: 1 1 20rem;
+  box-shadow: 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
-body .main-products .box-container .box .discount {
+body .main-products .products-container .product-box .discount {
   position: absolute;
   left: 1rem;
+  top: -2rem;
   padding: 0.6rem 1rem;
   font-size: 2rem;
   color: #dc56d6;
@@ -602,62 +604,51 @@ body .main-products .box-container .box .discount {
   z-index: 1;
   border-radius: 0.5rem;
 }
-body .main-products .box-container .box .image {
-  position: relative;
-  text-align: center;
-  padding-top: 2rem;
-  overflow: hidden;
-  background: #fff;
-}
-body .main-products .box-container .box .image img {
+body .main-products .products-container .product-box img {
   height: 25rem;
+  width: 100%;
   aspect-ratio: 1/1;
 }
-body .main-products .box-container .box .image img:hover {
+body .main-products .products-container .product-box img:hover {
   transform: scale(1.1);
 }
-body .main-products .box-container .box .product-title {
+body .main-products .products-container .product-box .product-title {
   margin: 3rem 0;
   font-size: 6rem;
   color: #dc56d6;
   text-align: center;
   color: #333;
   color: #333;
-  margin: 0;
+  font-size: 2rem;
+  color: #999;
+  margin-bottom: 0;
 }
 @media (max-width: 768px) {
-  body .main-products .box-container .box .product-title {
+  body .main-products .products-container .product-box .product-title {
     font-size: 5rem;
   }
 }
 @media (max-width: 768px) and (max-width: 425px) {
-  body .main-products .box-container .box .product-title {
+  body .main-products .products-container .product-box .product-title {
     font-size: 4rem;
   }
 }
-body .main-products .box-container .box .content {
+body .main-products .products-container .product-box .detail {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 3rem;
+  align-items: center;
+  padding: 0rem 2rem;
 }
-body .main-products .box-container .box .content .product-price {
-  font-size: 2rem;
+body .main-products .products-container .product-box .detail .product-price {
+  font-size: 1.8rem;
   color: #dc56d6;
   font-weight: bolder;
-  padding-top: 1rem;
 }
-body .main-products .box-container .box .content span {
-  color: #999;
-  font-size: 1.5rem;
-  font-weight: lighter;
-  text-decoration: line-through;
-}
-body .main-products .box-container .box .content .add-cart {
+body .main-products .products-container .product-box .detail .add-cart {
   font-size: 4rem;
-  align-self: flex-end;
   cursor: pointer;
 }
-body .main-products .box-container .box .content .add-cart:hover {
+body .main-products .products-container .product-box .detail .add-cart:hover {
   color: #dc56d6;
 }
 body .main-review h2 {
@@ -998,11 +989,14 @@ body:has(#changeTheme:checked) .main-icons .footer .credit {
 body:has(#changeTheme:checked) .main-icons .footer .credit:hover {
   color: #999;
 }
-body:has(#changeTheme:checked) .main-products .box-container {
+body:has(#changeTheme:checked) .main-products .products-container {
   background-color: #333;
 }
-body:has(#changeTheme:checked) .main-products .box-container .box .product-title {
-  color: #fff;
+body:has(#changeTheme:checked) .main-products .products-container .product-box .product-title {
+  color: #999;
+}
+body:has(#changeTheme:checked) .main-products .products-container .product-box .detail .product-price {
+  color: #dc56d6;
 }
 body:has(#changeTheme:checked) .main-review .box-container .box {
   background-color: #333;

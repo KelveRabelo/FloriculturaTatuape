@@ -4,20 +4,17 @@ const closeCart = document.querySelector("#cart-close");
 
 
 
-//add event click to cart
 cartIcon.addEventListener("click", () => {
-    //add class 'active' in cart
     cart.classList.add("active");
 });
 
-//add event click to X closeCart
 closeCart.addEventListener("click", () => {
-    //remove class 'active' in cart
     cart.classList.remove("active");
 });
 
 
 //start when the document is ready
+
 if(document.readyState == "loading"){
     document.addEventListener('DOMContentLoaded', start);
 }
@@ -25,35 +22,35 @@ else{
     start();
 }
 
-//================== START ================== 
-function start() {
+//================== START ==================
+function start(){
     addEvents();
 }
 
-
-//==================  UPDATE & RERENDER ==================
-function update() {
+//================== UPDATE & RERENDER ==================
+function update(){
     addEvents();
     updateTotal();
+
 }
 
 //================== ADD EVENTS ==================
-function addEvents() {
-
-    //Remove items from cart
+function addEvents(){
+    //Remove Items from cart
     let cartRemove_btns = document.querySelectorAll(".cart-remove");
+    console.log(cartRemove_btns);
     cartRemove_btns.forEach((btn) => {
         btn.addEventListener("click", handle_removeCartItem);
     });
 
     //Change item quantity
     let cartQuantity_inputs = document.querySelectorAll(".cart-quantity");
-    cartQuantity_inputs.forEach((select) => {
-        select.addEventListener("change", handle_changeItemQuantity);
+    cartQuantity_inputs.forEach((input) => {
+        input.addEventListener("change", handle_changeItemQuantity);
     });
 
     //Add item to cart
-    let addCart_btns = document.querySelectorAll(".add-cart");
+    let addCart_btns = document.querySelectorAll(".detail, .add-cart");
     addCart_btns.forEach((btn) => {
         btn.addEventListener("click", handle_addCartItem);
     });
@@ -62,8 +59,6 @@ function addEvents() {
     const buy_btn = document.querySelector(".btn-buy")
     buy_btn.addEventListener("click", handle_buyOrder);
 }
-
-
 //================== HANDLE EVENTS FUNCTIONS ==================
 let itemsAdded = [];
 // Add product to cart
@@ -72,6 +67,7 @@ function handle_addCartItem() {
     let imgSrc = product.querySelector(".product-img").src;
     let title = product.querySelector(".product-title").innerHTML;
     let price = product.querySelector(".product-price").innerHTML;
+    console.log(title, price, imgSrc);
 
     let newToAdd = {
         imgSrc,
@@ -85,7 +81,9 @@ function handle_addCartItem() {
         return;
     }else {
         itemsAdded.push(newToAdd);
+        alert("Item adicionado na sacola!")
     }
+
     let cartBoxElement = cartBoxComponent(imgSrc, title, price);
     let newNode = document.createElement("div");
     newNode.innerHTML = cartBoxElement;
@@ -93,7 +91,6 @@ function handle_addCartItem() {
     cartContent.appendChild(newNode);
     update();
 }
-
 //remove item cart
 function handle_removeCartItem() {
     this.parentElement.remove();
@@ -125,6 +122,7 @@ function handle_buyOrder() {
     update();
 }
 
+
 //================== UPDATE & RERENDER FUNCTIONS ==================
 function updateTotal() {
     let cartBoxes = document.querySelectorAll(".cart-box");
@@ -153,15 +151,9 @@ function cartBoxComponent(imgSrc, title, price) {
         <div class="detail-box">
             <div class="cart-product-title">${title}</div>
             <div class="cart-price">${price}</div>
-            <select class="cart-quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>               
+            <input type="number" value="1" min="1" max="10" class="cart-quantity">
         </div>
-        <!--REMOVE CART-->
+        <!--RMEOVE CART-->
         <i class="bi bi-trash3-fill cart-remove"></i>
     </div>`;
 }
