@@ -122,9 +122,9 @@ body .header-icons .changeTheme {
   height: 2rem;
   top: 0.3rem;
   left: 1rem;
+  position: relative;
   display: inline-block;
   background-color: #ccc;
-  position: relative;
   transition: 0.5s;
   border-radius: 30px;
   cursor: pointer;
@@ -244,7 +244,7 @@ body .header-cart .cart-content .cart-box .detail-box .cart-quantity {
   border: 1px solid #dc56d6;
   outline-color: #dc56d6;
   width: 4rem;
-  text-align: right;
+  text-align: left;
   font-size: 1.5rem;
 }
 body .header-cart .cart-content .cart-box .cart-remove {
@@ -294,7 +294,7 @@ body .header-cart .btn-buy:hover {
 }
 body .header-cart #cart-close {
   position: absolute;
-  font-size: 2rem;
+  font-size: 2.5rem;
   top: 1rem;
   right: 0.8rem;
   cursor: pointer;
