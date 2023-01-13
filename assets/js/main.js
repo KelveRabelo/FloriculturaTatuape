@@ -27,7 +27,7 @@ function ready()
     //open cart
     openCart.addEventListener("click", () => {
         cart.classList.add("active")
-        main.styles.width="60vh"
+        main.styles.width = "60vh"
     })
 
     //close cart
