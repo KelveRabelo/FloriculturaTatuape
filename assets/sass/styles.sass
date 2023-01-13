@@ -136,7 +136,7 @@ body
                         width: 2rem
                         height: 2rem
                     
-                        
+                //if changeTheme checked
                 &:has(input:checked) 
                     background-color: variables.$color-primary
 
@@ -195,8 +195,7 @@ body
             box-shadow: 0px 2px 4px #666
             transition: 1.5s
             padding: 0 2rem
-           
-
+        
             .cart-title
                 text-align: center
                 font-size: 1.8rem
@@ -223,16 +222,17 @@ body
                 
                         .cart-product-title 
                             font-size: 1.4rem
+                            font-weight: 600
                         
-                        .cart-price 
-                            font-size: 1.5rem
+                        .cart-product-price 
+                            font-size: 1.2rem
                             font-weight: 600
                         
                         .cart-product-quantity
                             border: 1px solid variables.$color-primary
                             outline-color: variables.$color-primary
                             width: 4rem
-                            text-align: left
+                            text-align: center
                             font-size: 1.5rem
                             @media (max-width: 425px)
                                 text-align: center

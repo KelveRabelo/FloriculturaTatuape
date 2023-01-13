@@ -15,12 +15,16 @@ var totalAmount = "0,00"
 //======================> ALL EVENTS <=======================//
 function ready()
 {
+    renderProdcuts()
+    
     //==================>EVENT OPEN/CLOSE CART <==================//
     const openCart = document.querySelector("#cart-icon")
     const closeCart = document.querySelector("#cart-close")
     const cart = document.querySelector(".header-cart")
+    
+    
+    
     const main = document.querySelector(".main")
-
     console.log(main)
    
 
@@ -223,8 +227,10 @@ function updateTotal()
 
 
 
-
-const productsRender = document.querySelector(".products-container");
+//====================> FUNÇÃO PRODUCTS <===================//
+function renderProdcuts()
+{
+    const productsRender = document.querySelector(".products-container");
 
 //RENDER PRODUCTS
     for (i = 0; i < products.length; i++)
@@ -243,5 +249,6 @@ const productsRender = document.querySelector(".products-container");
             </div>
         `
     }   
+}
+//==============================================================
 
-//renderProdcuts() 

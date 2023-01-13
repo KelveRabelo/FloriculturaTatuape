@@ -240,16 +240,17 @@ body .header-cart .cart-content .cart-box .detail-box {
 }
 body .header-cart .cart-content .cart-box .detail-box .cart-product-title {
   font-size: 1.4rem;
+  font-weight: 600;
 }
-body .header-cart .cart-content .cart-box .detail-box .cart-price {
-  font-size: 1.5rem;
+body .header-cart .cart-content .cart-box .detail-box .cart-product-price {
+  font-size: 1.2rem;
   font-weight: 600;
 }
 body .header-cart .cart-content .cart-box .detail-box .cart-product-quantity {
   border: 1px solid #dc56d6;
   outline-color: #dc56d6;
   width: 4rem;
-  text-align: left;
+  text-align: center;
   font-size: 1.5rem;
 }
 @media (max-width: 425px) {
