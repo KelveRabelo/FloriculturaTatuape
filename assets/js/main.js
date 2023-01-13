@@ -1,159 +1,247 @@
-const cartIcon = document.querySelector("#cart-icon");
-const cart = document.querySelector(".header-cart");
-const closeCart = document.querySelector("#cart-close");
-
-
-
-cartIcon.addEventListener("click", () => {
-    cart.classList.add("active");
-});
-
-closeCart.addEventListener("click", () => {
-    cart.classList.remove("active");
-});
-
-
-//start when the document is ready
-
-if(document.readyState == "loading"){
-    document.addEventListener('DOMContentLoaded', start);
+//======================> CHECK HTML <=======================//
+//check elements document was loading
+if(document.readyState == "loading")
+{
+    document.addEventListener("DOMContentLoaded", ready)
 }
-else{
-    start();
+else
+{
+    ready()
 }
 
-//================== START ==================
-function start(){
-    addEvents();
-}
+//============================================================= 
 
-//================== UPDATE & RERENDER ==================
-function update(){
-    addEvents();
-    updateTotal();
+var totalAmount = "0,00"
+//======================> ALL EVENTS <=======================//
+function ready()
+{
+    //==================>EVENT OPEN/CLOSE CART <==================//
+    const openCart = document.querySelector("#cart-icon")
+    const closeCart = document.querySelector("#cart-close")
+    const cart = document.querySelector(".header-cart")
+    const main = document.querySelector(".main")
 
-}
+    console.log(main)
+   
 
-//================== ADD EVENTS ==================
-function addEvents(){
-    //Remove Items from cart
-    let cartRemove_btns = document.querySelectorAll(".cart-remove");
-    console.log(cartRemove_btns);
-    cartRemove_btns.forEach((btn) => {
-        btn.addEventListener("click", handle_removeCartItem);
-    });
+    //open cart
+    openCart.addEventListener("click", () => {
+        cart.classList.add("active")
+        main.styles.width="60vh"
+    })
 
-    //Change item quantity
-    let cartQuantity_inputs = document.querySelectorAll(".cart-quantity");
-    cartQuantity_inputs.forEach((input) => {
-        input.addEventListener("change", handle_changeItemQuantity);
-    });
+    //close cart
+    closeCart.addEventListener("click", () => {
+        cart.classList.remove("active")
+        main.classList.remove("active")
+    })
+    //==============================================================
 
-    //Add item to cart
-    let addCart_btns = document.querySelectorAll(".detail, .add-cart");
-    addCart_btns.forEach((btn) => {
-        btn.addEventListener("click", handle_addCartItem);
-    });
-
-    //Buy Order
-    const buy_btn = document.querySelector(".btn-buy")
-    buy_btn.addEventListener("click", handle_buyOrder);
-}
-//================== HANDLE EVENTS FUNCTIONS ==================
-let itemsAdded = [];
-// Add product to cart
-function handle_addCartItem() {
-    let product = this.parentElement;
-    let imgSrc = product.querySelector(".product-img").src;
-    let title = product.querySelector(".product-title").innerHTML;
-    let price = product.querySelector(".product-price").innerHTML;
-
-    let newToAdd = {
-        imgSrc,
-        title,
-        price,
-    };
-
-    // handle item is already exist
-    if(itemsAdded.find(el => el.title == newToAdd.title)) {
-        alert("Este item já esta na sacola!");
-        return;
-    }else {
-        itemsAdded.push(newToAdd);
-        alert("Item adicionado na sacola!")
+    //==================>EVENTO ADD PRODUCT IN CAT <==================//
+    //get button add cart
+    const btnAddCart = document.querySelectorAll(".add-cart")
+    
+    //Add Event
+    for (i = 0; i < btnAddCart.length; i++)
+    {
+        btnAddCart[i].addEventListener("click", addProductCart)
     }
+    //==============================================================
 
-    let cartBoxElement = cartBoxComponent(imgSrc, title, price);
-    let newNode = document.createElement("div");
-    newNode.innerHTML = cartBoxElement;
-    const cartContent = cart.querySelector(".cart-content");
-    cartContent.appendChild(newNode);
-    update();
-}
-//remove item cart
-function handle_removeCartItem() {
-    this.parentElement.remove();
-    itemsAdded = itemsAdded.filter(el => el.title != this.parentElement.querySelector(".cart-product-title").innerHTML);
-    update();
-}
 
-function handle_changeItemQuantity() {
-    //ckeck if number > 1
-    if (isNaN(this.value) || this.value < 1) {
-        this.value = 1;
+    //==================>EVENT REMOVE PRODUCT CART<==================//
+    //Get button remove cart
+    const btnRemoveCart = document.querySelectorAll(".cart-remove")
+    
+    //Add Event Click
+    for (i = 0; i < btnRemoveCart.length; i++)
+    {
+        btnRemoveCart[i].addEventListener("click", removeProductCart)
     }
-    //convert to integer
-    this.value = Math.floor(this.value); //to keep integer
-    update();
-}
+    //==============================================================
 
-function handle_buyOrder() {
-    //check if has items in cart
-    if(itemsAdded.length <= 0) {
-        alert("Carrinho vazio! \nFaça um pedido.")
-        return;
+
+    //==================>EVENT ADD QUANTITY PRODUCTS<==================//
+    //get value input
+    const inputQuantityCart = document.querySelectorAll(".cart-product-quantity")
+    
+    //Add Event Change
+    for (i = 0; i < inputQuantityCart.length; i++)
+    {
+        inputQuantityCart[i].addEventListener("change", checkIfInputisNull)
     }
-    const cartContent = cart.querySelector(".cart-content");
-    cartContent.innerHTML = "";
-    alert("Seu pedido foi feito com sucesso! :)");
-    itemsAdded = [];
+    //==============================================================
 
-    update();
+
+    //==================> EVENT CHECKOUT <==================//
+    //get btn checkout
+    const btnCheckout = document.querySelector(".btn-buy")
+
+    btnCheckout.addEventListener("click", makePurchase)
+    //==============================================================
+
+}
+//============================================================= 
+   
+//================>FUNÇÃO ADD PRODUCT IN CAT<================//
+function addProductCart(event)
+{
+
+    //get button add cart
+    const button = event.target
+    
+    //parent from ".add-cart"
+    const productInfo = button.parentElement.parentElement
+    
+    //get img product
+    const productImg = productInfo.querySelector(".product-img").src
+    
+    //get title product
+    const productName = productInfo.querySelector(".product-title").innerText
+    
+    //get price product
+    const productPrice = productInfo.querySelector(".product-price").innerText
+
+    //get product name from cart
+    const productCartName = document.querySelectorAll(".cart-product-title")
+       
+        for (i = 0; i < productCartName.length; i++)
+        {
+            //check if product in cart
+            if (productCartName[i].innerText === productName)
+            {
+                //add more value input
+                productCartName[i].parentElement.querySelectorAll(".cart-product-quantity")[0].value++
+                updateTotal()
+                return
+            }
+        }
+
+        //create node div
+        let newNode = document.createElement("div")
+        //add class "cart-box"
+        newNode.classList.add("cart-box")
+        // add content to node 
+        newNode.innerHTML =   
+            `
+                <img src="${productImg}" alt="">
+                <div class="detail-box">
+                    <div class="cart-product-title">${productName}</div>
+                    <div class="cart-product-price">${productPrice}</div>
+                    <input type="number" value="1" class="cart-product-quantity">
+                </div>
+                <!--REMOVE CART-->
+                <button class="cart-remove bi bi-trash3-fill "></button>
+            `
+
+    //get element .cart-content
+    const productListCart = document.querySelector(".cart-content")
+
+    //add node inside element ".cart-content"        
+    productListCart.append(newNode)
+    //update total
+    updateTotal()
+
+    newNode.querySelectorAll(".cart-product-quantity")[0].addEventListener("change", checkIfInputisNull)
+    newNode.querySelectorAll(".cart-remove")[0].addEventListener("click", removeProductCart)
+} 
+//==============================================================  
+
+
+//================>FUNÇÃO REMOVE PRODUCT CART<================//
+function removeProductCart(event)
+{
+    event.target.parentElement.remove()
+    updateTotal()
     
 }
+//==============================================================
 
 
-//================== UPDATE & RERENDER FUNCTIONS ==================
-function updateTotal() {
-    let cartBoxes = document.querySelectorAll(".cart-box");
-    const totalElement = cart.querySelector(".total-price");
-    let total = 0;
-    cartBoxes.forEach((cartBox) => {
-        let priceElement = cartBox.querySelector(".cart-price");
-        let price = parseFloat(priceElement.innerHTML.replace("R$", ""));
-        let quantity = cartBox.querySelector(".cart-quantity").value;
-        total += price * quantity;
-    });
-
-    //keep 2 digits
-    total = total.toFixed(2);
-
-    totalElement.innerHTML = "R$" + total;
-    update();
+//==============> FUNÇÃO CHECK PRODUCT IN CART <==============//
+function checkIfInputisNull(event) 
+{
+    if(event.target.value === "0")
+    {
+        event.target.parentElement.parentElement.remove()
+    }
+    updateTotal()
 }
+//==============================================================
 
-// ================ HTML COMPONENTS ====================
 
-function cartBoxComponent(imgSrc, title, price) {
-    return `
-    <div class="cart-box">
-        <img src=${imgSrc} alt="">
-        <div class="detail-box">
-            <div class="cart-product-title">${title}</div>
-            <div class="cart-price">${price}</div>
-            <input type="number" value="1" min="1" max="10" class="cart-quantity">
-        </div>
-        <!--RMEOVE CART-->
-        <i class="bi bi-trash3-fill cart-remove"></i>
-    </div>`;
+//====================> FUNÇÃO PURCHARSE <====================//
+function makePurchase(event) {
+    if(totalAmount === "0,00")
+    {
+        alert("Seu carrinho está vazio!\nFaça uma ordem.")
+    }
+    else
+    {
+        alert
+        (
+            `Obrigado pela sua compra!\nValor do pedido R$${totalAmount}\nVolte sempre =)`
+        )
+    }
+    //clear cart
+    document.querySelector(".cart-content").innerHTML = ""
+    updateTotal()   
 }
+//==============================================================
+
+
+//====================> FUNÇÃO UPDATE CART <===================//
+function updateTotal()
+{
+    totalAmount = 0
+
+    //get list products
+    const cartProducts = document.querySelectorAll(".cart-box")
+    
+    //loop list products
+    for(i = 0; i < cartProducts.length; i++)
+    {
+        //get price 
+        const productPrice = cartProducts[i].querySelectorAll(".cart-product-price")[0].innerText.replace("R$", "").replace(",", ".")
+        
+        //get quantity
+        const productQuantity = cartProducts[i].querySelectorAll(".cart-product-quantity")[0].value
+        
+        //sum total
+        totalAmount += (productPrice * productQuantity)
+    }
+    //Fixa 2 casa decimal
+    totalAmount = totalAmount.toFixed(2).replace(".", ",")
+
+    //get price total
+    const totalPrice = document.querySelector(".total-price")
+
+    //update price total
+    totalPrice.innerHTML = "R$" + totalAmount
+}
+//==============================================================
+
+
+
+
+const productsRender = document.querySelector(".products-container");
+
+//RENDER PRODUCTS
+    for (i = 0; i < products.length; i++)
+    {
+        
+        productsRender.innerHTML += 
+        `
+            <div class="product-box">
+            	<span class="discount">-${products[i].discount}%</span>
+            	<img src=${products[i].imgSrc} alt="" class="product-img">
+                <h2 class="product-title">${products[i].name}</h2>
+                <div class="detail">
+                	<span class="product-price">R$${products[i].price}</span>
+			        <i class="bi bi-bag-plus-fill add-cart"></i>  
+            	</div>
+            </div>
+        `
+    }   
+
+//renderProdcuts() 

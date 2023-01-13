@@ -223,13 +223,12 @@ body
                 
                         .cart-product-title 
                             font-size: 1.4rem
-                            text-transform: uppercase
                         
                         .cart-price 
                             font-size: 1.5rem
                             font-weight: 600
                         
-                        .cart-quantity 
+                        .cart-product-quantity
                             border: 1px solid variables.$color-primary
                             outline-color: variables.$color-primary
                             width: 4rem
@@ -245,6 +244,7 @@ body
                         font-size: 2rem
                         color: variables.$color-primary
                         cursor: pointer
+                        width: 0
             
             .total 
                 display: flex
@@ -292,8 +292,9 @@ body
     ///////////////////////END///////////////////////
 
     //////////////////////MAIN//////////////////////
-    .main
+    .main 
         background-color: variables.$bg-color
+
         //SECTION GENERAL
         section
             padding: 2rem 9%
