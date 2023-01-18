@@ -205,7 +205,7 @@ function makePurchase(event)
     {
         alert
         (
-            `Obrigado pela sua compra!\nValor do pedido R$${totalAmount}\nVolte sempre =)`
+            `Você sera redirecionado para o Whatsapp!\nObrigado pela sua compra!\nValor do pedido R$${totalAmount}\nVolte sempre =)`
         )
         whatsappCheckout()
     }
