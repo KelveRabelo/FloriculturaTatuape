@@ -296,7 +296,7 @@ body .header-cart .btn-buy {
   cursor: pointer;
   border: 0.3rem solid #dc56d6;
   background: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-left: 50%;
   transform: translate(-50%, 50%);
 }
@@ -821,6 +821,9 @@ body .main-contact .row form .box {
 }
 body .main-contact .row form .box:focus {
   border-color: #dc56d6;
+}
+body .main-contact .row form #form-email {
+  text-transform: lowercase !important;
 }
 body .main-contact .row form textarea {
   height: 15rem;

@@ -68,6 +68,7 @@
                 </div> -->
 
             </div>
+            
 
             <!--TOTAL-->
             <div class="total">
@@ -76,7 +77,10 @@
             </div>
             
             <!--BUY BUTTON-->
-            <button type="button" class="btn-buy">checkout</button>
+            <button type="button" class="btn-buy"><i class="bi bi-whatsapp"> finaliza pedido</i></button>
+            
+
+            
             
             <!--CART CLOSE-->
             <i class="bi bi-x-circle-fill" id="cart-close"></i>
@@ -284,22 +288,20 @@
             <!--CONTAINER-->
             <div class="row">
                 <!-------------FORMULARIO-------------->
-                <form action="">
-                    <input class="box" type="text"  placeholder="nome" required maxlength="50">
-                    <input class="box" type="email"  placeholder="email" required maxlength="150">
-                    <input class="box" type="tel"  placeholder="número" maxlength="17">
-                    <select class="box" placeholder="test">
-                        <optgroup label="Serviços">
-                            <option>outros</option>
-                            <option>translado</option>
-                            <option>maquiagem</option>
-                            <option>coroa e tufos</option>
-                            <option>Lembrancinhas</option> 
-                        </optgroup>
+                <form action="" id="form">
+                    <input id="form-name" class="box" type="text" placeholder="Nome"  minlenght="3" maxlength="50" required>
+                    <input id="form-email" class="box" type="email" placeholder="Email" minlenght="13" maxlength="150" required>
+                    <input id="form-number" class="box" type="tel" placeholder="Número" minlenght="8" maxlength="14" required>
+                    <select id="form-services" class="box">
+                        <option value="serviços">serviços</option >
+                        <option value="translado">translado</option>
+                        <option value="maquiagem">maquiagem</option>
+                        <option value="coroa e tufos">coroa e tufos</option>
+                        <option value="lembrancinhas">lembrancinhas</option> 
+                        <option value="outros">outros</option> 
                     </select>
-                   
-                    <textarea class="box" name="" id="" cols="22" rows="10" placeholder="mensagem" required maxlength="500"></textarea>
-                    <input type="submit" value="enviar" class="btn">
+                    <textarea id="form-msg" class="box" cols="22" rows="10" placeholder="mensagem" maxlength="500" required></textarea>
+                    <button class="btn btn-form" type="submit">enviar</button>
                 </form>
                 <!------------------------------------->
 

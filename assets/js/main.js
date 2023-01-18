@@ -1,4 +1,4 @@
-//======================> CHECK HTML <=======================//
+//========================> CHECK HTML <==========================//
 //check elements document was loading
 if(document.readyState == "loading")
 {
@@ -8,40 +8,36 @@ else
 {
     ready()
 }
-
-//============================================================= 
+//==================================================================
 
 var totalAmount = "0,00"
-//======================> ALL EVENTS <=======================//
+//=========================> ALL EVENTS <==========================//
 function ready()
 {
+    
+    updateTotal()
     renderProdcuts()
+    validadeForm()
+    //checkoutWhatsapp()
     
     //==================>EVENT OPEN/CLOSE CART <==================//
     const openCart = document.querySelector("#cart-icon")
     const closeCart = document.querySelector("#cart-close")
     const cart = document.querySelector(".header-cart")
-    
-    
-    
-    const main = document.querySelector(".main")
-    console.log(main)
-   
 
     //open cart
     openCart.addEventListener("click", () => {
         cart.classList.add("active")
-        main.styles.width = "60vh"
     })
 
     //close cart
     closeCart.addEventListener("click", () => {
         cart.classList.remove("active")
-        main.classList.remove("active")
     })
     //==============================================================
 
-    //==================>EVENTO ADD PRODUCT IN CAT <==================//
+
+    //==================>EVENTO ADD PRODUCT IN CAT<==================//
     //get button add cart
     const btnAddCart = document.querySelectorAll(".add-cart")
     
@@ -65,7 +61,7 @@ function ready()
     //==============================================================
 
 
-    //==================>EVENT ADD QUANTITY PRODUCTS<==================//
+    //================>EVENT ADD QUANTITY PRODUCTS<================//
     //get value input
     const inputQuantityCart = document.querySelectorAll(".cart-product-quantity")
     
@@ -77,20 +73,20 @@ function ready()
     //==============================================================
 
 
-    //==================> EVENT CHECKOUT <==================//
+    //======================> EVENT CHECKOUT <======================//
     //get btn checkout
     const btnCheckout = document.querySelector(".btn-buy")
-
     btnCheckout.addEventListener("click", makePurchase)
     //==============================================================
 
+  
 }
-//============================================================= 
+//==================================================================
    
-//================>FUNÇÃO ADD PRODUCT IN CAT<================//
+
+//===================> FUNÇÃO ADD PRODUCT IN CA <==================//
 function addProductCart(event)
 {
-
     //get button add cart
     const button = event.target
     
@@ -125,7 +121,7 @@ function addProductCart(event)
         let newNode = document.createElement("div")
         //add class "cart-box"
         newNode.classList.add("cart-box")
-        // add content to node 
+        // add node inside content 
         newNode.innerHTML =   
             `
                 <img src="${productImg}" alt="">
@@ -135,7 +131,7 @@ function addProductCart(event)
                     <input type="number" value="1" class="cart-product-quantity">
                 </div>
                 <!--REMOVE CART-->
-                <button class="cart-remove bi bi-trash3-fill "></button>
+                <button class="cart-remove bi bi-trash3-fill"></button>
             `
 
     //get element .cart-content
@@ -143,26 +139,27 @@ function addProductCart(event)
 
     //add node inside element ".cart-content"        
     productListCart.append(newNode)
+ 
     //update total
     updateTotal()
 
     newNode.querySelectorAll(".cart-product-quantity")[0].addEventListener("change", checkIfInputisNull)
     newNode.querySelectorAll(".cart-remove")[0].addEventListener("click", removeProductCart)
 } 
-//==============================================================  
+//==================================================================
 
 
-//================>FUNÇÃO REMOVE PRODUCT CART<================//
+//==================> FUNÇÃO REMOVE PRODUCT CART <=================//
 function removeProductCart(event)
 {
     event.target.parentElement.remove()
     updateTotal()
     
 }
-//==============================================================
+//==================================================================
 
 
-//==============> FUNÇÃO CHECK PRODUCT IN CART <==============//
+//================> FUNÇÃO CHECK PRODUCT IN CART <================//
 function checkIfInputisNull(event) 
 {
     if(event.target.value === "0")
@@ -171,11 +168,35 @@ function checkIfInputisNull(event)
     }
     updateTotal()
 }
-//==============================================================
+//==================================================================
 
 
-//====================> FUNÇÃO PURCHARSE <====================//
-function makePurchase(event) {
+//==================> FUNÇÃO CHECKOUT WHATSAPP <==================//
+function whatsappCheckout()
+{
+    const itemsCart = document.querySelectorAll(".cart-box")
+    let list = []
+    for(i=0; i < itemsCart.length; i++)
+    {
+        list += itemsCart[i].innerText.replace("\n", " ")
+    }
+
+    var url = "https://wa.me/5511953604803?text="
+    + "==================" + "%0A"
+    + "Produtos:" + "%0A"
+    +"==================" + "%0A"
+    + list + "%0A"
+    +"-----------------------" + "%0A"
+    + "Total: R$" + totalAmount
+
+    window.open(url, "_blank").focus();
+}
+//==================================================================
+
+
+//====================> FUNÇÃO MAKE PURCHARSE <====================//
+function makePurchase(event) 
+{
     if(totalAmount === "0,00")
     {
         alert("Seu carrinho está vazio!\nFaça uma ordem.")
@@ -186,15 +207,17 @@ function makePurchase(event) {
         (
             `Obrigado pela sua compra!\nValor do pedido R$${totalAmount}\nVolte sempre =)`
         )
+        whatsappCheckout()
     }
+
     //clear cart
-    document.querySelector(".cart-content").innerHTML = ""
-    updateTotal()   
+    const clearCart = document.querySelector(".cart-content").innerHTML = ""
+    updateTotal()
 }
-//==============================================================
+//==================================================================
 
 
-//====================> FUNÇÃO UPDATE CART <===================//
+//======================> FUNÇÃO UPDATE CART <=====================//
 function updateTotal()
 {
     totalAmount = 0
@@ -222,17 +245,16 @@ function updateTotal()
 
     //update price total
     totalPrice.innerHTML = "R$" + totalAmount
+
 }
-//==============================================================
+//==================================================================
 
 
-
-//====================> FUNÇÃO PRODUCTS <===================//
+//=====================> FUNÇÃO RENDER PRODUCTS <===================//
 function renderProdcuts()
 {
-    const productsRender = document.querySelector(".products-container");
+    const productsRender = document.querySelector(".products-container")
 
-//RENDER PRODUCTS
     for (i = 0; i < products.length; i++)
     {
         
@@ -250,5 +272,106 @@ function renderProdcuts()
         `
     }   
 }
-//==============================================================
+//==================================================================
+
+
+//======================> FUNÇÃO VALIDADE FORM <=====================//
+function validadeForm()
+{
+    const form = document.querySelector("#form")
+    const formName = document.querySelector("#form-name")
+    const formEmail = document.querySelector("#form-email")
+    const formNumber = document.querySelector("#form-number")
+    const formServices = document.querySelector("#form-services")
+    const formMsg = document.querySelector("#form-msg")
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault()
+
+        //Check input name
+        if(formName.value === "")
+        {
+            alert("Preencha o nome!")
+            return
+        }
+        //Check input email
+        if(formEmail.value === "" || !isEmailValid(formEmail.value))
+        {
+            alert("Peencha um email válido!")
+            return
+        }
+        //Check input number
+        if(!validadeNumber(formNumber.value, 8))        
+        {
+            alert("Preencha um número de telefone válido!")
+            return
+        }
+        //Check input services
+        if(formServices.value === "" || formServices.value === "serviços")
+        {
+            alert("Escolha um serviço!")
+            return;
+        }
+        //Check inpurt message
+        if(formMsg.value === "")
+        {
+            alert("Digite sua mensagem!");
+            return
+        }
+        //se todos os campos estiverem ok!
+        
+        //======================> EVENT SEND FORM <======================//
+        //get btn form
+        const btnForm = document.querySelector(".btn-form")
+        btnForm.addEventListener("click", sendForm)
+        //==============================================================
+
+        form.submit()
+        
+    })
+
+    function isEmailValid(email)
+    {
+        //[user13] + @ + [domain] + . + [com.br]
+        const emailRegex = new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/);
+
+        if (emailRegex.test(email))
+        {
+            return true
+        }
+        return false
+    }
+
+    function validadeNumber(number, minDigits)
+    {
+        if(number >= minDigits)
+        {
+            return true
+        }
+        return false
+    }
+    
+}
+//==================================================================
+
+
+//======================> FUNÇÃO VALIDADE FORM <=====================//
+function sendForm()
+{
+    var formName = document.querySelector("#form-name").value
+    var formEmail = document.querySelector("#form-email").value
+    var formNumber = document.querySelector("#form-number").value
+    var formServices = document.querySelector("#form-services").value
+    var formMsg = document.querySelector("#form-msg").value
+
+    var url = "https://wa.me/5511953604803?text="
+    + "Nome: " + formName + "%0A"
+    + "E-mail: " + formEmail + "%0A"
+    + "Número: " + formNumber + "%0A"
+    + "Serviço: " + formServices + "%0A"
+    + "Mensagem: " + formMsg;
+
+    window.open(url, "_blank").focus();
+}
+//==================================================================
 
