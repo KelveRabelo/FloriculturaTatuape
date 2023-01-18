@@ -42,7 +42,7 @@ html ::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 html ::-webkit-scrollbar-thumb:hover {
-  background: #dc56d6;
+  background: #d76;
 }
 
 body {
@@ -78,7 +78,7 @@ body .header-brand {
   }
 }
 body .header span {
-  color: #dc56d6;
+  color: #d76;
 }
 @media (max-width: 768px) {
   body .header-navbar {
@@ -86,8 +86,8 @@ body .header span {
     top: 7.6rem;
     left: 0;
     right: 0;
-    background-color: #dc56d6;
-    border-top: 0.1rem solid #dc56d6;
+    background-color: #d76;
+    border-top: 0.1rem solid #d76;
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0 0);
   }
 }
@@ -100,14 +100,14 @@ body .header-navbar a {
   body .header-navbar a {
     margin: 1.5rem;
     padding: 1.5rem;
-    background-color: #dc56d6;
-    border-bottom: 0.1rem solid #dc56d6;
+    background-color: #d76;
+    border-bottom: 0.1rem solid #d76;
     display: block;
     color: #fff;
   }
 }
 body .header-navbar a:hover {
-  color: #dc56d6;
+  color: #d76;
 }
 @media (max-width: 768px) {
   body .header-navbar a:hover {
@@ -153,7 +153,7 @@ body .header-icons .changeTheme::before {
   }
 }
 body .header-icons .changeTheme:has(input:checked) {
-  background-color: #dc56d6;
+  background-color: #d76;
 }
 body .header-icons .changeTheme:has(input:checked)::before {
   left: calc(100% - 2rem);
@@ -173,7 +173,7 @@ body .header-icons i {
   }
 }
 body .header-icons i:hover {
-  color: #dc56d6;
+  color: #d76;
 }
 body .header-hamburguer {
   display: none;
@@ -186,7 +186,7 @@ body .header .bi-flower1 {
   display: none;
   font-size: 3rem;
   cursor: pointer;
-  color: #dc56d6;
+  color: #d76;
 }
 @media (max-width: 768px) {
   body .header .bi-flower1 {
@@ -247,8 +247,8 @@ body .header-cart .cart-content .cart-box .detail-box .cart-product-price {
   font-weight: 600;
 }
 body .header-cart .cart-content .cart-box .detail-box .cart-product-quantity {
-  border: 1px solid #dc56d6;
-  outline-color: #dc56d6;
+  border: 1px solid #d76;
+  outline-color: #d76;
   width: 4rem;
   text-align: center;
   font-size: 1.5rem;
@@ -263,7 +263,7 @@ body .header-cart .cart-content .cart-box .cart-remove {
   justify-content: right;
   align-items: center;
   font-size: 2rem;
-  color: #dc56d6;
+  color: #d76;
   cursor: pointer;
   width: 0;
 }
@@ -271,7 +271,7 @@ body .header-cart .total {
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
-  border-top: 1px solid #dc56d6;
+  border-top: 1px solid #d76;
 }
 body .header-cart .total .total-title {
   font-size: 1.5rem;
@@ -294,14 +294,14 @@ body .header-cart .btn-buy {
   font-weight: 700;
   color: #333;
   cursor: pointer;
-  border: 0.3rem solid #dc56d6;
+  border: 0.3rem solid #d76;
   background: none;
   font-size: 1.2rem;
   margin-left: 50%;
   transform: translate(-50%, 50%);
 }
 body .header-cart .btn-buy:hover {
-  background-color: #dc56d6;
+  background-color: #d76;
   color: #fff;
 }
 body .header-cart #cart-close {
@@ -313,7 +313,7 @@ body .header-cart #cart-close {
   color: #999;
 }
 body .header-cart #cart-close:hover {
-  color: #dc56d6;
+  color: #d76;
 }
 body .header .active {
   right: 0;
@@ -352,7 +352,7 @@ body .main-home .home-content {
 body .main-home .home-content h2 {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
   text-align: left;
   margin-bottom: 0;
@@ -403,12 +403,12 @@ body .main-home .home-content a {
   color: #fff;
 }
 body .main-home .home-content a:hover {
-  background-color: #dc56d6;
+  background-color: #d76;
 }
 body .main-about h2 {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
   margin: 3rem 0;
 }
@@ -425,7 +425,7 @@ body .main-about h2 {
 body .main-about span {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
   color: #333;
 }
@@ -515,10 +515,10 @@ body .main-about .row .about-text a {
   font-weight: 700;
   color: #333;
   cursor: pointer;
-  border: 0.3rem solid #dc56d6;
+  border: 0.3rem solid #d76;
 }
 body .main-about .row .about-text a:hover {
-  background-color: #dc56d6;
+  background-color: #d76;
 }
 body .main-icons {
   width: 100vw;
@@ -543,7 +543,7 @@ body .main-icons .container-icons .icons {
   cursor: pointer;
 }
 body .main-icons .container-icons .icons:hover {
-  background: #dc56d6;
+  background: #d76;
 }
 body .main-icons .container-icons .icons img {
   height: 10rem;
@@ -561,7 +561,7 @@ body .main-icons .container-icons .icons span {
 body .main-products h2 {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
 }
 @media (max-width: 768px) {
@@ -577,7 +577,7 @@ body .main-products h2 {
 body .main-products span {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
   color: #333;
 }
@@ -611,7 +611,7 @@ body .main-products .products-container .product-box .discount {
   top: -2rem;
   padding: 0.6rem 1rem;
   font-size: 2rem;
-  color: #dc56d6;
+  color: #d76;
   background: #222;
   z-index: 1;
   border-radius: 0.5rem;
@@ -627,7 +627,7 @@ body .main-products .products-container .product-box img:hover {
 body .main-products .products-container .product-box .product-title {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
   color: #333;
   color: #333;
@@ -658,7 +658,7 @@ body .main-products .products-container .product-box .detail {
 }
 body .main-products .products-container .product-box .detail .product-price {
   font-size: 2rem;
-  color: #dc56d6;
+  color: #d76;
   font-weight: 600;
 }
 body .main-products .products-container .product-box .detail .add-cart {
@@ -671,12 +671,12 @@ body .main-products .products-container .product-box .detail .add-cart {
   }
 }
 body .main-products .products-container .product-box .detail .add-cart:hover {
-  color: #dc56d6;
+  color: #d76;
 }
 body .main-review h2 {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
 }
 @media (max-width: 768px) {
@@ -692,7 +692,7 @@ body .main-review h2 {
 body .main-review span {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
   color: #333;
 }
@@ -721,7 +721,7 @@ body .main-review .box-container .box {
   position: relative;
 }
 body .main-review .box-container .box .stars i {
-  color: #dc56d6;
+  color: #d76;
   font-size: 2rem;
 }
 body .main-review .box-container .box p {
@@ -764,7 +764,7 @@ body .main-review .box-container .box .bi-quote {
 body .main-contact h2 {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
 }
 @media (max-width: 768px) {
@@ -780,7 +780,7 @@ body .main-contact h2 {
 body .main-contact span {
   margin: 3rem 0;
   font-size: 6rem;
-  color: #dc56d6;
+  color: #d76;
   text-align: center;
   color: #333;
 }
@@ -814,13 +814,13 @@ body .main-contact .row form .box {
   border-radius: 0.5rem;
   margin: 0.5rem;
   font-size: 2rem;
-  color: #dc56d6;
+  color: #d76;
   padding: 1rem;
   margin: 0.7rem 0;
   width: 100%;
 }
 body .main-contact .row form .box:focus {
-  border-color: #dc56d6;
+  border-color: #d76;
 }
 body .main-contact .row form #form-email {
   text-transform: lowercase !important;
@@ -839,10 +839,10 @@ body .main-contact .row form .btn {
   font-weight: 700;
   color: #333;
   cursor: pointer;
-  border: 0.2rem solid #dc56d6;
+  border: 0.2rem solid #d76;
 }
 body .main-contact .row form .btn:hover {
-  background-color: #dc56d6;
+  background-color: #d76;
 }
 body .main-contact .row .img-contact {
   flex: 1 1 40rem;
@@ -874,7 +874,7 @@ body .footer-container h3 {
   font-weight: bolder;
   text-align: center;
   padding: 1rem 0;
-  border-bottom: 0.1rem solid #dc56d6;
+  border-bottom: 0.1rem solid #d76;
 }
 body .footer-container a {
   font-size: 1.5rem;
@@ -886,7 +886,7 @@ body .footer-container a {
   display: block;
 }
 body .footer-container a:hover {
-  color: #dc56d6;
+  color: #d76;
 }
 body .footer-container .footer-links {
   text-align: center;
@@ -904,7 +904,7 @@ body .footer p {
   border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
 }
 body .footer .credit {
-  color: #dc56d6;
+  color: #d76;
 }
 body .footer .credit:hover {
   color: #999;
@@ -913,7 +913,7 @@ body:has(#changeTheme:checked) {
   background: #333;
 }
 body:has(#changeTheme:checked) ::hover {
-  color: #dc56d6;
+  color: #d76;
 }
 body:has(#changeTheme:checked) .header {
   background-color: #333;
@@ -925,7 +925,7 @@ body:has(#changeTheme:checked) .main {
   background-color: #333;
 }
 body:has(#changeTheme:checked) .main ::hover {
-  color: #dc56d6;
+  color: #d76;
 }
 body:has(#changeTheme:checked) .main section {
   background-color: #333;
@@ -944,7 +944,7 @@ body:has(#changeTheme:checked) .main-about .row .about-text a {
   color: #fff;
 }
 body:has(#changeTheme:checked) .main-about .row .about-text a:hover {
-  background-color: #dc56d6;
+  background-color: #d76;
 }
 body:has(#changeTheme:checked) .main-icons .container-icons {
   background: #333;
@@ -953,7 +953,7 @@ body:has(#changeTheme:checked) .main-icons .container-icons .icons {
   background: #333;
 }
 body:has(#changeTheme:checked) .main-icons .container-icons .icons:hover {
-  background: #dc56d6;
+  background: #d76;
 }
 body:has(#changeTheme:checked) .main-icons .container-icons .icons h3 {
   color: #fff;
@@ -968,13 +968,13 @@ body:has(#changeTheme:checked) .main-icons .footer-container a {
   color: #999;
 }
 body:has(#changeTheme:checked) .main-icons .footer-container a:hover {
-  color: #dc56d6;
+  color: #d76;
 }
 body:has(#changeTheme:checked) .main-icons .footer p {
   color: #999;
 }
 body:has(#changeTheme:checked) .main-icons .footer .credit {
-  color: #dc56d6;
+  color: #d76;
 }
 body:has(#changeTheme:checked) .main-icons .footer .credit:hover {
   color: #999;
@@ -986,7 +986,7 @@ body:has(#changeTheme:checked) .main-products .products-container .product-box .
   color: #999;
 }
 body:has(#changeTheme:checked) .main-products .products-container .product-box .detail .product-price {
-  color: #dc56d6;
+  color: #d76;
 }
 body:has(#changeTheme:checked) .main-review .box-container .box {
   background-color: #333;
@@ -1002,7 +1002,7 @@ body:has(#changeTheme:checked) .main-contact .row form .btn {
   color: #fff;
 }
 body:has(#changeTheme:checked) .main-contact .row form .btn:hover {
-  background-color: #dc56d6;
+  background-color: #d76;
 }
 body:has(#changeTheme:checked) .footer {
   background: #333;
