@@ -296,9 +296,12 @@ body .header-cart .btn-buy {
   cursor: pointer;
   border: 0.3rem solid #d76;
   background: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-left: 50%;
   transform: translate(-50%, 50%);
+}
+body .header-cart .btn-buy i {
+  font-size: 1.6rem;
 }
 body .header-cart .btn-buy:hover {
   background-color: #d76;
