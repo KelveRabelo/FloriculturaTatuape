@@ -18,6 +18,7 @@ function ready()
     updateTotal()
     renderProdcuts()
     validadeForm()
+ 
     //checkoutWhatsapp()
     
     //==================>EVENT OPEN/CLOSE CART <==================//
@@ -175,20 +176,33 @@ function checkIfInputisNull(event)
 function whatsappCheckout()
 {
     const itemsCart = document.querySelectorAll(".cart-box")
-    let list = []
-    for(i=0; i < itemsCart.length; i++)
+    const name = document.querySelectorAll(".cart-product-title")
+    const price = document.querySelectorAll(".cart-product-price")
+
+    let arr = []
+    var productList
+    function products(name, price) 
     {
-        list += itemsCart[i].innerText.replace("\n", " ")
+        productList = {Nome: name, Preço: price}
+        return productList
     }
 
-    var url = "https://wa.me/5511953604803?text="
-    + "===============" + "%0A"
-    + "Produtos:" + "%0A"
-    +"================" + "%0A"
-    + list + "%0A"
-    +"-----------------------------------------" + "%0A"
-    + "Total: R$" + totalAmount
+    for(i=0; i<itemsCart.length; i++)
+    {
+        arr.push(products(name[i].innerText, price[i].innerText))
+    }
 
+    var obj = JSON.stringify(arr)
+    obj = obj.replace("[","").replace("]","").replaceAll("{", "").replaceAll("}", "").replaceAll('"', "").replaceAll(":", ": ").replaceAll(",", "%0A")
+
+    var url = "https://wa.me/5511953604803?text=\n" + "%0A"
+    + "===============\n" + "%0A"
+    + "Produtos:\n" + "%0A"
+    +"================\n" + "%0A"
+    + obj + "%0A"
+    +"\n-----------------------------------------\n" + "%0A"
+    + "Total: R$" + totalAmount
+    
     window.open(url, "_blank").focus();
 }
 //==================================================================
@@ -321,6 +335,7 @@ function validadeForm()
         //se todos os campos estiverem ok!
         
         //======================> EVENT SEND FORM <======================//
+        sendForm()
         //get btn form
         const btnForm = document.querySelector(".btn-form")
         btnForm.addEventListener("click", sendForm)
