@@ -47,14 +47,18 @@
         <!--////////////////////////////////////////-->
     
         <!--CART-->
-        <div class="header-cart">
-
+        <aside class="header-cart">
+            
             <!-- TITLE CART -->
-            <h2 class="cart-title">carrinho</h2>
+            <div class="box-title">
+                <!--CART CLOSE-->
+                <i class="bi bi-x-circle-fill" id="cart-close"></i>
+                <h2 class="cart-title">carrinho</h2>
+            </div>
 
             <!--CONTENT-->
             <div class="cart-content">
-
+         
                 <!--RENDER CART-->
                 <!-- <div class="cart-box">
                     <img src="assets/img/flor.jpg" alt="">
@@ -68,23 +72,30 @@
 
             </div>
             
-
             <!--TOTAL-->
             <div class="total">
-                <div class="total-title">total</div>
+                <div class="total-title">total:</div>
                 <div class="total-price">R$0</div>
             </div>
+
+            <!-- INFORMAÇOES DE CONTATO -->
+            <form class="info-user">
+                <h3>informações de contato</h3>
+                <input id="info-user-name" class="box-info-user" type="text" placeholder="Nome"  minlenght="3" maxlength="50" required>
+                <input id="info-user-number" class="box-info-user" type="tel" placeholder="Número" minlenght="8" maxlength="14" required>
+                <select id="info-user-payment" class="box-info-user">
+                    <option value="pagamento">forma de pagamento</option >
+                    <option value="credito">credito</option>
+                    <option value="debito">débito</option>
+                    <option value="pix">pix</option>
+                    <option value="outros">outros</option> 
+                </select>
+            </form>
             
             <!--BUY BUTTON-->
             <button type="button" class="btn-buy"><i class="bi bi-whatsapp"> finaliza pedido</i></button>
-            
 
-            
-            
-            <!--CART CLOSE-->
-            <i class="bi bi-x-circle-fill" id="cart-close"></i>
-
-        </div>
+        </aside>
 
     </header>
 
@@ -280,6 +291,10 @@
             </div>
         </section>
         <!--CONTACTS END-->
+
+        <section>
+            <button><a href="https://wa.me/5511953604803" target="_blank"><i class="bi bi-whatsapp btn-whats"></i></a></button>
+        </section>
 
     </main>
     <!--END-->

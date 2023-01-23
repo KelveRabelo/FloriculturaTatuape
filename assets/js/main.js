@@ -175,6 +175,9 @@ function checkIfInputisNull(event)
 //==================> FUNÇÃO CHECKOUT WHATSAPP <==================//
 function whatsappCheckout()
 {
+    var userName = document.querySelector("#info-user-name").value
+    var userNumber = document.querySelector("#info-user-number").value
+    var userPayment = document.querySelector("#info-user-payment").value
     const itemsCart = document.querySelectorAll(".cart-box")
     const name = document.querySelectorAll(".cart-product-title")
     const price = document.querySelectorAll(".cart-product-price")
@@ -195,13 +198,20 @@ function whatsappCheckout()
     var obj = JSON.stringify(arr)
     obj = obj.replace("[","").replace("]","").replaceAll("{", "").replaceAll("}", "").replaceAll('"', "").replaceAll(":", ": ").replaceAll(",", "%0A")
 
-    var url = "https://wa.me/5511953604803?text=\n" + "%0A"
-    + "===============\n" + "%0A"
-    + "Produtos:\n" + "%0A"
-    +"================\n" + "%0A"
-    + obj + "%0A"
-    +"\n-----------------------------------------\n" + "%0A"
-    + "Total: R$" + totalAmount
+    var url = "https://wa.me/5511953604803?text=" + "%0A"
+    + "❁        Floricultura Tatuapé       ❁" + "%0A"
+    + "--------—-----------------------------" + "%0A"
+    + "| Nome: " + userName                    + "%0A"
+    + "| Celular: " + userNumber               + "%0A"
+    + "| Forma de pagamento: " + userPayment   + "%0A"
+    + "| Nº Pedido: 0001                     " + "%0A"
+    + "--------------------------------------" + "%0A"
+    + "| Lista de Items:                     " + "%0A"
+    + "--------------------------------------" + "%0A"
+    + obj                                      + "%0A"
+    + "--------------------------------------" + "%0A"
+    + "| Total: R$" + totalAmount              + "%0A"
+    + "--------------------------------------" + "%0A"
     
     window.open(url, "_blank").focus();
 }
@@ -217,10 +227,10 @@ function makePurchase(event)
     }
     else
     {
-        alert
+        /* alert
         (
             `Você sera redirecionado para o Whatsapp!\nObrigado pela sua compra!\nValor do pedido R$${totalAmount}\nVolte sempre =)`
-        )
+        ) */
         whatsappCheckout()
     }
 
