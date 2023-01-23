@@ -65,6 +65,7 @@ body
             padding: 2rem
         //LOGO
         &-brand
+            margin-left: -2rem
             font-size: 3rem
             font-weight: bolder
             color: variables.$font-color
@@ -102,9 +103,16 @@ body
                     color: variables.$color-primary
                     @media ( max-width: 768px )
                         color: variables.$color-secondary
-        //ICONS HEART/CART/USER
+        //ICON CART
         &-icons
-            font-size: 2.5rem
+            #cart-icon
+                font-size: 2.5rem
+                color: variables.$color-secondary
+                cursor: pointer
+                @media ( max-width:  425px )
+                    font-size: 2rem
+                &:hover
+                    color: variables.$color-primary
             
             .changeTheme
                 width: 6rem
@@ -114,9 +122,9 @@ body
                 position: relative
                 display: inline-block
                 background-color: #ccc
-                transition: .5s
                 border-radius: 30px
                 cursor: pointer
+    
                 @media ( max-width:  425px)
                     width: 4rem
                     height: 1.8rem
@@ -138,24 +146,15 @@ body
                     
                 //if changeTheme checked
                 &:has(input:checked) 
+                    
                     background-color: variables.$color-primary
 
                     &::before 
                         left: calc(100% - 2rem)
             //HIDDEN CHECK
-            input
+            #changeTheme
                 display: none
-            //SEARCH|HEART|CART       
-            i 
-                font-size: 2.5rem
-                color: variables.$color-secondary
-                margin-left: 1.5rem
-                cursor: pointer
-                @media ( max-width:  425px )
-                    font-size: 2rem
 
-                &:hover
-                    color: variables.$color-primary
         // MENU HAMBURGER
         &-hamburguer
             display: none
@@ -189,8 +188,8 @@ body
             right: -100%
             width: 300px
             height: 100vh
-            overflow-y: auto
-            overflow-x: hidden
+            overflow-y: scroll
+            overflow-x: scroll
             background-color: #fff
             box-shadow: 0px 2px 4px #666
             transition: 1.5s
@@ -267,9 +266,11 @@ body
                 @include mixins.btn
                 border: 0.3rem solid variables.$color-primary
                 background: none
-                font-size: 1.4rem
                 margin-left: 50%
                 transform: translate(-50%, 50%)
+                padding: 0 4rem
+                width: 80%
+                padding: 1rem
 
                 i
                     font-size: 1.6rem
@@ -283,9 +284,10 @@ body
                 position: absolute
                 font-size: 2.5rem
                 top: 1rem
-                right: .8rem
+                left: 2rem
                 cursor: pointer
                 color: variables.$color-secondary
+                
 
                 &:hover
                     color: variables.$color-primary
@@ -468,26 +470,14 @@ body
                     display: flex
                     flex-direction: column
 
-                    //DESCONTO
-                    .discount
-                        position: absolute
-                        left: 1rem
-                        top: -2rem
-                        padding: .6rem 1rem
-                        font-size: 2rem
-                        color: variables.$color-primary
-                        background: #222
-                        z-index: 1
-                        border-radius: 0.5rem
-
                     img
                         height: 25rem
                         width: 100%
                         aspect-ratio: 1/1
                         //HOVER IMAGE
                         &:hover
-                            transform: scale(1.1)
-
+                            transform: scale(.9)
+                            
                     .product-title
                         @include mixins.sub
                         color: variables.$font-color
@@ -497,7 +487,6 @@ body
                         @media ( max-width: 425px )
                             font-size: 2.5rem
                             
-
                     .detail
                         display: flex
                         justify-content: space-between
@@ -595,13 +584,11 @@ body
                 display: flex
                 flex-wrap: wrap-reverse
                 gap: 1.5rem
-                margin-bottom: 6rem
                 //FORMULARIO
                 form
                     
                     flex: 1 1 40rem
                     padding: 2rem 2.5rem
-                    border: .1rem solid rgba(0, 0, 0, .1)
                     border-bottom: none
                     border-radius: .5rem
                     box-shadow: .0rem .0rem .2rem .1rem
@@ -618,8 +605,10 @@ body
                         width: 100%
                         &:focus
                             border-color: variables.$color-primary
+                    
                     #form-email
                         text-transform: lowercase !important
+                    
                     textarea
                         height: 15rem
                         resize: none
@@ -639,55 +628,87 @@ body
                         height: 100%
                         object-fit: cover
                         border-radius: .5rem
-                       
         ///////////////////////////END///////////////////////////
+
+
+                  
     ///////////////////////END///////////////////////
 
     //////////////////////FOOTER//////////////////////
     .footer
-        background-color: #fff
+        background-color: #333
         padding: 2rem 9%
-        margin-top: 3rem
-        box-shadow: 2rem 0 1rem 0
+       
+        h2
+            color: variables.$color-primary
+            font-size: 3rem
+            font-weight: bolder
+            margin-bottom: 2rem
+
         &-container
             display: flex
             gap: 3rem
             text-align: left
             justify-content: stretch
-
+            flex-direction: column
+            @media ( min-width: 768px )
+                flex-direction: row
+                
             .footer-links
-                flex: 1 1 25rem
+                flex: 1 1
             
             h3
                 color: variables.$color-secondary
-                font-size: 1.4rem
+                font-size: 2rem
                 font-weight: bolder
-                text-align: center
-                padding: 1rem 0
-                border-bottom: 0.1rem solid variables.$color-primary
 
             a
                 @include mixins.text
                 color: variables.$color-secondary
-                font-size: 1.4rem
+                font-size: 1.6rem
                 display: block
                 &:hover
                     color: variables.$color-primary
 
-            .footer-links
-                text-align: center
+            .footer-pagamentos
+                h3
+                    margin-bottom: 1rem
 
-            img
-                margin-top: 1rem
-        
+            .footer-localidade
+                h3
+                    margin-bottom: 1rem
+                
+                img
+                    width: 6rem
+                    height: 3rem
+                    aspect-ratio: 1/1
+
+                    
+        .footer-rede-social
+            margin-top: 2rem
+            text-align: center
+            font-size: 2rem
+
+            .rede-social
+                display: flex
+                justify-content: center
+                gap: 4.5rem
+                margin-top: 2rem
+                margin-bottom: 5rem
+
+                i
+                    font-size: 2.5rem
+                    &:hover
+                        color: variables.$color-primary
+
+        //copyright
         p
             text-align: center
             font-size: 2rem
             color: variables.$color-secondary
-            padding: 1.5rem
-            padding-top: 2.5rem
-            margin-top: 1.5rem
-            border-top: .1rem solid rgba(0, 0, 0, .1)
+        
+        .copyright
+            margin-bottom: 2rem
 
         .credit
             color: variables.$color-primary

@@ -264,31 +264,6 @@ function updateTotal()
 //==================================================================
 
 
-//=====================> FUNÇÃO RENDER PRODUCTS <===================//
-function renderProdcuts()
-{
-    const productsRender = document.querySelector(".products-container")
-
-    for (i = 0; i < products.length; i++)
-    {
-        
-        productsRender.innerHTML += 
-        `
-            <div class="product-box">
-            	<span class="discount">-${products[i].discount}%</span>
-            	<img src=${products[i].imgSrc} alt="" class="product-img">
-                <h2 class="product-title">${products[i].name}</h2>
-                <div class="detail">
-                	<span class="product-price">R$${products[i].price}</span>
-			        <i class="bi bi-bag-plus-fill add-cart"></i>  
-            	</div>
-            </div>
-        `
-    }   
-}
-//==================================================================
-
-
 //======================> FUNÇÃO VALIDADE FORM <=====================//
 function validadeForm()
 {
@@ -387,6 +362,30 @@ function sendForm()
     + "Mensagem: " + formMsg;
 
     window.open(url, "_blank").focus();
+}
+//==================================================================
+
+
+//=====================> FUNÇÃO RENDER PRODUCTS <===================//
+function renderProdcuts()
+{
+    const productsRender = document.querySelector(".products-container")
+
+    for (i = 0; i < products.length; i++)
+    {
+        
+        productsRender.innerHTML += 
+        `
+            <div class="product-box">
+            	<img src=${products[i].imgSrc} alt="" class="product-img">
+                <h2 class="product-title">${products[i].name}</h2>
+                <div class="detail">
+                	<span class="product-price">R$${products[i].price}</span>
+			        <i class="bi bi-bag-plus-fill add-cart"></i>  
+            	</div>
+            </div>
+        `
+    }   
 }
 //==================================================================
 
