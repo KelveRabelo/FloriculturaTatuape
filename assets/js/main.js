@@ -403,7 +403,7 @@ function validadeForm()
 function sendForm()
 {
     var formName = document.querySelector("#form-name").value
-    var formEmail = document.querySelector("#form-email").value.
+    var formEmail = document.querySelector("#form-email").value
     var formNumber = document.querySelector("#form-number").value
     var formServices = document.querySelector("#form-services").value
     var formMsg = document.querySelector("#form-msg").value
