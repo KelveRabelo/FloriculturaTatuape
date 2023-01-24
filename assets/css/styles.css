@@ -75,7 +75,7 @@ body .header span {
   color: #dc56d6;
 }
 @media (max-width: 768px) {
-  body .header-navbar {
+  body .header-navbar, body .header .close {
     position: absolute;
     top: 7.6rem;
     left: 0;
@@ -85,13 +85,13 @@ body .header span {
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0 0);
   }
 }
-body .header-navbar a {
+body .header-navbar a, body .header .close a {
   font-size: 2rem;
   padding: 0 1.5rem;
   color: #999;
 }
 @media (max-width: 768px) {
-  body .header-navbar a {
+  body .header-navbar a, body .header .close a {
     margin: 1.5rem;
     padding: 1.5rem;
     background-color: #dc56d6;
@@ -100,11 +100,11 @@ body .header-navbar a {
     color: #fff;
   }
 }
-body .header-navbar a:hover {
+body .header-navbar a:hover, body .header .close a:hover {
   color: #dc56d6;
 }
 @media (max-width: 768px) {
-  body .header-navbar a:hover {
+  body .header-navbar a:hover, body .header .close a:hover {
     color: #999;
   }
 }
@@ -229,6 +229,11 @@ body .header-cart .cart-content {
   padding-right: 3rem;
   padding-top: 5rem;
 }
+body .header-cart .cart-content .cart-null {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem;
+}
 body .header-cart .cart-content .cart-box {
   display: flex;
 }
@@ -335,6 +340,22 @@ body .header-cart .btn-buy:hover {
 body .header .active {
   right: 0;
   transform: 0.5s;
+}
+body .notifications {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 7.6rem;
+  background: #333;
+  color: #999;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  z-index: 101;
+  transition: 0.5s;
+}
+body .active {
+  display: block;
 }
 body .main {
   background-color: #fff;
@@ -825,9 +846,6 @@ body .main-contact .row form .box {
 }
 body .main-contact .row form .box:focus {
   border-color: #dc56d6;
-}
-body .main-contact .row form #form-email {
-  text-transform: lowercase !important;
 }
 body .main-contact .row form textarea {
   height: 15rem;

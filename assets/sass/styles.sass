@@ -63,6 +63,7 @@ body
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1)
         @media ( max-width: 991px )
             padding: 2rem
+            
         //LOGO
         &-brand
             margin-left: -8rem
@@ -75,7 +76,7 @@ body
         span
             color: variables.$color-primary
         //MENU MOBILE
-        &-navbar
+        &-navbar, .close
             @media ( max-width: 768px )
                 position: absolute
                 top: 7.6rem
@@ -157,10 +158,12 @@ body
         // MENU HAMBURGER
         &-hamburguer
             display: none
+        
         // MENU HAMBURGER VERIFICADO
         &-hamburguer:checked ~ .header-navbar
             //SHOW MENU
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+        
         //ICON FLOR   
         .bi-flower1
             animation: animate 4s linear infinite
@@ -224,6 +227,10 @@ body
                 padding-right: 3rem
                 padding-top: 5rem
 
+                .cart-null
+                    font-size: 2rem
+                    text-align: center
+                    margin: 1rem
                 .cart-box
                     display: flex
                     
@@ -321,7 +328,22 @@ body
             right: 0
             transform: .5s
     ///////////////////////END///////////////////////
+    .notifications
+        display: none
+        position: fixed
+        width: 100%
+        top: 7.6rem
+        background: #333
+        color: #999
+        padding: 1rem
+        font-size: 2rem
+        text-align: center
+        z-index: 101
+        transition: .5s
 
+    .active
+        display: block
+        
     //////////////////////MAIN//////////////////////
     .main 
         background-color: variables.$bg-color
@@ -632,7 +654,7 @@ body
                             border-color: variables.$color-primary
                     
                     #form-email
-                        text-transform: lowercase !important
+                        //text-transform: lowercase !important
                     
                     textarea
                         height: 15rem

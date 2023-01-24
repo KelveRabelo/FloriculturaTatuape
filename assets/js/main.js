@@ -11,6 +11,7 @@ else
 //==================================================================
 
 var totalAmount = "0,00"
+var nPedido = 1
 //=========================> ALL EVENTS <==========================//
 function ready()
 {
@@ -25,6 +26,20 @@ function ready()
     const openCart = document.querySelector("#cart-icon")
     const closeCart = document.querySelector("#cart-close")
     const cart = document.querySelector(".header-cart")
+
+    /*     const menuLinks = document.querySelectorAll(".link-menu")
+    console.log(menuLinks)
+    for(i=0; i < menuLinks.length; i++)
+    {
+        menuLinks[i].addEventListener("click", closeMenu)
+    }
+
+    function closeMenu()
+    {
+        document.querySelector(".header-navbar").classList.add("close")
+    } */
+    
+
 
     //open cart
     openCart.addEventListener("click", () => {
@@ -79,8 +94,6 @@ function ready()
     const btnCheckout = document.querySelector(".btn-buy")
     btnCheckout.addEventListener("click", makePurchase)
     //==============================================================
-
-  
 }
 //==================================================================
    
@@ -105,6 +118,12 @@ function addProductCart(event)
 
     //get product name from cart
     const productCartName = document.querySelectorAll(".cart-product-title")
+
+    //get element .cart-content
+    const productListCart = document.querySelector(".cart-content")
+
+    //get notification from cart
+    const notification = document.querySelector(".notifications")
        
         for (i = 0; i < productCartName.length; i++)
         {
@@ -135,12 +154,25 @@ function addProductCart(event)
                 <button class="cart-remove bi bi-trash3-fill"></button>
             `
 
-    //get element .cart-content
-    const productListCart = document.querySelector(".cart-content")
+    
+    function handle_notification_close()
+    {
+        notification.classList.remove("active")
+    }
+    
+    if(totalAmount === "0,00")
+    {
+        productListCart.innerHTML = "" 
+    }
 
+    notification.innerHTML = `<p>item adicionado ao carrinho =)</p>`
+    notification.classList.add("active")
     //add node inside element ".cart-content"        
     productListCart.append(newNode)
- 
+    
+    setTimeout(handle_notification_close, 2500)
+
+    
     //update total
     updateTotal()
 
@@ -153,9 +185,18 @@ function addProductCart(event)
 //==================> FUNÇÃO REMOVE PRODUCT CART <=================//
 function removeProductCart(event)
 {
-    event.target.parentElement.remove()
-    updateTotal()
+    function handle_notification_close()
+    {
+        notification.classList.remove("active")
+    }
     
+    //get notificaiion
+    const notification = document.querySelector(".notifications")
+    notification.innerHTML = `<p>item removido do carrinho =(</p>`
+    notification.classList.add("active")
+    setTimeout(handle_notification_close, 2500)
+    event.target.parentElement.remove()
+    updateTotal() 
 }
 //==================================================================
 
@@ -175,9 +216,9 @@ function checkIfInputisNull(event)
 //==================> FUNÇÃO CHECKOUT WHATSAPP <==================//
 function whatsappCheckout()
 {
-    var userName = document.querySelector("#info-user-name").value
-    var userNumber = document.querySelector("#info-user-number").value
-    var userPayment = document.querySelector("#info-user-payment").value
+    const userName = document.querySelector("#info-user-name").value
+    const userNumber = document.querySelector("#info-user-number").value
+    const userPayment = document.querySelector("#info-user-payment").value
     const itemsCart = document.querySelectorAll(".cart-box")
     const name = document.querySelectorAll(".cart-product-title")
     const price = document.querySelectorAll(".cart-product-price")
@@ -195,26 +236,30 @@ function whatsappCheckout()
         arr.push(products(name[i].innerText, price[i].innerText))
     }
 
+    //ajustando a a exibição dos itens
     var obj = JSON.stringify(arr)
-    obj = obj.replace("[","").replace("]","").replaceAll("{", "").replaceAll("}", "").replaceAll('"', "").replaceAll(":", ": ").replaceAll(",", "%0A")
+    obj = obj.replace("[","").replace("]","").replaceAll("{", "").replaceAll("}", "").replaceAll('"', "").replaceAll(":", ": ").replaceAll(",", "%0A").replaceAll("R$", "R$ ").replaceAll("Nome", "| Nome").replaceAll("Preço", "| Preço")
 
     var url = "https://wa.me/5511953604803?text=" + "%0A"
-    + "❁        Floricultura Tatuapé       ❁" + "%0A"
-    + "--------—-----------------------------" + "%0A"
-    + "| Nome: " + userName                    + "%0A"
-    + "| Celular: " + userNumber               + "%0A"
-    + "| Forma de pagamento: " + userPayment   + "%0A"
-    + "| Nº Pedido: 0001                     " + "%0A"
-    + "--------------------------------------" + "%0A"
-    + "| Lista de Items:                     " + "%0A"
-    + "--------------------------------------" + "%0A"
-    + obj                                      + "%0A"
-    + "--------------------------------------" + "%0A"
-    + "| Total: R$" + totalAmount              + "%0A"
-    + "--------------------------------------" + "%0A"
-    
-    window.open(url, "_blank").focus();
-}
+    + "----------------------------------------"  + "%0A"
+    + "❁        Floricultura Tatuapé       ❁"    + "%0A"
+    + "----------------------------------------"  + "%0A"
+    + "| Dados do cliente"                        + "%0A"
+    + "----------------------------------------"  + "%0A"
+    + "| Nome: " + userName                       + "%0A"
+    + "| Celular: " + userNumber                  + "%0A"
+    + "| Forma de pagamento: " + userPayment      + "%0A"
+    + "| Nº Pedido: " + nPedido                   + "%0A"
+    + "----------------------------------------"  + "%0A"
+    + "| Lista de Itens:                     "    + "%0A"
+    + "----------------------------------------"  + "%0A"
+    + obj                                         + "%0A"
+    + "----------------------------------------"  + "%0A"
+    + "| Total: R$" + totalAmount                 + "%0A"
+    + "----------------------------------------"  + "%0A"
+
+    //window.open(url, "_blank").focus();
+} 
 //==================================================================
 
 
@@ -227,15 +272,14 @@ function makePurchase(event)
     }
     else
     {
-        /* alert
-        (
-            `Você sera redirecionado para o Whatsapp!\nObrigado pela sua compra!\nValor do pedido R$${totalAmount}\nVolte sempre =)`
-        ) */
+        nPedido += 1
         whatsappCheckout()
     }
 
     //clear cart
-    const clearCart = document.querySelector(".cart-content").innerHTML = ""
+    const clearCart = document.querySelector(".cart-content").innerHTML = `<p class="cart-null">seu carrinho esta vazio!</p>
+    <p class="cart-null">faça um pedido.</p>
+`
     updateTotal()
 }
 //==================================================================
@@ -359,14 +403,14 @@ function validadeForm()
 function sendForm()
 {
     var formName = document.querySelector("#form-name").value
-    var formEmail = document.querySelector("#form-email").value
+    var formEmail = document.querySelector("#form-email").value.
     var formNumber = document.querySelector("#form-number").value
     var formServices = document.querySelector("#form-services").value
     var formMsg = document.querySelector("#form-msg").value
 
     var url = "https://wa.me/5511953604803?text="
     + "Nome: " + formName + "%0A"
-    + "E-mail: " + formEmail + "%0A"
+    + "E-mail: " + formEmail.l + "%0A"
     + "Número: " + formNumber + "%0A"
     + "Serviço: " + formServices + "%0A"
     + "Mensagem: " + formMsg;
