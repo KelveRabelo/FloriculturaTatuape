@@ -75,9 +75,9 @@ body .header span {
   color: #dc56d6;
 }
 @media (max-width: 768px) {
-  body .header-navbar, body .header .close {
+  body .header-navbar {
     position: absolute;
-    top: 7.6rem;
+    top: 7.5rem;
     left: 0;
     right: 0;
     background-color: #dc56d6;
@@ -85,13 +85,13 @@ body .header span {
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0 0);
   }
 }
-body .header-navbar a, body .header .close a {
+body .header-navbar a {
   font-size: 2rem;
   padding: 0 1.5rem;
   color: #999;
 }
 @media (max-width: 768px) {
-  body .header-navbar a, body .header .close a {
+  body .header-navbar a {
     margin: 1.5rem;
     padding: 1.5rem;
     background-color: #dc56d6;
@@ -100,11 +100,11 @@ body .header-navbar a, body .header .close a {
     color: #fff;
   }
 }
-body .header-navbar a:hover, body .header .close a:hover {
+body .header-navbar a:hover {
   color: #dc56d6;
 }
 @media (max-width: 768px) {
-  body .header-navbar a:hover, body .header .close a:hover {
+  body .header-navbar a:hover {
     color: #999;
   }
 }
@@ -187,12 +187,12 @@ body .header .bi-flower1 {
 }
 body .header-cart {
   position: fixed;
-  top: 7.6rem;
+  top: 7.5rem;
   right: -100%;
   width: 300px;
   height: 100vh;
   background-color: #fff;
-  box-shadow: 0px 2px 4px #666;
+  box-shadow: 0px 2px 2px #666;
   transition: 1.5s;
   overflow: hidden;
   overflow-y: scroll;
@@ -984,6 +984,9 @@ body:has(#changeTheme:checked) .header {
 }
 body:has(#changeTheme:checked) .header-brand {
   color: #fff;
+}
+body:has(#changeTheme:checked) .notifications {
+  background: #fff;
 }
 body:has(#changeTheme:checked) .main {
   background-color: #333;

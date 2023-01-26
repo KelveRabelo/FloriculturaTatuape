@@ -26,21 +26,20 @@ function ready()
     const openCart = document.querySelector("#cart-icon")
     const closeCart = document.querySelector("#cart-close")
     const cart = document.querySelector(".header-cart")
+    const menuLinks = document.querySelectorAll(".link-menu")
 
-    /*     const menuLinks = document.querySelectorAll(".link-menu")
-    console.log(menuLinks)
+    //hidden menu at click in link
     for(i=0; i < menuLinks.length; i++)
     {
-        menuLinks[i].addEventListener("click", closeMenu)
+        menuLinks[i].addEventListener("click", () => {
+            if(document.querySelector(".header-hamburguer").checked)
+            {
+                document.querySelector(".header-hamburguer").checked=false
+            }
+            console.log(menuLinks[i])
+        })
     }
-
-    function closeMenu()
-    {
-        document.querySelector(".header-navbar").classList.add("close")
-    } */
     
-
-
     //open cart
     openCart.addEventListener("click", () => {
         cart.classList.add("active")
@@ -154,7 +153,6 @@ function addProductCart(event)
                 <button class="cart-remove bi bi-trash3-fill"></button>
             `
 
-    
     function handle_notification_close()
     {
         notification.classList.remove("active")
@@ -164,15 +162,14 @@ function addProductCart(event)
     {
         productListCart.innerHTML = "" 
     }
-
+    // show notifications when add item
     notification.innerHTML = `<p>item adicionado ao carrinho =)</p>`
     notification.classList.add("active")
     //add node inside element ".cart-content"        
     productListCart.append(newNode)
-    
-    setTimeout(handle_notification_close, 2500)
+    //time notification
+    setTimeout(handle_notification_close, 2000)
 
-    
     //update total
     updateTotal()
 
@@ -258,7 +255,7 @@ function whatsappCheckout()
     + "| Total: R$" + totalAmount                 + "%0A"
     + "----------------------------------------"  + "%0A"
 
-    //window.open(url, "_blank").focus();
+    window.open(url, "_blank").focus();
 } 
 //==================================================================
 

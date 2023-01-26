@@ -76,17 +76,17 @@ body
         span
             color: variables.$color-primary
         //MENU MOBILE
-        &-navbar, .close
+        &-navbar
             @media ( max-width: 768px )
                 position: absolute
-                top: 7.6rem
+                top: 7.5rem
                 left: 0
                 right: 0
                 background-color: variables.$color-primary
                 border-top: .1rem solid variables.$color-primary
                 //HIDDEN MENU
-                clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0 0)
-                
+                clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0 0)  
+
             //MENU LIST
             a
                 font-size: 2rem
@@ -110,7 +110,6 @@ body
                 font-size: 2.5rem
                 color: variables.$color-secondary
                 cursor: pointer
-
                 &:hover
                     color: variables.$color-primary
             
@@ -155,16 +154,16 @@ body
             #changeTheme
                 display: none
 
-        // MENU HAMBURGER
+        // MENU HAMBURGER INPUT
         &-hamburguer
             display: none
         
-        // MENU HAMBURGER VERIFICADO
+        MENU HAMBURGER INPUT VERIFICADO
         &-hamburguer:checked ~ .header-navbar
             //SHOW MENU
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
         
-        //ICON FLOR   
+        //ICON MENU FLOWER   
         .bi-flower1
             animation: animate 4s linear infinite
             display: none
@@ -186,12 +185,12 @@ body
         // CART
         &-cart
             position: fixed
-            top: 7.6rem
+            top: 7.5rem
             right: -100%
             width: 300px
             height: 100vh
             background-color: #fff
-            box-shadow: 0px 2px 4px #666
+            box-shadow: 0px 2px 2px #666
             transition: 1.5s
             overflow: hidden
             overflow-y: scroll
@@ -322,12 +321,12 @@ body
                 &:hover
                     background-color: variables.$color-primary
                     color: #fff
-
-            
         .active
             right: 0
             transform: .5s
     ///////////////////////END///////////////////////
+    
+    //////////////////NOTIFICATIONS//////////////////
     .notifications
         display: none
         position: fixed
@@ -340,10 +339,9 @@ body
         text-align: center
         z-index: 101
         transition: .5s
-
     .active
         display: block
-        
+    ///////////////////////END///////////////////////       
     //////////////////////MAIN//////////////////////
     .main 
         background-color: variables.$bg-color
@@ -692,8 +690,7 @@ body
                 border-radius: 50%
                 i
                 padding: .3rem .8rem
-        ///////////////////////////END///////////////////////////
-                        
+        ///////////////////////////END///////////////////////////                    
     ///////////////////////END///////////////////////
 
     //////////////////////FOOTER//////////////////////
@@ -789,6 +786,8 @@ body
             background-color: #333
             &-brand
                 color: #fff
+        .notifications
+            background: #fff
         .main
             background-color: #333
             ::hover
