@@ -204,10 +204,13 @@ body
                 width: 300px
                 height: 5rem
                 align-items: center
-                gap: calc( 300px - 85%)
-                
-                #cart-close
-                    font-size: 2.5rem
+                justify-content: space-between
+                @media ( max-width: 425px )
+                    text-align: center
+                    width: 100%
+
+                #cart-close, #cart-history
+                    font-size: 2rem
                     cursor: pointer
                     color: variables.$color-secondary
                     &:hover
@@ -324,6 +327,9 @@ body
         .active
             right: 0
             transform: .5s
+            @media ( max-width: 425px )
+                width: 100%
+                
     ///////////////////////END///////////////////////
     
     //////////////////NOTIFICATIONS//////////////////
@@ -892,4 +898,4 @@ body
                                 background-color: variables.$color-primary                     
         .footer
             background: #333          
-                    //////////////////////BODY//////////////////////
+//////////////////////BODY//////////////////////
