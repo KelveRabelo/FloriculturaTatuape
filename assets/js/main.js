@@ -182,6 +182,7 @@ function addProductCart(event)
 //==================> FUNÇÃO REMOVE PRODUCT CART <=================//
 function removeProductCart(event)
 {
+    const productListCart = document.querySelector(".cart-content")
     function handle_notification_close()
     {
         notification.classList.remove("active")
@@ -194,6 +195,12 @@ function removeProductCart(event)
     setTimeout(handle_notification_close, 2500)
     event.target.parentElement.remove()
     updateTotal() 
+    if(totalAmount === "0,00")
+    {
+        const clearCart = document.querySelector(".cart-content").innerHTML = `<p class="cart-null">seu carrinho esta vazio!</p>
+        <p class="cart-null">faça um pedido.</p>`
+    }
+
 }
 //==================================================================
 
@@ -275,8 +282,7 @@ function makePurchase(event)
 
     //clear cart
     const clearCart = document.querySelector(".cart-content").innerHTML = `<p class="cart-null">seu carrinho esta vazio!</p>
-    <p class="cart-null">faça um pedido.</p>
-`
+    <p class="cart-null">faça um pedido.</p>`
     updateTotal()
 }
 //==================================================================
