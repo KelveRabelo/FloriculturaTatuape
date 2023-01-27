@@ -966,9 +966,6 @@ body .footer .credit:hover {
 body:has(#changeTheme:checked) {
   background: #333;
 }
-body:has(#changeTheme:checked) ::hover {
-  color: #dc56d6;
-}
 body:has(#changeTheme:checked) .header {
   background-color: #333;
 }
@@ -980,9 +977,6 @@ body:has(#changeTheme:checked) .notifications {
 }
 body:has(#changeTheme:checked) .main {
   background-color: #333;
-}
-body:has(#changeTheme:checked) .main ::hover {
-  color: #dc56d6;
 }
 body:has(#changeTheme:checked) .main section {
   background-color: #333;
