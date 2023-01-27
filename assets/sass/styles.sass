@@ -106,59 +106,41 @@ body
                         color: variables.$color-secondary
         //ICON CART
         &-icons
-            #cart-icon
-                font-size: 2.5rem
-                color: variables.$color-secondary
+            font-size: 2.5rem
+            #cart-icon          
                 cursor: pointer
+                color: variables.$color-secondary
+                margin-right: .5rem
                 &:hover
                     color: variables.$color-primary
-            
+
             .changeTheme
-                width: 6rem
-                height: 2rem
-                top: .3rem
-                left: 1rem
-                position: relative
-                display: inline-block
-                background-color: #ccc
-                border-radius: 30px
-                cursor: pointer
-    
-                @media ( max-width:  425px)
-                    width: 4rem
-                    height: 1.8rem
-                    
-                //SLIDE
-                &::before
-                    content: ''
-                    top: -.3rem
-                    width: 2.5rem
-                    height: 2.5rem
-                    position: absolute
-                    background-color: #fff
-                    border-radius: 50%
-                    box-shadow: 0 5px 10px #cdcdcd
-                    @media ( max-width:  425px)
-                        top: -.1rem
-                        width: 2rem
-                        height: 2rem
-                    
+                .theme
+                    cursor: pointer
+                    transition: .5s
+                #theme-moon
+                    color: #666
+                #theme-sun
+                    color: #fbff00
+
                 //if changeTheme checked
                 &:has(input:checked) 
-                    
-                    background-color: variables.$color-primary
+                    #theme-moon
+                        display: none
+                //if changeTheme not checked
+                &:not(:has(input:checked))
+                    #theme-sun
+                        display: none
 
-                    &::before 
-                        left: calc(100% - 2rem)
             //HIDDEN CHECK
             #changeTheme
                 display: none
 
-        // MENU HAMBURGER INPUT
+        // MENU HAMBURGER OCULTAR INPUT 
         &-hamburguer
             display: none
         
-        MENU HAMBURGER INPUT VERIFICADO
+        //MENU HAMBURGER INPUT VERIFICADO
         &-hamburguer:checked ~ .header-navbar
             //SHOW MENU
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
@@ -687,7 +669,7 @@ body
                 position: fixed
                 z-index: 100
                 top: 70%
-                right: 6%
+                right: 4.5%
                 font-size: 3.5rem
                 background: #54e70a
                 width: 5rem
