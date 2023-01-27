@@ -124,34 +124,34 @@ function addProductCart(event)
     //get notification from cart
     const notification = document.querySelector(".notifications")
        
-        for (i = 0; i < productCartName.length; i++)
+    for (i = 0; i < productCartName.length; i++)
+    {
+        //check if product in cart
+        if (productCartName[i].innerText === productName)
         {
-            //check if product in cart
-            if (productCartName[i].innerText === productName)
-            {
-                //add more value input
-                productCartName[i].parentElement.querySelectorAll(".cart-product-quantity")[0].value++
-                updateTotal()
-                return
-            }
+            //add more value input
+            productCartName[i].parentElement.querySelectorAll(".cart-product-quantity")[0].value++
+            updateTotal()
+            return
         }
+    }
 
-        //create node div
-        let newNode = document.createElement("div")
-        //add class "cart-box"
-        newNode.classList.add("cart-box")
-        // add node inside content 
-        newNode.innerHTML =   
-            `
-                <img src="${productImg}" alt="">
-                <div class="detail-box">
-                    <div class="cart-product-title">${productName}</div>
-                    <div class="cart-product-price">${productPrice}</div>
-                    <input type="number" value="1" class="cart-product-quantity">
-                </div>
-                <!--REMOVE CART-->
-                <button class="cart-remove bi bi-trash3-fill"></button>
-            `
+    //create node div
+    let newNode = document.createElement("div")
+    //add class "cart-box"
+    newNode.classList.add("cart-box")
+    // add node inside content 
+    newNode.innerHTML =   
+        `
+            <img src="${productImg}" alt="">
+            <div class="detail-box">
+                <div class="cart-product-title">${productName}</div>
+                <div class="cart-product-price">${productPrice}</div>
+                <input type="number" value="1" class="cart-product-quantity">
+            </div>
+            <!--REMOVE CART-->
+            <button class="cart-remove bi bi-trash3-fill"></button>
+        `
 
     function handle_notification_close()
     {
@@ -162,11 +162,14 @@ function addProductCart(event)
     {
         productListCart.innerHTML = "" 
     }
+    
     // show notifications when add item
     notification.innerHTML = `<p>item adicionado ao carrinho =)</p>`
     notification.classList.add("active")
+
     //add node inside element ".cart-content"        
     productListCart.append(newNode)
+
     //time notification
     setTimeout(handle_notification_close, 2000)
 
@@ -200,7 +203,6 @@ function removeProductCart(event)
         const clearCart = document.querySelector(".cart-content").innerHTML = `<p class="cart-null">seu carrinho esta vazio!</p>
         <p class="cart-null">faça um pedido.</p>`
     }
-
 }
 //==================================================================
 
