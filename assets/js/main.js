@@ -439,7 +439,7 @@ function renderProdcuts()
             	<img src=${products[i].imgSrc} alt="" class="product-img">
                 <h2 class="product-title">${products[i].name}</h2>
                 <div class="detail">
-                	<span class="product-price">R$${products[i].price}</span>
+                	<span class="product-price">R$${products[i].price.toFixed(2).replaceAll(".", ",")}</span>
 			        <i class="bi bi-bag-plus-fill add-cart"></i>  
             	</div>
             </div>
