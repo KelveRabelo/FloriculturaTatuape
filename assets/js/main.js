@@ -15,7 +15,6 @@ var nPedido = 1
 //=========================> ALL EVENTS <==========================//
 function ready()
 {
-    
     updateTotal()
     renderProdcuts()
     validadeForm()
@@ -23,10 +22,13 @@ function ready()
     //checkoutWhatsapp()
     
     //==================>EVENT OPEN/CLOSE CART <==================//
-    const openCart = document.querySelector("#cart-icon")
-    const closeCart = document.querySelector("#cart-close")
-    const cart = document.querySelector(".header-cart")
     const menuLinks = document.querySelectorAll(".link-menu")
+    const cart = document.querySelector(".header-cart")
+    const cartHistory = document.querySelector(".header-cart-history")
+    const btnOpenCart = document.querySelector("#cart-icon")
+    const btnCloseCart = document.querySelector("#cart-close")
+    const btnOpenCartHistory = document.querySelector("#cart-history")
+    const btnCloseCartHistory = document.querySelector("#cart-close-history")
 
     //hidden menu at click in link
     for(i=0; i < menuLinks.length; i++)
@@ -39,16 +41,30 @@ function ready()
             console.log(menuLinks[i])
         })
     }
-    
+
     //open cart
-    openCart.addEventListener("click", () => {
+    btnOpenCart.addEventListener("click", () => {
         cart.classList.add("active")
+        document.querySelector(".header-hamburguer").checked=false
     })
 
     //close cart
-    closeCart.addEventListener("click", () => {
+    btnCloseCart.addEventListener("click", () => {
         cart.classList.remove("active")
+        cartHistory.classList.remove("active")
+
     })
+
+    //open history
+    btnOpenCartHistory.addEventListener("click", () => {
+        cartHistory.classList.add("active")
+        cart.classList.remove("active")
+        document.querySelector(".header-hamburguer").checked=false
+    })
+    btnCloseCartHistory.addEventListener("click", () => {
+        cartHistory.classList.remove("active")
+    })
+
     //==============================================================
 
 

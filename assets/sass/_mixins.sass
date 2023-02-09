@@ -5,6 +5,34 @@
     justify-content: space-between
     align-items: center
 
+@mixin menu-mobile
+    @media ( max-width: 768px )
+        position: absolute
+        top: 7.5rem
+        left: 0
+        right: 0
+        background-color: variables.$color-primary
+        border-top: .1rem solid variables.$color-primary
+        //HIDDEN MENU
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0 0)  
+
+@mixin links-menu
+    font-size: 2rem
+    padding: 0 1.5rem
+    color: variables.$color-secondary
+    @media ( max-width: 768px )
+        margin: 1.5rem
+        padding: 1.5rem
+        border-bottom: .1rem solid variables.$color-primary
+        display: block
+        color: #fff
+        background-color: variables.$color-primary
+
+    &:hover
+        color: variables.$color-primary
+        @media ( max-width: 768px )
+            color: variables.$color-secondary
+    
 @mixin btn
     display: inline-block
     margin-top: 1.5rem
@@ -68,3 +96,59 @@
     border-top: .4rem solid variables.$color-secondary
     border-left: .4rem solid variables.$color-secondary
     padding: .3rem .3rem
+
+//================= SIDE CART =================
+@mixin aside-cart
+    position: fixed
+    top: 7.5rem
+    right: -100%
+    width: 300px
+    height: 100vh
+    background-color: #fff
+    box-shadow: 0px 2px 2px #666
+    transition: 1.5s
+    overflow: hidden
+    overflow-y: scroll
+    height: 100vh
+
+@mixin cart-header
+    display: flex
+    position: fixed
+    background: #333
+    padding: 0 2rem
+    width: 300px
+    height: 5rem
+    align-items: center
+    justify-content: space-between
+    @media ( max-width: 425px )
+        text-align: center
+        width: 100%
+
+@mixin cart-icons
+    font-size: 2rem
+    cursor: pointer
+    color: variables.$color-secondary
+    &:hover
+        color: variables.$color-primary
+
+@mixin cart-title
+    display: flex
+    justify-content: center
+    font-size: 1.8rem
+    font-weight: 600
+
+@mixin cart-content
+    display: flex
+    flex-direction: column
+    padding: 0 2rem
+    padding-right: 3rem
+    padding-top: 5rem
+
+@mixin cart-null
+    font-size: 2rem
+    text-align: center
+    margin: 1rem
+    
+
+
+    

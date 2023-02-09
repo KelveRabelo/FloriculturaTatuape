@@ -52,7 +52,7 @@
         <aside class="header-cart">
             
             <!-- TITLE CART -->
-            <div class="box-title">
+            <div class="cart-header">
                 <!--CART CLOSE-->
                 <i class="bi bi-x-circle-fill" id="cart-close"></i>
                 <h2 class="cart-title">carrinho</h2>
@@ -74,7 +74,6 @@
                     </div>
                     <button class="cart-remove bi bi-trash3-fill "></button>
                 </div> -->
-
             </div>
             
             <!--TOTAL-->
@@ -101,11 +100,43 @@
             <button type="button" class="btn-buy"><i class="bi bi-whatsapp"> finaliza pedido</i></button>
 
         </aside>
+        
+        <!--CART HISTORY-->
+        <aside class="header-cart-history">
+            
+            <!-- CART HEADER -->
+            <div class="cart-header">
+                <i class="bi bi-x-circle-fill" id="cart-close-history"></i>
+                <h2 class="cart-title">histórico</h2>
+                <i class="bi bi-cart-fill" id="cart-icon"></i>
+            </div>
+
+            <!--CART CONTENT-->
+            <div class="cart-content">
+                <p class="cart-null">você não fez nenhum pedido!</p>
+                <p class="cart-null">faça um pedido.</p>
+         
+                <!--RENDER CART HISTORY-->
+                <!-- <div class="cart-box">
+                    <img src="assets/img/flor.jpg" alt="">
+                    <div class="detail-box">
+                        <div class="cart-product-title">flor</div>
+                        <div class="cart-product-price">$29.90</div>
+                        <input type="number" value="1" class="cart-product-quantity">
+                    </div>
+                    <button class="cart-remove bi bi-trash3-fill "></button>
+                </div> -->
+            </div>
+
+        </aside>
 
     </header>
+
+    <!-- NOTIFICATIONS -->
     <div class="notifications">
         
     </div>
+
     <!-- MAIN -->
     <main class="main">
         <!--HOME-->
@@ -365,7 +396,6 @@
     <!--LINK JAVASCRIPT-->
     <script src="assets/js/products.js"></script>
     <script src="assets/js/main.js"></script>
-
 
 </body>
 </html>

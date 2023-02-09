@@ -75,35 +75,15 @@ body
         //SUB LOGO
         span
             color: variables.$color-primary
+        
         //MENU MOBILE
         &-navbar
-            @media ( max-width: 768px )
-                position: absolute
-                top: 7.5rem
-                left: 0
-                right: 0
-                background-color: variables.$color-primary
-                border-top: .1rem solid variables.$color-primary
-                //HIDDEN MENU
-                clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0 0)  
+            @include mixins.menu-mobile
 
             //MENU LIST
-            a
-                font-size: 2rem
-                padding: 0 1.5rem
-                color: variables.$color-secondary
-                @media ( max-width: 768px )
-                    margin: 1.5rem
-                    padding: 1.5rem
-                    background-color: variables.$color-primary
-                    border-bottom: .1rem solid variables.$color-primary
-                    display: block
-                    color: #fff
-
-                &:hover
-                    color: variables.$color-primary
-                    @media ( max-width: 768px )
-                        color: variables.$color-secondary
+            .link-menu
+                @include mixins.links-menu
+                
         //ICON CART
         &-icons
             font-size: 2.5rem
@@ -114,6 +94,7 @@ body
                 &:hover
                     color: variables.$color-primary
 
+            //DARK MODE
             .changeTheme
                 .theme
                     cursor: pointer
@@ -131,7 +112,6 @@ body
                 &:not(:has(input:checked))
                     #theme-sun
                         display: none
-
             //HIDDEN CHECK
             #changeTheme
                 display: none
@@ -166,55 +146,24 @@ body
         
         // CART
         &-cart
-            position: fixed
-            top: 7.5rem
-            right: -100%
-            width: 300px
-            height: 100vh
-            background-color: #fff
-            box-shadow: 0px 2px 2px #666
-            transition: 1.5s
-            overflow: hidden
-            overflow-y: scroll
-            height: 100vh
+            @include mixins.aside-cart
+            display: none
         
-            .box-title
-                display: flex
-                position: fixed
-                background: #333
-                padding: 0 2rem
-                width: 300px
-                height: 5rem
-                align-items: center
-                justify-content: space-between
-                @media ( max-width: 425px )
-                    text-align: center
-                    width: 100%
+            .cart-header
+                @include mixins.cart-header
 
                 #cart-close, #cart-history
-                    font-size: 2rem
-                    cursor: pointer
-                    color: variables.$color-secondary
-                    &:hover
-                        color: variables.$color-primary
+                    @include mixins.cart-icons
 
                 .cart-title
-                    display: flex
-                    justify-content: center
-                    font-size: 1.8rem
-                    font-weight: 600
+                    @include mixins.cart-title
                     
             .cart-content
-                display: flex
-                flex-direction: column
-                padding: 0 2rem
-                padding-right: 3rem
-                padding-top: 5rem
+                @include mixins.cart-content
 
                 .cart-null
-                    font-size: 2rem
-                    text-align: center
-                    margin: 1rem
+                    @include mixins.cart-null
+                    
                 .cart-box
                     display: flex
                     
@@ -306,12 +255,39 @@ body
                 &:hover
                     background-color: variables.$color-primary
                     color: #fff
+
         .active
             right: 0
             transform: .5s
             @media ( max-width: 425px )
                 width: 100%
-                
+        
+        //CART HISTORY
+        &-cart-history
+            @include mixins.aside-cart
+
+            .cart-header
+                @include mixins.cart-header
+
+                #cart-close-history, #cart-icon
+                    @include mixins.cart-icons
+
+                .cart-title
+                    @include mixins.cart-title
+
+            .cart-content
+                @include mixins.cart-content
+
+                .cart-null
+                    font-size: 2rem
+                    text-align: center
+                    margin: 1rem
+
+        .active
+            right: 0
+            transform: .5s
+            @media ( max-width: 425px )
+                width: 100%             
     ///////////////////////END///////////////////////
     
     //////////////////NOTIFICATIONS//////////////////
@@ -677,7 +653,7 @@ body
                 color: #fff
                 border-radius: 50%
                 i
-                padding: .3rem .8rem
+                    padding: .3rem .8rem
         ///////////////////////////END///////////////////////////                    
     ///////////////////////END///////////////////////
 
@@ -729,8 +705,7 @@ body
                     width: 6rem
                     height: 3rem
                     aspect-ratio: 1/1
-
-                    
+           
         .footer-rede-social
             margin-top: 2rem
             text-align: center
