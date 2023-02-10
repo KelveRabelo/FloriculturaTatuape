@@ -278,9 +278,7 @@ body
                 @include mixins.cart-content
 
                 .cart-null
-                    font-size: 2rem
-                    text-align: center
-                    margin: 1rem
+                    @include mixins.cart-null
 
         .active
             right: 0
@@ -305,7 +303,8 @@ body
     .active
         display: block
     ///////////////////////END///////////////////////       
-    //////////////////////MAIN//////////////////////
+    
+    //////////////////////MAIN///////////////////////
     .main 
         background-color: variables.$bg-color
 
@@ -653,10 +652,9 @@ body
                 border-radius: 10rem
                 padding: 0.6rem 1.1rem     
         ///////////////////////////END///////////////////////////
-
     ///////////////////////END///////////////////////
 
-    //////////////////////FOOTER//////////////////////
+    //////////////////////FOOTER/////////////////////
     .footer
         background-color: #333
         padding: 2rem 9%
@@ -735,9 +733,9 @@ body
             color: variables.$color-primary
             &:hover
                 color: variables.$color-secondary
-    ///////////////////////END///////////////////////                    
+    ///////////////////////END////////////////////////                   
 
-    ///////////////////////DARK-MODE///////////////////////
+    ///////////////////////DARK-MODE//////////////////
     //$bg-color: #333
     //$font-color: #fff
     &:has(#changeTheme:checked)
@@ -746,14 +744,11 @@ body
             background-color: #333
             &-brand
                 color: #fff
-
         .notifications
             background: #fff
-        
         .main
             background-color: #333
-
-            //SECTION GERAL
+            //SECTION GLOBAL
             section
                 background-color: #333
                 span
@@ -821,7 +816,6 @@ body
                     .product-box
                         .product-title
                             color: variables.$color-secondary
-                        
                         .detail
                             .product-price
                                 color: variables.$color-primary
@@ -843,7 +837,6 @@ body
                 .row
                     form
                         background: #333
-
                         .btn
                             background: #333
                             color: #fff
