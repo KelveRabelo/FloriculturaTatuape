@@ -147,8 +147,7 @@ body
         // CART
         &-cart
             @include mixins.aside-cart
-            display: none
-        
+            
             .cart-header
                 @include mixins.cart-header
 
@@ -269,7 +268,7 @@ body
             .cart-header
                 @include mixins.cart-header
 
-                #cart-close-history, #cart-icon
+                #cart-close-history, #btn-cart-history
                     @include mixins.cart-icons
 
                 .cart-title
@@ -418,7 +417,7 @@ body
                             background-color: variables.$color-primary
         ///////////////////////////END///////////////////////////
 
-        //////////////////////SECTION ICONS //////////////////////
+        //////////////////////SECTION ICONS//////////////////////
         &-icons
             width: 100vw
 
@@ -516,7 +515,7 @@ body
                                 color: variables.$color-primary
         ///////////////////////////END///////////////////////////
 
-        //////////////////////SECTION REVIEW ////////////////////// 
+        //////////////////////SECTION REVIEW////////////////////// 
         &-review
             
             //SUB-TITLE
@@ -580,7 +579,7 @@ body
                         transform: rotateY(180deg)
         ///////////////////////////END///////////////////////////
 
-        //////////////////////SECTION CONTACT //////////////////////
+        //////////////////////SECTION CONTACT//////////////////////
         &-contact
             //TITTLE
             h2
@@ -640,21 +639,21 @@ body
         ///////////////////////////END///////////////////////////
 
         //////////////////////SECTION BUTTON WHATSAPP //////////////////////
-        section
+        &-whatsapp
             .btn-whats
                 position: fixed
                 z-index: 100
                 top: 70%
                 right: 4.5%
-                font-size: 3.5rem
+                font-size: 3rem
                 background: #54e70a
                 width: 5rem
                 height: 5rem
                 color: #fff
-                border-radius: 50%
-                i
-                    padding: .3rem .8rem
-        ///////////////////////////END///////////////////////////                    
+                border-radius: 10rem
+                padding: 0.6rem 1.1rem     
+        ///////////////////////////END///////////////////////////
+
     ///////////////////////END///////////////////////
 
     //////////////////////FOOTER//////////////////////

@@ -176,7 +176,6 @@ body .header-cart {
   overflow: hidden;
   overflow-y: scroll;
   height: 100vh;
-  display: none;
 }
 body .header-cart .cart-header {
   display: flex;
@@ -361,12 +360,12 @@ body .header-cart-history .cart-header {
     width: 100%;
   }
 }
-body .header-cart-history .cart-header #cart-close-history, body .header-cart-history .cart-header #cart-icon {
+body .header-cart-history .cart-header #cart-close-history, body .header-cart-history .cart-header #btn-cart-history {
   font-size: 2rem;
   cursor: pointer;
   color: #999;
 }
-body .header-cart-history .cart-header #cart-close-history:hover, body .header-cart-history .cart-header #cart-icon:hover {
+body .header-cart-history .cart-header #cart-close-history:hover, body .header-cart-history .cart-header #btn-cart-history:hover {
   color: #dc56d6;
 }
 body .header-cart-history .cart-header .cart-title {
@@ -930,20 +929,18 @@ body .main-contact .row .img-contact img {
   object-fit: cover;
   border-radius: 0.5rem;
 }
-body .main section .btn-whats {
+body .main-whatsapp .btn-whats {
   position: fixed;
   z-index: 100;
   top: 70%;
   right: 4.5%;
-  font-size: 3.5rem;
+  font-size: 3rem;
   background: #54e70a;
   width: 5rem;
   height: 5rem;
   color: #fff;
-  border-radius: 50%;
-}
-body .main section .btn-whats i {
-  padding: 0.3rem 0.8rem;
+  border-radius: 10rem;
+  padding: 0.6rem 1.1rem;
 }
 body .footer {
   background-color: #333;

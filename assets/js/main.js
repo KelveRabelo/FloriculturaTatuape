@@ -1,5 +1,5 @@
 //========================> CHECK HTML <==========================//
-//check elements document was loading
+//Check elements document was loading
 if(document.readyState == "loading")
 {
     document.addEventListener("DOMContentLoaded", ready)
@@ -10,6 +10,7 @@ else
 }
 //==================================================================
 
+//Vabriables global
 var totalAmount = "0,00"
 var nPedido = 1
 //=========================> ALL EVENTS <==========================//
@@ -18,10 +19,10 @@ function ready()
     updateTotal()
     renderProdcuts()
     validadeForm()
- 
     //checkoutWhatsapp()
     
-    //==================>EVENT OPEN/CLOSE CART <==================//
+    //==================>EVENTS OPEN/CLOSE CART <==================//
+    const hamburguer = document.querySelector("#hamburguer")
     const menuLinks = document.querySelectorAll(".link-menu")
     const cart = document.querySelector(".header-cart")
     const cartHistory = document.querySelector(".header-cart-history")
@@ -29,7 +30,15 @@ function ready()
     const btnCloseCart = document.querySelector("#cart-close")
     const btnOpenCartHistory = document.querySelector("#cart-history")
     const btnCloseCartHistory = document.querySelector("#cart-close-history")
+    const btnCart = document.querySelector("#btn-cart-history")
+    
 
+    ///////////////////////////// MENU /////////////////////////////
+    hamburguer.addEventListener("click", () => {
+        cart.classList.remove("active")
+        cartHistory.classList.remove("active")
+    })
+    
     //hidden menu at click in link
     for(i=0; i < menuLinks.length; i++)
     {
@@ -41,18 +50,18 @@ function ready()
             console.log(menuLinks[i])
         })
     }
-
+    
+    /////////////////////////////// CART ////////////////////////////
     //open cart
     btnOpenCart.addEventListener("click", () => {
         cart.classList.add("active")
+        cartHistory.classList.remove("active")
         document.querySelector(".header-hamburguer").checked=false
     })
-
     //close cart
     btnCloseCart.addEventListener("click", () => {
         cart.classList.remove("active")
         cartHistory.classList.remove("active")
-
     })
 
     //open history
@@ -61,7 +70,13 @@ function ready()
         cart.classList.remove("active")
         document.querySelector(".header-hamburguer").checked=false
     })
+    //close history
     btnCloseCartHistory.addEventListener("click", () => {
+        cartHistory.classList.remove("active")
+    })
+    //open cart aside history
+    btnCart.addEventListener("click", () => {
+        cart.classList.add("active")
         cartHistory.classList.remove("active")
     })
 
@@ -93,7 +108,7 @@ function ready()
 
 
     //================>EVENT ADD QUANTITY PRODUCTS<================//
-    //get value input
+    //Get value input
     const inputQuantityCart = document.querySelectorAll(".cart-product-quantity")
     
     //Add Event Change
@@ -105,7 +120,7 @@ function ready()
 
 
     //======================> EVENT CHECKOUT <======================//
-    //get btn checkout
+    //Get btn checkout
     const btnCheckout = document.querySelector(".btn-buy")
     btnCheckout.addEventListener("click", makePurchase)
     //==============================================================
@@ -463,4 +478,3 @@ function renderProdcuts()
     }   
 }
 //==================================================================
-
