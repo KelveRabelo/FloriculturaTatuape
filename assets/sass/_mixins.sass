@@ -97,6 +97,19 @@
     padding: .3rem .3rem
 
 //================= SIDE CART =================
+@mixin notifications
+    display: none
+    position: fixed
+    width: 100%
+    top: 7.6rem
+    background: #333
+    color: #999
+    padding: 1rem
+    font-size: 2rem
+    text-align: center
+    z-index: 101
+    transition: .5s
+
 @mixin aside-cart
     position: fixed
     top: 7.5rem
@@ -147,7 +160,3 @@
     font-size: 2rem
     text-align: center
     margin: 1rem
-    
-
-
-    

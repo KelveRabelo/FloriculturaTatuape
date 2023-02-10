@@ -289,17 +289,7 @@ body
     
     //////////////////NOTIFICATIONS//////////////////
     .notifications
-        display: none
-        position: fixed
-        width: 100%
-        top: 7.6rem
-        background: #333
-        color: #999
-        padding: 1rem
-        font-size: 2rem
-        text-align: center
-        z-index: 101
-        transition: .5s
+       @include mixins.notifications
     .active
         display: block
     ///////////////////////END///////////////////////       
