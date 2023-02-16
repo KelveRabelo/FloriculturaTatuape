@@ -279,6 +279,25 @@ body
 
                 .cart-null
                     @include mixins.cart-null
+            
+            table
+                font-size: 1.5rem
+                border-collapse: collapse
+                
+                caption
+                    font-size: 2rem
+                    padding: 1.5rem
+                thead
+                    background: variables.$color-primary
+                    
+                    th
+                        color: #fff
+                
+                th, td
+                    border: .2rem solid variables.$color-secondary
+                    text-align: center
+                    padding: .3rem 0rem
+                    
 
         .active
             right: 0

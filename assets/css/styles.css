@@ -386,6 +386,25 @@ body .header-cart-history .cart-content .cart-null {
   text-align: center;
   margin: 1rem;
 }
+body .header-cart-history table {
+  font-size: 1.5rem;
+  border-collapse: collapse;
+}
+body .header-cart-history table caption {
+  font-size: 2rem;
+  padding: 1.5rem;
+}
+body .header-cart-history table thead {
+  background: #dc56d6;
+}
+body .header-cart-history table thead th {
+  color: #fff;
+}
+body .header-cart-history table th, body .header-cart-history table td {
+  border: 0.2rem solid #999;
+  text-align: center;
+  padding: 0.3rem 0rem;
+}
 body .header .active {
   right: 0;
   transform: 0.5s;
