@@ -181,7 +181,7 @@ body .header-cart .cart-header {
   display: flex;
   position: fixed;
   background: #333;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   width: 300px;
   height: 5rem;
   align-items: center;
@@ -202,8 +202,6 @@ body .header-cart .cart-header #cart-close:hover, body .header-cart .cart-header
   color: #dc56d6;
 }
 body .header-cart .cart-header .cart-title {
-  display: flex;
-  justify-content: center;
   font-size: 1.8rem;
   font-weight: 600;
 }
@@ -221,6 +219,7 @@ body .header-cart .cart-content .cart-null {
 }
 body .header-cart .cart-content .cart-box {
   display: flex;
+  gap: 3rem;
 }
 body .header-cart .cart-content .cart-box img {
   width: 100px;
@@ -264,21 +263,14 @@ body .header-cart .cart-content .cart-box .cart-remove {
 }
 body .header-cart .total {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
   background: #333;
-  padding: 1rem;
-}
-body .header-cart .total .total-title {
+  padding: 1rem 3rem;
   font-size: 1.6rem;
   font-weight: 700;
 }
-body .header-cart .total .total-price {
-  font-size: 1.6rem;
-  margin-left: 0.5rem;
-}
 body .header-cart .info-user {
-  margin-top: 2rem;
   padding: 2.5rem 2.5rem;
   font-size: 1.6rem;
 }
@@ -348,7 +340,7 @@ body .header-cart-history .cart-header {
   display: flex;
   position: fixed;
   background: #333;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   width: 300px;
   height: 5rem;
   align-items: center;
@@ -369,41 +361,48 @@ body .header-cart-history .cart-header #cart-close-history:hover, body .header-c
   color: #dc56d6;
 }
 body .header-cart-history .cart-header .cart-title {
-  display: flex;
-  justify-content: center;
   font-size: 1.8rem;
   font-weight: 600;
 }
 body .header-cart-history .cart-content {
-  display: flex;
-  flex-direction: column;
-  padding: 0 2rem;
-  padding-right: 3rem;
-  padding-top: 5rem;
+  margin-top: 7rem;
 }
 body .header-cart-history .cart-content .cart-null {
   font-size: 2rem;
   text-align: center;
   margin: 1rem;
 }
-body .header-cart-history table {
-  font-size: 1.5rem;
-  border-collapse: collapse;
+body .header-cart-history .card-history {
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
-body .header-cart-history table caption {
-  font-size: 2rem;
-  padding: 1.5rem;
+body .header-cart-history .card-history .header-card-history {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
-body .header-cart-history table thead {
-  background: #dc56d6;
+body .header-cart-history .card-history .body-card-history {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2.5rem;
 }
-body .header-cart-history table thead th {
-  color: #fff;
+body .header-cart-history .card-history .body-card-history img {
+  object-fit: 1/1;
+  width: 6rem;
 }
-body .header-cart-history table th, body .header-cart-history table td {
-  border: 0.2rem solid #999;
-  text-align: center;
-  padding: 0.3rem 0rem;
+body .header-cart-history .card-history .footer-card-history {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 0.5rem 2.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 1rem;
 }
 body .header .active {
   right: 0;

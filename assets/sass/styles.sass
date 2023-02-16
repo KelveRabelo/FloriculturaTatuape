@@ -165,6 +165,7 @@ body
                     
                 .cart-box
                     display: flex
+                    gap: 3rem
                     
                     img
                         width: 100px
@@ -180,6 +181,7 @@ body
                         .cart-product-title 
                             font-size: 1.4rem
                             font-weight: 600
+                            
                         
                         .cart-product-price 
                             font-size: 1.2rem
@@ -204,23 +206,13 @@ body
                         width: 0
             
             .total 
-                display: flex
-                justify-content: flex-end
-                margin-top: 1.5rem
-                //border-top: 1px solid variables.$color-primary
+                @include mixins.flex-center
                 background: #333
-                padding: 1rem
-                
-                .total-title 
-                    font-size: 1.6rem
-                    font-weight: 700
-
-                .total-price 
-                    font-size: 1.6rem
-                    margin-left: .5rem
+                padding: 1rem 3rem
+                font-size: 1.6rem
+                font-weight: 700
 
             .info-user
-                margin-top: 2rem
                 padding: 2.5rem 2.5rem
                 font-size: 1.6rem
 
@@ -275,29 +267,38 @@ body
                     @include mixins.cart-title
 
             .cart-content
-                @include mixins.cart-content
+                margin-top: 7rem
 
                 .cart-null
                     @include mixins.cart-null
+
+            .card-history
+                font-size: 1.2rem
+                margin-top: 2rem
+
+                .header-card-history
+                    @include mixins.flex-center
+                    padding: 0rem 2.5rem
+                    font-weight: bold
+                    margin-bottom: 1.5rem
+
+                .body-card-history
+                    @include mixins.flex-center
+                    padding: 0rem 2.5rem
+
+                    img
+                        object-fit: 1/1
+                        width: 6rem
+                
+                .footer-card-history
+                    @include mixins.flex-center
+                    background: #333
+                    padding: .5rem 2.5rem
+                    font-size: 1.4rem
+                    font-weight: 700
+                    margin-top: 1rem
+                    
             
-            table
-                font-size: 1.5rem
-                border-collapse: collapse
-                
-                caption
-                    font-size: 2rem
-                    padding: 1.5rem
-                thead
-                    background: variables.$color-primary
-                    
-                    th
-                        color: #fff
-                
-                th, td
-                    border: .2rem solid variables.$color-secondary
-                    text-align: center
-                    padding: .3rem 0rem
-                    
 
         .active
             right: 0
