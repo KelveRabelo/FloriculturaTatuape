@@ -246,12 +246,6 @@ body
                 &:hover
                     background-color: variables.$color-primary
                     color: #fff
-
-        .active
-            right: 0
-            transform: .5s
-            @media ( max-width: 425px )
-                width: 100%
         
         //CART HISTORY
         &-cart-history
@@ -297,7 +291,12 @@ body
                     font-size: 1.4rem
                     font-weight: 700
                     margin-top: 1rem
-                    
+
+        .active
+            right: 0
+            transform: .5s
+            @media ( max-width: 425px )
+                width: 100%            
             
 
         .active
@@ -329,7 +328,7 @@ body
             //BANNER
             @include mixins.flex-center
             min-height: 100vh
-            background-image: url("../img/fundo-3.jpg")
+            background-image: url("../img/background-home.jpg")
             background-size: cover
             background-position: left
             transition: 1.5s linear

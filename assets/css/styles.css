@@ -314,15 +314,6 @@ body .header-cart .btn-buy:hover {
   background-color: #dc56d6;
   color: #fff;
 }
-body .header .active {
-  right: 0;
-  transform: 0.5s;
-}
-@media (max-width: 425px) {
-  body .header .active {
-    width: 100%;
-  }
-}
 body .header-cart-history {
   position: fixed;
   top: 7.5rem;
@@ -413,6 +404,15 @@ body .header .active {
     width: 100%;
   }
 }
+body .header .active {
+  right: 0;
+  transform: 0.5s;
+}
+@media (max-width: 425px) {
+  body .header .active {
+    width: 100%;
+  }
+}
 body .notifications {
   display: none;
   position: fixed;
@@ -445,7 +445,7 @@ body .main-home {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background-image: url("../img/fundo-3.jpg");
+  background-image: url("../img/background-home.jpg");
   background-size: cover;
   background-position: left;
   transition: 1.5s linear;
