@@ -1,11 +1,9 @@
 //========================> CHECK HTML <==========================//
 //Check elements document was loading
-if(document.readyState == "loading")
-{
+if (document.readyState == "loading") {
     document.addEventListener("DOMContentLoaded", ready)
 }
-else
-{
+else {
     ready()
 }
 //==================================================================
@@ -13,14 +11,22 @@ else
 //Vabriables global
 var totalAmount = "0,00"
 var nPedido = 1
+let listProducts = []
+let listProductsLocalStorage = []
+let listHistoryProductsLocalStorage = []
+let product = {}
+
+const productListCart = document.querySelector(".cart-content")
 //=========================> ALL EVENTS <==========================//
-function ready()
-{
+function ready() {
     updateTotal()
     renderProdcuts()
     validadeForm()
-    //checkoutWhatsapp()
+    getLocalStorage()
+    getHistoryLocalStorage()
     
+    //checkoutWhatsapp()
+
     //==================>EVENTS OPEN/CLOSE CART <==================//
     const hamburguer = document.querySelector("#hamburguer")
     const menuLinks = document.querySelectorAll(".link-menu")
@@ -31,32 +37,30 @@ function ready()
     const btnOpenCartHistory = document.querySelector("#cart-history")
     const btnCloseCartHistory = document.querySelector("#cart-close-history")
     const btnCart = document.querySelector("#btn-cart-history")
-    
+
 
     ///////////////////////////// MENU /////////////////////////////
     hamburguer.addEventListener("click", () => {
         cart.classList.remove("active")
         cartHistory.classList.remove("active")
     })
-    
+
     //hidden menu at click in link
-    for(i=0; i < menuLinks.length; i++)
-    {
+    for (i = 0; i < menuLinks.length; i++) {
         menuLinks[i].addEventListener("click", () => {
-            if(document.querySelector(".header-hamburguer").checked)
-            {
-                document.querySelector(".header-hamburguer").checked=false
+            if (document.querySelector(".header-hamburguer").checked) {
+                document.querySelector(".header-hamburguer").checked = false
             }
             console.log(menuLinks[i])
         })
     }
-    
+
     /////////////////////////////// CART ////////////////////////////
     //open cart
     btnOpenCart.addEventListener("click", () => {
         cart.classList.add("active")
         cartHistory.classList.remove("active")
-        document.querySelector(".header-hamburguer").checked=false
+        document.querySelector(".header-hamburguer").checked = false
     })
     //close cart
     btnCloseCart.addEventListener("click", () => {
@@ -68,7 +72,7 @@ function ready()
     btnOpenCartHistory.addEventListener("click", () => {
         cartHistory.classList.add("active")
         cart.classList.remove("active")
-        document.querySelector(".header-hamburguer").checked=false
+        document.querySelector(".header-hamburguer").checked = false
     })
     //close history
     btnCloseCartHistory.addEventListener("click", () => {
@@ -86,10 +90,9 @@ function ready()
     //==================>EVENTO ADD PRODUCT IN CAT<==================//
     //get button add cart
     const btnAddCart = document.querySelectorAll(".add-cart")
-    
+
     //Add Event
-    for (i = 0; i < btnAddCart.length; i++)
-    {
+    for (i = 0; i < btnAddCart.length; i++) {
         btnAddCart[i].addEventListener("click", addProductCart)
     }
     //==============================================================
@@ -98,10 +101,9 @@ function ready()
     //==================>EVENT REMOVE PRODUCT CART<==================//
     //Get button remove cart
     const btnRemoveCart = document.querySelectorAll(".cart-remove")
-    
+
     //Add Event Click
-    for (i = 0; i < btnRemoveCart.length; i++)
-    {
+    for (i = 0; i < btnRemoveCart.length; i++) {
         btnRemoveCart[i].addEventListener("click", removeProductCart)
     }
     //==============================================================
@@ -110,10 +112,9 @@ function ready()
     //================>EVENT ADD QUANTITY PRODUCTS<================//
     //Get value input
     const inputQuantityCart = document.querySelectorAll(".cart-product-quantity")
-    
+
     //Add Event Change
-    for (i = 0; i < inputQuantityCart.length; i++)
-    {
+    for (i = 0; i < inputQuantityCart.length; i++) {
         inputQuantityCart[i].addEventListener("change", checkIfInputisNull)
     }
     //==============================================================
@@ -126,23 +127,21 @@ function ready()
     //==============================================================
 }
 //==================================================================
-   
 
 //===================> FUNÇÃO ADD PRODUCT IN CA <==================//
-function addProductCart(event)
-{
+function addProductCart(event) {
     //get button add cart
     const button = event.target
-    
+
     //parent from ".add-cart"
     const productInfo = button.parentElement.parentElement
-    
+
     //get img product
     const productImg = productInfo.querySelector(".product-img").src
-    
+
     //get title product
     const productName = productInfo.querySelector(".product-title").innerText
-    
+
     //get price product
     const productPrice = productInfo.querySelector(".product-price").innerText
 
@@ -150,16 +149,14 @@ function addProductCart(event)
     const productCartName = document.querySelectorAll(".cart-product-title")
 
     //get element .cart-content
-    const productListCart = document.querySelector(".cart-content")
+    //    const productListCart = document.querySelector(".cart-content")
 
     //get notification from cart
     const notification = document.querySelector(".notifications")
-       
-    for (i = 0; i < productCartName.length; i++)
-    {
+
+    for (i = 0; i < productCartName.length; i++) {
         //check if product in cart
-        if (productCartName[i].innerText === productName)
-        {
+        if (productCartName[i].innerText === productName) {
             //add more value input
             productCartName[i].parentElement.querySelectorAll(".cart-product-quantity")[0].value++
             updateTotal()
@@ -172,7 +169,7 @@ function addProductCart(event)
     //add class "cart-box"
     newNode.classList.add("cart-box")
     // add node inside content 
-    newNode.innerHTML =   
+    newNode.innerHTML =
         `
             <img src="${productImg}" alt="">
             <div class="detail-box">
@@ -183,17 +180,16 @@ function addProductCart(event)
             <!--REMOVE CART-->
             <button class="cart-remove bi bi-trash3-fill"></button>
         `
+    setlocalStorage(productImg, productName, productPrice)
 
-    function handle_notification_close()
-    {
+    function handle_notification_close() {
         notification.classList.remove("active")
     }
-    
-    if(totalAmount === "0,00")
-    {
-        productListCart.innerHTML = "" 
+
+    if (totalAmount === "0,00") {
+        productListCart.innerHTML = ""
     }
-    
+
     // show notifications when add item
     notification.innerHTML = `<p>item adicionado ao carrinho =)</p>`
     notification.classList.add("active")
@@ -209,28 +205,104 @@ function addProductCart(event)
 
     newNode.querySelectorAll(".cart-product-quantity")[0].addEventListener("change", checkIfInputisNull)
     newNode.querySelectorAll(".cart-remove")[0].addEventListener("click", removeProductCart)
-} 
+}
 //==================================================================
+
+function setlocalStorage(img, name, price) {
+    listProductsLocalStorage = JSON.parse(localStorage.getItem("products"))
+    for (item in listProductsLocalStorage) {
+        listProducts.push(listProductsLocalStorage[item])
+    }
+
+    product = { img: img, name: name, price: price }
+    listProducts.push(product)
+    localStorage.setItem("products", JSON.stringify(listProducts))
+    listProducts.length = 0
+}
+function getLocalStorage() {
+    if (localStorage.hasOwnProperty("products")) {
+        listProductsLocalStorage = JSON.parse(localStorage.getItem("products"))
+        
+        productListCart.innerHTML = ""
+        for (item in listProductsLocalStorage) {
+            productListCart.innerHTML +=
+            `
+                <div class="cart-box">
+                    <img src="${listProductsLocalStorage[item].img}" alt="">
+                    <div class="detail-box">
+                        <div class="cart-product-title">${listProductsLocalStorage[item].name}</div>
+                        <div class="cart-product-price">${listProductsLocalStorage[item].price}</div>
+                        <input type="number" value="1" class="cart-product-quantity">
+                    </div>
+                    <!--REMOVE CART-->
+                    <button class="cart-remove bi bi-trash3-fill"></button>
+                </div>
+            `
+            updateTotal()
+        }
+    }
+
+
+
+}
+function getHistoryLocalStorage(){
+    const data = new Date()
+    const dia = String(data.getDate()).padStart(2, '0')
+    const mes = String(data.getMonth() + 1).padStart(2, '0')
+    const ano = String(data.getFullYear())
+    const dataAtual = `${dia}/${mes}/${ano}`
+
+    const cartContent = document.querySelector(".cart-content-history")
+    if(localStorage.hasOwnProperty("history"))
+    {
+        listHistoryProductsLocalStorage = JSON.parse(localStorage.getItem("history"))
+        for(item in listHistoryProductsLocalStorage)
+        {
+            cartContent.innerHTML += 
+            `
+                <div class="card-history">
+                        
+                    <div class="header-card-history">
+                        <p>Nº Pedido: <span>${nPedido}</span></p>
+                        <p>Data: <span>${dataAtual}</span></p>
+                    </div>
+
+                    <div class="body-card-history">
+                        <img src="${listHistoryProductsLocalStorage[item].img}" alt="">
+                        <p>${listHistoryProductsLocalStorage[item].name}</p>
+                        <p>1x</p>
+                        <p>R$ ${listHistoryProductsLocalStorage[item].price}</p>
+                    </div>
+
+                    <div class="footer-card-history">
+                        <p>Total: </p>
+                        <p>R$ ${listHistoryProductsLocalStorage[item].price}</p>
+                    </div>
+
+                </div>
+            `
+        }
+        updateTotal()
+    }
+    updateTotal()
+}
 
 
 //==================> FUNÇÃO REMOVE PRODUCT CART <=================//
-function removeProductCart(event)
-{
+function removeProductCart(event) {
     const productListCart = document.querySelector(".cart-content")
-    function handle_notification_close()
-    {
+    function handle_notification_close() {
         notification.classList.remove("active")
     }
-    
+
     //get notificaiion
     const notification = document.querySelector(".notifications")
     notification.innerHTML = `<p>item removido do carrinho =(</p>`
     notification.classList.add("active")
     setTimeout(handle_notification_close, 2500)
     event.target.parentElement.remove()
-    updateTotal() 
-    if(totalAmount === "0,00")
-    {
+    updateTotal()
+    if (totalAmount === "0,00") {
         const clearCart = document.querySelector(".cart-content").innerHTML = `<p class="cart-null">seu carrinho esta vazio!</p>
         <p class="cart-null">faça um pedido.</p>`
     }
@@ -239,10 +311,8 @@ function removeProductCart(event)
 
 
 //================> FUNÇÃO CHECK PRODUCT IN CART <================//
-function checkIfInputisNull(event) 
-{
-    if(event.target.value === "0")
-    {
+function checkIfInputisNull(event) {
+    if (event.target.value === "0") {
         event.target.parentElement.parentElement.remove()
     }
     updateTotal()
@@ -251,8 +321,7 @@ function checkIfInputisNull(event)
 
 
 //==================> FUNÇÃO CHECKOUT WHATSAPP <==================//
-function whatsappCheckout()
-{
+function whatsappCheckout() {
     const userName = document.querySelector("#info-user-name").value
     const userNumber = document.querySelector("#info-user-number").value
     const userPayment = document.querySelector("#info-user-payment").value
@@ -262,53 +331,52 @@ function whatsappCheckout()
 
     let arr = []
     var productList
-    function products(name, price) 
-    {
-        productList = {Nome: name, Preço: price}
+    function products(name, price) {
+        productList = {name: name, price: price }
         return productList
     }
 
-    for(i=0; i<itemsCart.length; i++)
-    {
+    for (i = 0; i < itemsCart.length; i++) {
         arr.push(products(name[i].innerText, price[i].innerText))
     }
 
+    localStorage.setItem("history", localStorage.getItem("products"))
+    localStorage.removeItem("products")
+
+
     //ajustando a a exibição dos itens
     var obj = JSON.stringify(arr)
-    obj = obj.replace("[","").replace("]","").replaceAll("{", "").replaceAll("}", "").replaceAll('"', "").replaceAll(":", ": ").replaceAll(",", "%0A").replaceAll("R$", "R$ ").replaceAll("Nome", "| Nome").replaceAll("Preço", "| Preço")
+    obj = obj.replace("[", "").replace("]", "").replaceAll("{", "").replaceAll("}", "").replaceAll('"', "").replaceAll(":", ": ").replaceAll(",", "%0A").replaceAll("R$", "R$ ").replaceAll("Nome", "| Nome").replaceAll("Preço", "| Preço")
 
     var url = "https://wa.me/5511953604803?text=" + "%0A"
-    + "----------------------------------------"  + "%0A"
-    + "❁        Floricultura Tatuapé       ❁"    + "%0A"
-    + "----------------------------------------"  + "%0A"
-    + "| Dados do cliente"                        + "%0A"
-    + "----------------------------------------"  + "%0A"
-    + "| Nome: " + userName                       + "%0A"
-    + "| Celular: " + userNumber                  + "%0A"
-    + "| Forma de pagamento: " + userPayment      + "%0A"
-    + "| Nº Pedido: " + nPedido                   + "%0A"
-    + "----------------------------------------"  + "%0A"
-    + "| Lista de Itens:                     "    + "%0A"
-    + "----------------------------------------"  + "%0A"
-    + obj                                         + "%0A"
-    + "----------------------------------------"  + "%0A"
-    + "| Total: R$" + totalAmount                 + "%0A"
-    + "----------------------------------------"  + "%0A"
+        + "----------------------------------------" + "%0A"
+        + "❁        Floricultura Tatuapé       ❁" + "%0A"
+        + "----------------------------------------" + "%0A"
+        + "| Dados do cliente" + "%0A"
+        + "----------------------------------------" + "%0A"
+        + "| Nome: " + userName + "%0A"
+        + "| Celular: " + userNumber + "%0A"
+        + "| Forma de pagamento: " + userPayment + "%0A"
+        + "| Nº Pedido: " + nPedido + "%0A"
+        + "----------------------------------------" + "%0A"
+        + "| Lista de Itens:                     " + "%0A"
+        + "----------------------------------------" + "%0A"
+        + obj + "%0A"
+        + "----------------------------------------" + "%0A"
+        + "| Total: R$" + totalAmount + "%0A"
+        + "----------------------------------------" + "%0A"
 
     window.open(url, "_blank").focus();
-} 
+}
 //==================================================================
 
 
 //====================> FUNÇÃO MAKE PURCHARSE <====================//
-function makePurchase(event) 
-{
-    if(totalAmount === "0,00")
-    {
+function makePurchase(event) {
+    if (totalAmount === "0,00") {
         alert("Seu carrinho está vazio!\nFaça uma ordem.")
     }
-    else
-    {
+    else {
         nPedido += 1
         whatsappCheckout()
     }
@@ -322,22 +390,21 @@ function makePurchase(event)
 
 
 //======================> FUNÇÃO UPDATE CART <=====================//
-function updateTotal()
-{
+function updateTotal() {
+
     totalAmount = 0
 
     //get list products
     const cartProducts = document.querySelectorAll(".cart-box")
-    
+
     //loop list products
-    for(i = 0; i < cartProducts.length; i++)
-    {
+    for (i = 0; i < cartProducts.length; i++) {
         //get price 
         const productPrice = cartProducts[i].querySelectorAll(".cart-product-price")[0].innerText.replace("R$", "").replace(",", ".")
-        
+
         //get quantity
         const productQuantity = cartProducts[i].querySelectorAll(".cart-product-quantity")[0].value
-        
+
         //sum total
         totalAmount += (productPrice * productQuantity)
     }
@@ -355,8 +422,7 @@ function updateTotal()
 
 
 //======================> FUNÇÃO VALIDADE FORM <=====================//
-function validadeForm()
-{
+function validadeForm() {
     const form = document.querySelector("#form")
     const formName = document.querySelector("#form-name")
     const formEmail = document.querySelector("#form-email")
@@ -368,37 +434,32 @@ function validadeForm()
         event.preventDefault()
 
         //Check input name
-        if(formName.value === "")
-        {
+        if (formName.value === "") {
             alert("Preencha o nome!")
             return
         }
         //Check input email
-        if(formEmail.value === "" || !isEmailValid(formEmail.value))
-        {
+        if (formEmail.value === "" || !isEmailValid(formEmail.value)) {
             alert("Peencha um email válido!")
             return
         }
         //Check input number
-        if(!validadeNumber(formNumber.value, 8))        
-        {
+        if (!validadeNumber(formNumber.value, 8)) {
             alert("Preencha um número de telefone válido!")
             return
         }
         //Check input services
-        if(formServices.value === "" || formServices.value === "serviços")
-        {
+        if (formServices.value === "" || formServices.value === "serviços") {
             alert("Escolha um serviço!")
             return;
         }
         //Check inpurt message
-        if(formMsg.value === "")
-        {
+        if (formMsg.value === "") {
             alert("Digite sua mensagem!");
             return
         }
         //se todos os campos estiverem ok!
-        
+
         //======================> EVENT SEND FORM <======================//
         sendForm()
         //get btn form
@@ -407,37 +468,32 @@ function validadeForm()
         //==============================================================
 
         form.submit()
-        
+
     })
 
-    function isEmailValid(email)
-    {
+    function isEmailValid(email) {
         //[user13] + @ + [domain] + . + [com.br]
         const emailRegex = new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/);
 
-        if (emailRegex.test(email))
-        {
+        if (emailRegex.test(email)) {
             return true
         }
         return false
     }
 
-    function validadeNumber(number, minDigits)
-    {
-        if(number >= minDigits)
-        {
+    function validadeNumber(number, minDigits) {
+        if (number >= minDigits) {
             return true
         }
         return false
     }
-    
+
 }
 //==================================================================
 
 
 //======================> FUNÇÃO VALIDADE FORM <=====================//
-function sendForm()
-{
+function sendForm() {
     var formName = document.querySelector("#form-name").value
     var formEmail = document.querySelector("#form-email").value
     var formNumber = document.querySelector("#form-number").value
@@ -445,11 +501,11 @@ function sendForm()
     var formMsg = document.querySelector("#form-msg").value
 
     var url = "https://wa.me/5511953604803?text="
-    + "Nome: " + formName + "%0A"
-    + "E-mail: " + formEmail.l + "%0A"
-    + "Número: " + formNumber + "%0A"
-    + "Serviço: " + formServices + "%0A"
-    + "Mensagem: " + formMsg;
+        + "Nome: " + formName + "%0A"
+        + "E-mail: " + formEmail.l + "%0A"
+        + "Número: " + formNumber + "%0A"
+        + "Serviço: " + formServices + "%0A"
+        + "Mensagem: " + formMsg;
 
     window.open(url, "_blank").focus();
 }
@@ -457,15 +513,13 @@ function sendForm()
 
 
 //=====================> FUNÇÃO RENDER PRODUCTS <===================//
-function renderProdcuts()
-{
+function renderProdcuts() {
     const productsRender = document.querySelector(".products-container")
 
-    for (i = 0; i < products.length; i++)
-    {
-        
-        productsRender.innerHTML += 
-        `
+    for (i = 0; i < products.length; i++) {
+
+        productsRender.innerHTML +=
+            `
             <div class="product-box">
             	<img src=${products[i].imgSrc} alt="" class="product-img">
                 <h2 class="product-title">${products[i].name}</h2>
@@ -475,6 +529,6 @@ function renderProdcuts()
             	</div>
             </div>
         `
-    }   
+    }
 }
 //==================================================================

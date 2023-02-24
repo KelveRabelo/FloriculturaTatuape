@@ -355,10 +355,10 @@ body .header-cart-history .cart-header .cart-title {
   font-size: 1.8rem;
   font-weight: 600;
 }
-body .header-cart-history .cart-content {
+body .header-cart-history .cart-content-history {
   margin-top: 7rem;
 }
-body .header-cart-history .cart-content .cart-null {
+body .header-cart-history .cart-content-history .cart-null {
   font-size: 2rem;
   text-align: center;
   margin: 1rem;
