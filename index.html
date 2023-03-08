@@ -23,7 +23,7 @@
     <!--HEADER-->
     <header class="header">
 
-        <!--Hidden menu-->
+        <!--HAMBURGUER MENU-->
         <input type="checkbox" class="header-hamburguer" name="header-hamburguer" id="hamburguer">
         <label for="hamburguer" class="bi bi-flower1"></label>
         <!--////////////////////////////////////////-->
@@ -34,17 +34,17 @@
 
         <!--MENU LIST-->
         <nav class="header-navbar">
-            <a class="link-menu" href="#home">inicio</a>
-            <a class="link-menu"href="#about">sobre</a>
-            <a class="link-menu"href="#products">produtos</a>
-            <a class="link-menu"href="#review">depoimentos</a>
-            <a class="link-menu"href="#contact">contato</a>
+            <a class="linkMenu" href="#home">inicio</a>
+            <a class="linkMenu"href="#about">sobre</a>
+            <a class="linkMenu"href="#products">produtos</a>
+            <a class="linkMenu"href="#review">depoimentos</a>
+            <a class="linkMenu"href="#contact">contato</a>
         </nav>
         <!--////////////////////////////////////////-->
 
          <!--ICONS LIST-->
         <div class="header-icons">
-            <i class="bi bi-cart-fill" id="cart-icon"></i>
+            <i class="bi bi-cart-fill btnCart"></i>
             <label class="changeTheme" for="changeTheme">
                 <i class="bi bi-moon-fill theme" id="theme-moon"></i>
                 <i class="bi bi-sun-fill theme" id="theme-sun"></i>
@@ -57,27 +57,27 @@
         <aside class="header-cart">
             
             <!-- TITLE CART -->
-            <div class="cart-header">
+            <div class="headerCart">
                 <!--CART CLOSE-->
-                <i class="bi bi-x-circle-fill" id="cart-close"></i>
-                <h2 class="cart-title">carrinho</h2>
-                <i class="bi bi-receipt-cutoff" id="cart-history"></i>
+                <i class="bi bi-x-circle-fill btnCloseCart"></i>
+                <h2 class="titleCart">carrinho</h2>
+                <i class="bi bi-receipt-cutoff btnHistory"></i>
             </div>
 
             <!--CONTENT-->
-            <div class="cart-content">
-                <p class="cart-null">seu carrinho esta vazio!</p>
-                <p class="cart-null">faça um pedido.</p>
+            <div class="contentCart">
+                <p class="nullCart">seu carrinho esta vazio!</p>
+                <p class="nullCart">faça um pedido.</p>
          
                 <!--RENDER CART-->
-                <!-- <div class="cart-box">
+                <!-- <div class="cardCart">
                     <img src="assets/img/flor.jpg" alt="">
-                    <div class="detail-box">
-                        <div class="cart-product-title">flor</div>
-                        <div class="cart-product-price">$29.90</div>
-                        <input type="number" value="1" class="cart-product-quantity">
+                    <div class="cardDetail">
+                        <div class="nameProductCart">flor</div>
+                        <div class="priceProductCart">$29.90</div>
+                        <input type="number" value="1" class="quantityProductCart" onchange="updateInputQuantity()">
                     </div>
-                    <button class="cart-remove bi bi-trash3-fill "></button>
+                    <button class="removeProductCart bi bi-trash3-fill "></button>
                 </div> -->
             </div>
             
@@ -88,64 +88,97 @@
             </div>
 
             <!-- INFORMAÇOES DE CONTATO -->
-            <form class="info-user">
+            <form class="userInfo">
                 <h3>informações de contato</h3>
-                <input id="info-user-name" class="box-info-user" type="text" placeholder="Nome"  minlenght="3" maxlength="50" required>
-                <input id="info-user-number" class="box-info-user" type="tel" placeholder="Número" minlenght="8" maxlength="14" required>
-                <select id="info-user-payment" class="box-info-user">
-                    <option value="pagamento">forma de pagamento</option >
-                    <option value="credito">credito</option>
-                    <option value="debito">débito</option>
-                    <option value="pix">pix</option>
-                    <option value="outros">outros</option> 
+                <input id="userName" class="boxUserInfo" type="text" placeholder="Nome"  minlenght="3" maxlength="50" required>
+                <input id="userNumber" class="boxUserInfo" type="tel" placeholder="Número" minlenght="10" maxlength="11" required>
+                <select id="userPayment" class="boxUserInfo">
+                    <option value="">forma de pagamento</option >
+                    <option value="Credito">credito</option>
+                    <option value="Debito">débito</option>
+                    <option value="Pix">pix</option>
+                    <option value="Outros">outros</option> 
                 </select>
             </form>
             
             <!--BUY BUTTON-->
-            <button type="button" class="btn-buy"><i class="bi bi-whatsapp"> finaliza pedido</i></button>
+            <button type="button" class="btnBuy"><i class="bi bi-whatsapp"> finaliza pedido</i></button>
 
         </aside>
-        
+        <!--////////////////////////////////////////-->
+
         <!--CART HISTORY-->
         <aside class="header-cart-history">
             
-            <!-- CART HEADER -->
-            <div class="cart-header">
-                <i class="bi bi-x-circle-fill" id="cart-close-history"></i>
-                <h2 class="cart-title">histórico</h2>
-                <i class="bi bi-cart-fill" id="btn-cart-history"></i>
+            <!-- CART HEADER HISTORY-->
+            <div class="headerCartHistory">
+                <i class="bi bi-x-circle-fill btnCloseCart"></i>
+                <h2 class="cartTitle">histórico</h2>
+                <i class="bi bi-cart-fill btnCart"></i>
             </div>
 
             <!--CART CONTENT-->
+<<<<<<< HEAD
+            <div class="contentCartHistory">
+                <!-- <p class="cartNull">você não fez nenhum pedido!</p>
+                <p class="cartNull">faça um pedido.</p> -->
+
+                <div class="cardHistory">
+=======
             <div class="cart-content-history">
                 <!-- <p class="cart-null">você não fez nenhum pedido!</p>
                 <p class="cart-null">faça um pedido.</p> -->
 
                <!--  <div class="card-history">
+>>>>>>> 4de294eb40b2bcfa098d2577abaffabcfaebd37f
                     
-                    <div class="header-card-history">
+                    <!-- <div class="headerCardHistory">
                         <p>Nº Pedido: <span>0001</span></p>
                         <p>Data: <span>16/02/2023</span></p>
                     </div>
 
+<<<<<<< HEAD
+                    <div class="bodyCardHistory">
+=======
                     <div class="body-card-history">
+>>>>>>> 4de294eb40b2bcfa098d2577abaffabcfaebd37f
                         <img src="assets/img/flor.jpg" alt="">
                         <p>flor vermelha</p>
                         <p>1x</p>
                         <p>R$ 19,20</p>
                     </div>
 
-                    <div class="footer-card-history">
+                    <div class="bodyCardHistory">
+                        <img src="assets/img/flor.jpg" alt="">
+                        <p>flor vermelha</p>
+                        <p>1x</p>
+                        <p>R$ 19,20</p>
+                    </div>
+
+                    <div class="bodyCardHistory">
+                        <img src="assets/img/flor.jpg" alt="">
+                        <p>flor vermelha</p>
+                        <p>1x</p>
+                        <p>R$ 19,20</p>
+                    </div>
+
+                    <div class="footerCardHistory">
                         <p>Total: </p>
                         <p>R$ 38,40</p>
                     </div>
+<<<<<<< HEAD
+                </div>
+ -->
+=======
 
                 </div> -->
 
 
+>>>>>>> 4de294eb40b2bcfa098d2577abaffabcfaebd37f
             </div>
 
         </aside>
+        <!--////////////////////////////////////////-->
 
     </header>
 
@@ -153,6 +186,7 @@
     <div class="notifications">
         
     </div>
+    <!--////////////////////////////////////////-->
 
     <!-- MAIN -->
     <main class="main">
@@ -228,19 +262,9 @@
             <h2 class="sub-title">produtos <span class="sub">recentes</span></h2>
 
             <!-- CONTAINER PRODUCTS -->
-            <div class="products-container">
+            <div class="containerProducts">
+                <!-- CARD PRODUCT RENDER -->
 
-                <!--BOX 1-->
-           <!--      <div class="product-box">
-                    <span class="discount">-10%</span>
-                    <img src="assets/img/flor.jpg" alt="" class="product-img">
-                    <h2 class="product-title">flow rosa</h2>
-                    <div class="detail">
-                        <span class="product-price">R$30.50</span>
-                        <i class="bi bi-bag-plus-fill add-cart"></i>    
-                    </div>
-                </div>
-                         -->
             </div>
 
         </section>

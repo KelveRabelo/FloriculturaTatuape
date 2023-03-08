@@ -17,7 +17,7 @@
         //HIDDEN MENU
         clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0 0)  
 
-@mixin links-menu
+@mixin linkMenu
     font-size: 2rem
     padding: 0 1.5rem
     color: variables.$color-secondary
@@ -111,7 +111,7 @@
     z-index: 101
     transition: .5s
 
-@mixin aside-cart
+@mixin asideCart
     position: fixed
     top: 7.5rem
     right: -100%
@@ -124,7 +124,7 @@
     overflow-y: scroll
     height: 100vh
 
-@mixin cart-header
+@mixin headerCart
     display: flex
     position: fixed
     background: #333
@@ -137,25 +137,25 @@
         text-align: center
         width: 100%
 
-@mixin cart-icons
+@mixin cartIcons
     font-size: 2rem
     cursor: pointer
     color: variables.$color-secondary
     &:hover
         color: variables.$color-primary
 
-@mixin cart-title
+@mixin titleCart
     font-size: 1.8rem
     font-weight: 600
 
-@mixin cart-content
+@mixin contentCart
     display: flex
     flex-direction: column
     padding: 0 2rem
     padding-right: 3rem
     padding-top: 5rem
 
-@mixin cart-null
+@mixin cartNull
     font-size: 2rem
     text-align: center
     margin: 1rem

@@ -81,13 +81,13 @@ body
             @include mixins.menu-mobile
 
             //MENU LIST
-            .link-menu
-                @include mixins.links-menu
+            .linkMenu
+                @include mixins.linkMenu
                 
         //ICON CART
         &-icons
             font-size: 2.5rem
-            #cart-icon          
+            .btnCart          
                 cursor: pointer
                 color: variables.$color-secondary
                 margin-right: .5rem
@@ -99,6 +99,7 @@ body
                 .theme
                     cursor: pointer
                     transition: .5s
+                    
                 #theme-moon
                     color: #666
                 #theme-sun
@@ -112,6 +113,7 @@ body
                 &:not(:has(input:checked))
                     #theme-sun
                         display: none
+               
             //HIDDEN CHECK
             #changeTheme
                 display: none
@@ -146,24 +148,24 @@ body
         
         // CART
         &-cart
-            @include mixins.aside-cart
+            @include mixins.asideCart
             
-            .cart-header
-                @include mixins.cart-header
+            .headerCart
+                @include mixins.headerCart
 
-                #cart-close, #cart-history
-                    @include mixins.cart-icons
+                .btnCloseCart, .btnHistory
+                    @include mixins.cartIcons
 
-                .cart-title
-                    @include mixins.cart-title
+                .titleCart
+                    @include mixins.titleCart
                     
-            .cart-content
-                @include mixins.cart-content
+            .contentCart
+                @include mixins.contentCart
 
-                .cart-null
-                    @include mixins.cart-null
+                .nullCart
+                    @include mixins.cartNull
                     
-                .cart-box
+                .cardCart
                     display: flex
                     gap: 3rem
                     
@@ -173,21 +175,20 @@ body
                         object-fit: contain
                         padding: 10px
 
-                    .detail-box 
+                    .cardDetail
                         flex: 1 1
                         align-self: center
                         line-height: 2.5rem
                 
-                        .cart-product-title 
+                        .nameProductCart
                             font-size: 1.4rem
                             font-weight: 600
                             
-                        
-                        .cart-product-price 
+                        .priceProductCart 
                             font-size: 1.2rem
                             font-weight: 600
                         
-                        .cart-product-quantity
+                        .quantityProductCart
                             border: 1px solid variables.$color-primary
                             outline-color: variables.$color-primary
                             width: 4rem
@@ -196,7 +197,7 @@ body
                             @media (max-width: 425px)
                                 text-align: center
             
-                    .cart-remove 
+                    .removeProductCart 
                         display: flex
                         justify-content: right
                         align-items: center
@@ -212,11 +213,11 @@ body
                 font-size: 1.6rem
                 font-weight: 700
 
-            .info-user
+            .userInfo
                 padding: 2.5rem 2.5rem
                 font-size: 1.6rem
 
-                .box-info-user
+                .boxUserInfo
                     border: .1rem solid rgba(0, 0, 0, .1)
                     border-radius: .5rem
                     margin: 0.5rem
@@ -228,7 +229,7 @@ body
                     &:focus
                         border-color: variables.$color-primary
             
-            .btn-buy 
+            .btnBuy 
                 @include mixins.btn
                 border: 0.3rem solid variables.$color-primary
                 background: none
@@ -249,36 +250,48 @@ body
         
         //CART HISTORY
         &-cart-history
+<<<<<<< HEAD
+            @include mixins.asideCart
+
+            .headerCartHistory
+                @include mixins.headerCart
+=======
             @include mixins.aside-cart
             
 
             .cart-header
                 @include mixins.cart-header
                 
+>>>>>>> 4de294eb40b2bcfa098d2577abaffabcfaebd37f
 
-                #cart-close-history, #btn-cart-history
-                    @include mixins.cart-icons
+                .btnCloseCart, .btnCart
+                    @include mixins.cartIcons
 
-                .cart-title
-                    @include mixins.cart-title
+                .cartTitle
+                    @include mixins.titleCart
 
+<<<<<<< HEAD
+            .contentCartHistory
+                margin-top: 6.5rem
+=======
             .cart-content-history
                 margin-top: 7rem
+>>>>>>> 4de294eb40b2bcfa098d2577abaffabcfaebd37f
 
-                .cart-null
-                    @include mixins.cart-null
+                .cartNull
+                    @include mixins.cartNull
 
-            .card-history
+            .cardHistory
                 font-size: 1.2rem
                 margin-top: 2rem
 
-                .header-card-history
+                .headerCardHistory
                     @include mixins.flex-center
                     padding: 0rem 2.5rem
                     font-weight: bold
                     margin-bottom: 1.5rem
 
-                .body-card-history
+                .bodyCardHistory
                     @include mixins.flex-center
                     padding: 0rem 2.5rem
 
@@ -286,13 +299,14 @@ body
                         object-fit: 1/1
                         width: 6rem
                 
-                .footer-card-history
+                .footerCardHistory
                     @include mixins.flex-center
                     background: #333
                     padding: .5rem 2.5rem
                     font-size: 1.4rem
                     font-weight: 700
                     margin-top: 1rem
+                    margin-bottom: 1rem
 
         .active
             right: 0
@@ -300,7 +314,6 @@ body
             @media ( max-width: 425px )
                 width: 100%            
             
-
         .active
             right: 0
             transform: .5s
@@ -471,15 +484,16 @@ body
             //SUB
             span
                 @include mixins.sub
+            
             //PRODUCTS CONTAINER
-            .products-container
+            .containerProducts
                 //background-color: variables.$bg-color
                 display: flex
                 flex-wrap: wrap
                 gap: 1.5rem
                 
                 //CARD
-                .product-box
+                .cardProduct
                     flex: 1 1 20rem
                     box-shadow: 0.3rem .3rem rgba(0, 0, 0, .1)
                     border-radius: .5rem
@@ -488,7 +502,7 @@ body
                     display: flex
                     flex-direction: column
 
-                    img
+                    .imgProduct
                         height: 25rem
                         width: 100%
                         aspect-ratio: 1/1
@@ -496,7 +510,7 @@ body
                         &:hover
                             transform: scale(.9)
                             
-                    .product-title
+                    .nameProduct
                         @include mixins.sub
                         color: variables.$font-color
                         font-size: 2rem
@@ -511,14 +525,15 @@ body
                         align-items: center
                         padding: 0rem 2rem
 
-                        .product-price
+                        .priceProduct
                             font-size: 2rem
                             color: variables.$color-primary
                             font-weight: 600
                         
-                        .add-cart
+                        .btnAddCart
                             font-size: 4rem
                             cursor: pointer
+                            background: #fff
                             @media ( max-width: 425px )
                                 font-size: 3rem
                             &:hover
