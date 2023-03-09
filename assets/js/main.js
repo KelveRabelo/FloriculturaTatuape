@@ -314,10 +314,11 @@ function checkout() {
     let prefix = "FT"
     let random = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000 // número aleatório para simular um número de pedido
     let order = prefix + random
+    let data = new Date().toLocaleString().split(',')[0] // data e hora atual formatada como string
     // criando o objeto que representa o pedido
     const pedido = {
       order: order, 
-      data: new Date().toLocaleString().split(',')[0], // data e hora atual formatada como string
+      data: data, 
       produtos: cartProductsList, // lista de produtos do carrinho
       total: cartTotal, // valor total dos produtos do carrinho
     };
@@ -325,7 +326,7 @@ function checkout() {
     cartProductsListHistory.push(pedido);
 
     let productListText = cartProductsList
-    .map(item => `| ${item.name.padEnd(10)} ${item.quantity.toString()}x ${"".padEnd(10)}R$${item.price.toFixed(2)}`).join("%0A");
+    .map(item => `| ${item.name.padEnd(10)} ${item.quantity.toString()}x ${"".padEnd(6)}R$${item.price.toFixed(2)}`).join("%0A");
 
     let message =
     "%2B+---------------------------------------------%2B+" +
