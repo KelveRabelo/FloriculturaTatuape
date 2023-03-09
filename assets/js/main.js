@@ -180,7 +180,7 @@ function renderCartProductsHistory()
         <div class="pedidoCardHistory">
           <div class="headerCardHistory">
             <p>Nº Pedido: <span>${pedido.order}</span></p>
-            <p>Data: <span>${pedido.dataHora}</span></p>
+            <p>Data: <span>${pedido.data}</span></p>
           </div>
           ${produtosHtml}
           <div class="footerCardHistory">
@@ -330,19 +330,19 @@ function checkout() {
 
     let message =
     "%2B+---------------------------------------------%2B+" +
-    "%0A|               ❁ Floricultura Tatuapé ❁              |" +
+    "%0A|      ❁ Floricultura Tatuapé ❁        |" +
     "%0A%2B+---------------------------------------------%2B+" +
     "%0A| Dados do cliente                                         |" +
     "%0A%2B+---------------------------------------------%2B+" +
     `%0A| Nome: ${userName.value.toString().padEnd(53)}|` +
     `%0A| Número: ${userNumber.value.padEnd(42)}|` +
     `%0A| Pagamento: ${userPayment.value.padEnd(46)}|` +
-    `%0A| Order: ${pedido.order.toString().padEnd(50)}|` +
-    `%0A| Data: ${pedido.data.padEnd(50)}|` +
+    `%0A| Order: ${order.toString().padEnd(50)}|` +
+    `%0A| Data: ${data.padEnd(50)}|` +
     "%0A%2B+---------------------------------------------%2B+" +
-    "%0A|                        Lista de produtos                 |" +
+    "%0A| Lista de produtos                                       |" +
     "%0A%2B+---------------------------------------------%2B+" +
-    `%0A| Nome${"".padEnd(10)}Qtd${"".padEnd(10)}Preço${"".padEnd(8)}|`+  
+    `%0A| Nome${"".padEnd(10)}Qtd${"".padEnd(12)}Preço${"".padEnd(8)}|`+  
     `%0A${productListText}` +
     "%0A%2B+---------------------------------------------%2B+" +
     `%0A| Total: R$ ${cartTotal.toFixed(2).toString().padEnd(49)}|` +
