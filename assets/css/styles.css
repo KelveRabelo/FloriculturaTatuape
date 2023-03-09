@@ -773,6 +773,29 @@ body .main-products .containerProducts .cardProduct .detailsProduct .btnAddCart 
 body .main-products .containerProducts .cardProduct .detailsProduct .btnAddCart:hover {
   color: #dc56d6;
 }
+body .main-products .seeMore {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 2.5rem;
+  border-radius: 5rem;
+  background-color: #fff;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  border: 0.3rem solid #dc56d6;
+  background: none;
+  margin-left: 50%;
+  transform: translate(-50%, 50%);
+  padding: 0 4rem;
+  width: 80%;
+  padding: 1rem;
+  margin-bottom: 15rem;
+  margin-top: 0;
+}
+body .main-products .seeMore:hover {
+  background: #dc56d6;
+}
 body .main-review h2 {
   margin: 3rem 0;
   font-size: 6rem;

@@ -97,6 +97,9 @@ function notificationRemove()
     setTimeout(removeNotification, 1500)
 }
 //=====================> FUNÇÃO RENDER PRODUCTS <===================//
+
+
+
 function renderProducts() 
 {
     const productsRender = document.querySelector(".containerProducts")
