@@ -86,13 +86,13 @@ function notificationAdd()
 {
     notification.innerHTML = `<p>item adicionado ao carrinho =)</p>`;
     notification.classList.add("active");
-    setTimeout(removeNotification, 2000)
+    setTimeout(removeNotification, 1500)
 }
 function notificationRemove()
 {
     notification.innerHTML = `<p>item removido do carrinho =(</p>`
     notification.classList.add("active")
-    setTimeout(removeNotification, 2000)
+    setTimeout(removeNotification, 1500)
 }
 //=====================> FUNÇÃO RENDER PRODUCTS <===================//
 function renderProducts() 
@@ -325,7 +325,7 @@ function checkout() {
     cartProductsListHistory.push(pedido);
 
     let productListText = cartProductsList
-    .map(item => `| ${item.name.padEnd(22)} ${item.quantity.toString()}x ${"".padEnd(18)}R$${item.price.toFixed(2)}`).join("%0A");
+    .map(item => `| ${item.name.padEnd(10)} ${item.quantity.toString()}x ${"".padEnd(10)}R$${item.price.toFixed(2)}`).join("%0A");
 
     let message =
     "%2B+---------------------------------------------%2B+" +
@@ -341,7 +341,7 @@ function checkout() {
     "%0A%2B+---------------------------------------------%2B+" +
     "%0A|                        Lista de produtos                 |" +
     "%0A%2B+---------------------------------------------%2B+" +
-    `%0A| Nome${"".padEnd(15)}Qtd${"".padEnd(20)}Preço${"".padEnd(8)}|`+  
+    `%0A| Nome${"".padEnd(10)}Qtd${"".padEnd(10)}Preço${"".padEnd(8)}|`+  
     `%0A${productListText}` +
     "%0A%2B+---------------------------------------------%2B+" +
     `%0A| Total: R$ ${cartTotal.toFixed(2).toString().padEnd(49)}|` +
