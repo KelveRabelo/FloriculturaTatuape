@@ -326,26 +326,26 @@ function checkout() {
     cartProductsListHistory.push(pedido);
 
     let productListText = cartProductsList
-    .map(item => `| ${item.name.padEnd(10)} ${item.quantity.toString()}x ${"".padEnd(6)}R$${item.price.toFixed(2)}`).join("%0A");
+    .map(item => `| ${item.name.padEnd(14)} ${item.quantity.toString()}x ${"".padEnd(10)}R$${item.price.toFixed(2)}`).join("%0A");
 
     let message =
     "%2B+---------------------------------------------%2B+" +
-    "%0A|      ❁ Floricultura Tatuapé ❁        |" +
+    "%0A|  ❁ Floricultura Tatuapé ❁    |" +
     "%0A%2B+---------------------------------------------%2B+" +
-    "%0A| Dados do cliente                                         |" +
+    "%0A| Dados do cliente              |" +
     "%0A%2B+---------------------------------------------%2B+" +
-    `%0A| Nome: ${userName.value.toString().padEnd(53)}|` +
-    `%0A| Número: ${userNumber.value.padEnd(42)}|` +
-    `%0A| Pagamento: ${userPayment.value.padEnd(46)}|` +
-    `%0A| Order: ${order.toString().padEnd(50)}|` +
-    `%0A| Data: ${data.padEnd(50)}|` +
+    `%0A| Nome: ${userName.value.toString()}` +
+    `%0A| Número: ${userNumber.value}` +
+    `%0A| Pagamento: ${userPayment.value}` +
+    `%0A| Order: ${order.toString()}` +
+    `%0A| Data: ${data}|` +
     "%0A%2B+---------------------------------------------%2B+" +
-    "%0A| Lista de produtos                                       |" +
+    "%0A| Lista de produtos             |" +
     "%0A%2B+---------------------------------------------%2B+" +
     `%0A| Nome${"".padEnd(10)}Qtd${"".padEnd(12)}Preço${"".padEnd(8)}|`+  
     `%0A${productListText}` +
     "%0A%2B+---------------------------------------------%2B+" +
-    `%0A| Total: R$ ${cartTotal.toFixed(2).toString().padEnd(49)}|` +
+    `%0A| Total: R$ ${cartTotal.toFixed(2).toString()}|` +
     "%0A%2B+---------------------------------------------%2B+";
 
     let url = "https://wa.me/5511953604803?text=" + message;
@@ -366,11 +366,9 @@ function checkout() {
 
     update();
 }
-
-
 //======================> FUNÇÃO VALIDADE FORM <=====================//
 
-//==================================================================
+
 
 
 // Call renderCartProducts on page load
