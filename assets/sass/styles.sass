@@ -525,18 +525,19 @@ body
                                 color: variables.$color-primary
 
             .seeMore
-                @include mixins.btn
-                border: 0.3rem solid variables.$color-primary
-                background: none
-                margin-left: 50%
-                transform: translate(-50%, 50%)
-                padding: 0 4rem
-                width: 80%
-                padding: 1rem
-                margin-bottom: 15rem
-                margin-top: 0
-                &:hover
-                    background: variables.$color-primary
+                display: flex
+                justify-content: center
+                align-items: center
+                .btnSeeMore
+                    @include mixins.btn
+                    border: 0.3rem solid variables.$color-primary
+                    background: none
+                    padding: 0 4rem
+                    width: 40%
+                    padding: 1rem
+                    margin-top: 3rem
+                    &:hover
+                        background: variables.$color-primary
 
         ///////////////////////////END///////////////////////////
 

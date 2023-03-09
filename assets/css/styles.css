@@ -774,6 +774,11 @@ body .main-products .containerProducts .cardProduct .detailsProduct .btnAddCart:
   color: #dc56d6;
 }
 body .main-products .seeMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .main-products .seeMore .btnSeeMore {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 1rem 2.5rem;
@@ -785,15 +790,12 @@ body .main-products .seeMore {
   cursor: pointer;
   border: 0.3rem solid #dc56d6;
   background: none;
-  margin-left: 50%;
-  transform: translate(-50%, 50%);
   padding: 0 4rem;
-  width: 80%;
+  width: 40%;
   padding: 1rem;
-  margin-bottom: 15rem;
-  margin-top: 0;
+  margin-top: 3rem;
 }
-body .main-products .seeMore:hover {
+body .main-products .seeMore .btnSeeMore:hover {
   background: #dc56d6;
 }
 body .main-review h2 {
