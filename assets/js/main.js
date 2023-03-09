@@ -26,14 +26,6 @@ const notification      = document.querySelector(".notifications");
 const userName          = document.querySelector("#userName")
 const userNumber        = document.querySelector("#userNumber")
 const userPayment       =   document.querySelector("#userPayment")
-// Selecionando os valores dos campos de formulário
-/* const nameForm          = document.querySelector('#nameForm').value;
-const emailForm         = document.querySelector('#emailForm').value;
-const numberForm        = document.querySelector('#numberForm').value;
-const servicesForm      = document.querySelector('#servicesForm').value;
-const msgForm           = document.querySelector('#msgForm').value;
-const form      = document.querySelector('#form'); */
-
 
 //=================> FUNCTION UPDATE <=================//
 function update()
@@ -114,7 +106,7 @@ function renderProducts()
         productsRender.innerHTML +=
             `
             <div class="cardProduct">
-            	<img src=${products[i].imgSrc} alt="" class="imgProduct">
+            	<img src=${products[i].imgSrc} alt="${products[i].name}" class="imgProduct">
                 <h2 class="nameProduct">${products[i].name}</h2>
                 <div class="detailsProduct">
                 	<span class="priceProduct">R$${products[i].price.toFixed(2).replaceAll(".", ",")}</span>
@@ -379,7 +371,6 @@ function checkout()
 
 const form = document.querySelector('#form');
 const submitButton = document.querySelector('.btnSendForm');
-
 // Adicionando o evento de clique ao botão de envio
 submitButton.addEventListener("click", contactWhatsApp)
 function contactWhatsApp(e) 

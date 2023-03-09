@@ -764,7 +764,6 @@ body .main-products .containerProducts .cardProduct .detailsProduct .priceProduc
 body .main-products .containerProducts .cardProduct .detailsProduct .btnAddCart {
   font-size: 4rem;
   cursor: pointer;
-  background: #fff;
 }
 @media (max-width: 425px) {
   body .main-products .containerProducts .cardProduct .detailsProduct .btnAddCart {
