@@ -355,17 +355,10 @@ body .header-cart-history .headerCartHistory .cartTitle {
   font-size: 1.8rem;
   font-weight: 600;
 }
-<<<<<<< HEAD
 body .header-cart-history .contentCartHistory {
   margin-top: 6.5rem;
 }
 body .header-cart-history .contentCartHistory .cartNull {
-=======
-body .header-cart-history .cart-content-history {
-  margin-top: 7rem;
-}
-body .header-cart-history .cart-content-history .cart-null {
->>>>>>> 4de294eb40b2bcfa098d2577abaffabcfaebd37f
   font-size: 2rem;
   text-align: center;
   margin: 1rem;
@@ -757,28 +750,28 @@ body .main-products .containerProducts .cardProduct .nameProduct {
     font-size: 2.5rem;
   }
 }
-body .main-products .containerProducts .cardProduct .detail {
+body .main-products .containerProducts .cardProduct .detailsProduct {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0rem 2rem;
 }
-body .main-products .containerProducts .cardProduct .detail .priceProduct {
+body .main-products .containerProducts .cardProduct .detailsProduct .priceProduct {
   font-size: 2rem;
   color: #dc56d6;
   font-weight: 600;
 }
-body .main-products .containerProducts .cardProduct .detail .btnAddCart {
+body .main-products .containerProducts .cardProduct .detailsProduct .btnAddCart {
   font-size: 4rem;
   cursor: pointer;
   background: #fff;
 }
 @media (max-width: 425px) {
-  body .main-products .containerProducts .cardProduct .detail .btnAddCart {
+  body .main-products .containerProducts .cardProduct .detailsProduct .btnAddCart {
     font-size: 3rem;
   }
 }
-body .main-products .containerProducts .cardProduct .detail .btnAddCart:hover {
+body .main-products .containerProducts .cardProduct .detailsProduct .btnAddCart:hover {
   color: #dc56d6;
 }
 body .main-review h2 {
