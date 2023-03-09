@@ -9,8 +9,10 @@ else
 }
 
 //=================> VARIABLES GLOBALS <=================//
+//Selecionando elementos do menu
 const hamburguer        = document.querySelector("#hamburguer")
 const linkMenu          = document.querySelectorAll(".linkMenu")
+//Selecionando elementos do cart
 const cart              = document.querySelector(".header-cart")
 const btnCart           = document.querySelectorAll(".btnCart")
 const btnCloseCart      = document.querySelectorAll(".btnCloseCart")
@@ -20,9 +22,17 @@ const removeCart        = document.querySelectorAll(".removeCart")
 const inputUpdateQuantity = document.getElementsByClassName("quantityProductCart")
 const btnBuy            = document.querySelector(".btnBuy");
 const notification      = document.querySelector(".notifications");
+// Selecionando os valores dos campos para checkout
 const userName          = document.querySelector("#userName")
 const userNumber        = document.querySelector("#userNumber")
 const userPayment       =   document.querySelector("#userPayment")
+// Selecionando os valores dos campos de formulário
+/* const nameForm          = document.querySelector('#nameForm').value;
+const emailForm         = document.querySelector('#emailForm').value;
+const numberForm        = document.querySelector('#numberForm').value;
+const servicesForm      = document.querySelector('#servicesForm').value;
+const msgForm           = document.querySelector('#msgForm').value;
+const form      = document.querySelector('#form'); */
 
 
 //=================> FUNCTION UPDATE <=================//
@@ -236,7 +246,6 @@ function addProductCart(id)
 //=================> FUNÇÃO REMOVE PRODUCT TO CART <=================//
 function removeProductCart(event)
 {
-    
     const cartProductsList = JSON.parse(localStorage.getItem('cartProductsList')) || [];
 
     const buttonClicked = event.target;
@@ -305,8 +314,8 @@ function inputUpdateProduct()
 }
 //=================> CHECKOUT WHATSAPP <=================//
 btnBuy.addEventListener("click", checkout)
-
-function checkout() {
+function checkout() 
+{
     let cartProductsListHistory = JSON.parse(localStorage.getItem("cartProductsListHistory")) || [];
     let cartProductsList = JSON.parse(localStorage.getItem('cartProductsList')) || [];
     let cartTotal = JSON.parse(localStorage.getItem("cartTotal")) || 0;
@@ -368,8 +377,52 @@ function checkout() {
 }
 //======================> FUNÇÃO VALIDADE FORM <=====================//
 
+const form = document.querySelector('#form');
+const submitButton = document.querySelector('.btnSendForm');
 
+// Adicionando o evento de clique ao botão de envio
+submitButton.addEventListener("click", contactWhatsApp)
+function contactWhatsApp(e) 
+{
+    e.preventDefault(); // Previne que o formulário seja enviado automaticamente
 
+    const nameForm = document.querySelector('#nameForm').value;
+    const emailForm = document.querySelector('#emailForm').value;
+    const numberForm = document.querySelector('#numberForm').value;
+    const servicesForm = document.querySelector('#servicesForm').value;
+    const msgForm = document.querySelector('#msgForm').value;
+
+    // Validando se todos os campos foram preenchidos
+    if (nameForm === '' || emailForm === '' || numberForm === '' || (servicesForm === '' || servicesForm === 'Escolha um serviço') || msgForm === '') {
+        alert('Por favor, preencha todos os campos.'); // Exibindo uma  mensagem de alerta
+        return false; // Impedindo o envio do formulário
+    } else {
+         // Criando a mensagem que será enviada pelo WhatsApp
+        let message =
+        "%2B+---------------------------------------------%2B+"     +
+        "%0A|  ❁ Floricultura Tatuapé ❁      |"                    +
+        "%0A%2B+---------------------------------------------%2B+"  +
+        "%0A| Dados do cliente                     |"               +
+        "%0A%2B+---------------------------------------------%2B+"  +
+        `%0A| Nome: ${nameForm}`                                    +
+        `%0A| Número: ${numberForm}`                                +
+        `%0A| E-mail: ${emailForm}`                                 +
+        `%0A| Serviço: ${servicesForm}`                             +
+        "%0A%2B+---------------------------------------------%2B+"  +
+        "%0A| Mensagem:                              |"           +
+        `%0A| ${msgForm}`                                           +
+        "%0A%2B+---------------------------------------------%2B+";
+        
+        
+        let url = "https://wa.me/5511953604803?text=" + message;
+        window.open(url, "_blank").focus();
+    }
+    document.querySelector('#nameForm').value = "";
+    document.querySelector('#numberForm').value = "";
+    document.querySelector('#emailForm').value = "";
+    document.querySelector('#servicesForm').value = "serviços";
+    document.querySelector('#msgForm').value = "";
+}
 
 // Call renderCartProducts on page load
 window.addEventListener('load', renderCartProducts);

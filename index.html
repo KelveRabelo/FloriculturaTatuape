@@ -345,19 +345,19 @@
             <div class="row">
                 <!-------------FORMULARIO-------------->
                 <form action="" id="form">
-                    <input id="form-name" class="box" type="text" placeholder="Nome"  minlenght="3" maxlength="50" required>
-                    <input id="form-email" class="box" type="email" placeholder="Email" minlenght="13" maxlength="150" required>
-                    <input id="form-number" class="box" type="tel" placeholder="Número" minlenght="8" maxlength="14" required>
-                    <select id="form-services" class="box">
-                        <option value="serviços">serviços</option >
+                    <input id="nameForm" class="box" type="text" placeholder="Nome"  minlenght="3" maxlength="50" required>
+                    <input id="emailForm" class="box" type="email" placeholder="Email" minlenght="13" maxlength="150" required>
+                    <input id="numberForm" class="box" type="number" placeholder="Número" minlenght="10" maxlength="11" required>
+                    <select id="servicesForm" class="box">
+                        <option value="" disabled selected>Escolha um serviço</option >
                         <option value="translado">translado</option>
                         <option value="maquiagem">maquiagem</option>
                         <option value="coroa e tufos">coroa e tufos</option>
                         <option value="lembrancinhas">lembrancinhas</option> 
                         <option value="outros">outros</option> 
                     </select>
-                    <textarea id="form-msg" class="box" cols="22" rows="10" placeholder="mensagem" maxlength="500" required></textarea>
-                    <button class="btn btn-form" type="submit">enviar</button>
+                    <textarea id="msgForm" class="box" cols="22" rows="10" placeholder="mensagem" maxlength="500" required></textarea>
+                    <button class="btn btnSendForm" type="submit">enviar</button>
                 </form>
                 <!------------------------------------->
 
@@ -408,19 +408,23 @@
             <!------------LINKS PAGAMENTOS------------->
             <div class="footer-pagamentos footer-links">
                 <h3>pagamentos</h3>
-                <img src="assets/img/payment.png" alt="">
+                <div class="iconsPayment">
+                    <img src="assets/img/payment.png" alt="Formas de Pagamento">
+                    <img class="pix" src="assets/img/pix.png" alt="Pix">
+                </div>
             </div>
             <!------------------------------------->
 
-              <!------------LINKS LOCALIDADE------------->
+            <!------------LINKS LOCALIDADE------------->
             <div class="footer-localidade footer-links">
                 <h3>localidade</h3>
-                <img src="assets/img/flag-brasil.png" alt="">
-        </div>
+                <img src="assets/img/flag-brasil.png" alt="Flag Brasil">
+            </div>
             <!------------------------------------->
         </div>
-         <!------------LINKS MEDIA SOCIAL------------->
-         <div class="footer-rede-social footer-links">
+
+        <!------------LINKS MEDIA SOCIAL------------->
+        <div class="footer-rede-social footer-links">
             <h3>rede sociais</h3>
             <div class="rede-social">
                 <a href="https://www.instagram.com/floricultura_tatuape/"target="_blank"><i class="bi bi-instagram" ></i></a>
@@ -428,8 +432,7 @@
                 <a href="#"><i class="bi bi-twitter"></i></a>
                 <a href="#"><i class="bi bi-linkedin"></i> </a>
             </div>
-            <!------------------------------------->
-            
+            <!------------------------------------->   
         </div>
         <p class="copyright">&copy; 2023 floricultura tatuape | todos os direitos reservados </p>
         <p>created by <span><a class="credit" href="https://www.linkedin.com/in/kelverabelo/" target="_blank">kelve rabelo</a></span></p>
