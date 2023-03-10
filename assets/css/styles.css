@@ -769,7 +769,6 @@ body .main-products .containerProducts .cardProduct {
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 20%;
 }
 body .main-products .containerProducts .cardProduct .imgProduct {
   height: 25rem;
