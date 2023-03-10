@@ -357,6 +357,7 @@ body .header-cart-history .headerCartHistory .cartTitle {
 }
 body .header-cart-history .contentCartHistory {
   margin-top: 6.5rem;
+  margin-bottom: 7.5rem;
 }
 body .header-cart-history .contentCartHistory .cartNull {
   font-size: 2rem;
@@ -379,7 +380,7 @@ body .header-cart-history .cardHistory .bodyCardHistory {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 2.5rem;
+  padding: 0rem 3.5rem;
 }
 body .header-cart-history .cardHistory .bodyCardHistory img {
   object-fit: 1/1;

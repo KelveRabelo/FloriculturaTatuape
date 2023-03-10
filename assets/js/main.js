@@ -26,6 +26,9 @@ const notification      = document.querySelector(".notifications");
 const userName          = document.querySelector("#userName")
 const userNumber        = document.querySelector("#userNumber")
 const userPayment       =   document.querySelector("#userPayment")
+// Selecionando os valores dos campos formulário
+const form = document.querySelector('#form');
+const submitButton = document.querySelector('.btnSendForm');
 
 //=================> FUNCTION UPDATE <=================//
 function update()
@@ -97,9 +100,6 @@ function notificationRemove()
     setTimeout(removeNotification, 1500)
 }
 //=====================> FUNÇÃO RENDER PRODUCTS <===================//
-
-
-
 function renderProducts() 
 {
     const productsRender = document.querySelector(".containerProducts")
@@ -329,27 +329,37 @@ function checkout()
     // adicionando o pedido ao histórico de pedidos
     cartProductsListHistory.push(pedido);
 
-    let productListText = cartProductsList
-    .map(item => `| ${item.name.padEnd(14)} ${item.quantity.toString()}x ${"".padEnd(10)}R$${item.price.toFixed(2)}`).join("%0A");
+    const maxNameLength = cartProductsList.reduce((acc, item) => Math.max(acc, item.name.length), 0);
+    
+    let cartProductsListFormatted = cartProductsList.map(item => {
+        let paddedName = item.name.concat(" ".repeat((maxNameLength - item.name.length) + 8));
+        return {...item, name: paddedName};
+      });
+      
+      let productListText = cartProductsListFormatted.map(item => `| ${item.name} ${item.quantity.toString()}x ${"".padEnd(5)}R$${item.price.toFixed(2)}`).join("%0A");
+
+    
+    //let productListText = cartProductsList
+    //.map(item => `| ${item.name.padEnd(14)} ${item.quantity.toString()}x ${"".padEnd(10)}R$${item.price.toFixed(2)}`).join("%0A");
 
     let message =
     "%2B+---------------------------------------------%2B+" +
-    "%0A|  ❁ Floricultura Tatuapé ❁    |" +
+    `%0A|  ❁ Floricultura Tatuapé ❁${"".padEnd(6)}|` +
     "%0A%2B+---------------------------------------------%2B+" +
-    "%0A| Dados do cliente              |" +
+    `%0A| Dados do cliente${"".padEnd(21)}|` +
     "%0A%2B+---------------------------------------------%2B+" +
     `%0A| Nome: ${userName.value.toString()}` +
     `%0A| Número: ${userNumber.value}` +
     `%0A| Pagamento: ${userPayment.value}` +
     `%0A| Order: ${order.toString()}` +
-    `%0A| Data: ${data}|` +
+    `%0A| Data: ${data}` +
     "%0A%2B+---------------------------------------------%2B+" +
-    "%0A| Lista de produtos             |" +
+    `%0A| Lista de produtos ${"".padEnd(19)}|` +
     "%0A%2B+---------------------------------------------%2B+" +
-    `%0A| Nome${"".padEnd(10)}Qtd${"".padEnd(12)}Preço${"".padEnd(8)}|`+  
+    `%0A| Nome${"".padEnd(14)}Qtd${"".padEnd(9)}Preço |`+  
     `%0A${productListText}` +
     "%0A%2B+---------------------------------------------%2B+" +
-    `%0A| Total: R$ ${cartTotal.toFixed(2).toString()}|` +
+    `%0A| Total: R$ ${cartTotal.toFixed(2).toString().padEnd(27)}|` +
     "%0A%2B+---------------------------------------------%2B+";
 
     let url = "https://wa.me/5511953604803?text=" + message;
@@ -372,8 +382,6 @@ function checkout()
 }
 //======================> FUNÇÃO VALIDADE FORM <=====================//
 
-const form = document.querySelector('#form');
-const submitButton = document.querySelector('.btnSendForm');
 // Adicionando o evento de clique ao botão de envio
 submitButton.addEventListener("click", contactWhatsApp)
 function contactWhatsApp(e) 
