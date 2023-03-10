@@ -33,9 +33,11 @@ const submitButton = document.querySelector('.btnSendForm');
 //=================> FUNCTION UPDATE <=================//
 function update()
 {
+    
+    let qtd = 4
     renderCartProductsHistory()
     renderCartProducts()
-    renderProducts()
+    renderProducts(qtd)
     updateCartTotal()
     menu()
 }
@@ -100,11 +102,11 @@ function notificationRemove()
     setTimeout(removeNotification, 1500)
 }
 //=====================> FUNÇÃO RENDER PRODUCTS <===================//
-function renderProducts() 
+function renderProducts(qtd) 
 {
     const productsRender = document.querySelector(".containerProducts")
     productsRender.innerHTML = ""
-    for (i = 0; i < products.length; i++) {
+    for (i = 0; i < qtd; i++) {
 
         productsRender.innerHTML +=
             `
@@ -424,6 +426,13 @@ function contactWhatsApp(e)
     document.querySelector('#emailForm').value = "";
     document.querySelector('#servicesForm').value = "serviços";
     document.querySelector('#msgForm').value = "";
+}
+
+let qtd = 4
+function seeMore()
+{
+    qtd = qtd + 2
+    renderProducts(qtd) 
 }
 
 // Call renderCartProducts on page load
