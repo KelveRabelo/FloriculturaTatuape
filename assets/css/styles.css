@@ -704,6 +704,7 @@ body .main-products span {
   }
 }
 body .main-products .search {
+  padding: 2rem 4rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -711,7 +712,7 @@ body .main-products .search {
 body .main-products .search .search-box {
   position: absolute;
   background: #666;
-  height: 40px;
+  height: 30px;
   border-radius: 40px;
   padding-right: 2rem;
   padding-left: 2rem;
@@ -720,7 +721,7 @@ body .main-products .search .search-box:hover {
   padding-right: 0rem;
 }
 body .main-products .search .search-box:hover .search-txt {
-  width: 240px;
+  width: 360px;
   padding: 0 6px;
 }
 body .main-products .search .search-box:hover .search-btn {
@@ -733,8 +734,8 @@ body .main-products .search .search-box .search-btn {
   cursor: pointer;
   color: #dc56d6;
   float: right;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: #666;
   display: flex;
@@ -751,7 +752,7 @@ body .main-products .search .search-box .search-txt {
   padding: 0;
   color: #fff;
   font: 16px;
-  line-height: 40px;
+  line-height: 30px;
   width: 0px;
   transition: 0.4s;
 }
@@ -759,7 +760,7 @@ body .main-products .containerProducts {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 body .main-products .containerProducts .cardProduct {
   flex: 1 1 20rem;
@@ -1208,6 +1209,9 @@ body:has(#changeTheme:checked) .main-products .products-container .product-box .
 }
 body:has(#changeTheme:checked) .main-products .products-container .product-box .detail .product-price {
   color: #dc56d6;
+}
+body:has(#changeTheme:checked) .main .seeMore .btnSeeMore {
+  color: #fff;
 }
 body:has(#changeTheme:checked) .main-review .box-container .box {
   background-color: #333;

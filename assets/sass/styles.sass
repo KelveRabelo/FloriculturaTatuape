@@ -472,16 +472,17 @@ body
             //SUB
             span
                 @include mixins.sub
+            
             //SEARCH PRODUCTS
-
             .search
+                padding: 2rem 4rem
                 display: flex
                 justify-content: flex-end
                 align-items: center
                 .search-box
                     position: absolute
                     background: #666
-                    height: 40px
+                    height: 30px
                     border-radius: 40px
                     padding-right: 2rem
                     padding-left: 2rem
@@ -489,7 +490,7 @@ body
                     &:hover 
                         padding-right: 0rem
                         .search-txt
-                            width: 240px
+                            width: 360px
                             padding: 0 6px
                             
                         .search-btn
@@ -501,8 +502,8 @@ body
                         cursor: pointer
                         color: variables.$color-primary
                         float: right
-                        width: 40px
-                        height: 40px
+                        width: 30px
+                        height: 30px
                         border-radius: 50%
                         background: #666
                         display: flex
@@ -519,18 +520,17 @@ body
                         padding: 0
                         color: #fff
                         font: 16px
-                        line-height: 40px
+                        line-height: 30px
                         width: 0px
                         transition: .4s
-                        
-                 
+                          
             //PRODUCTS CONTAINER
             .containerProducts
                 //background-color: variables.$bg-color
                 display: flex
                 flex-wrap: wrap
                 gap: 1.5rem
-                margin-top: 5rem
+                margin-top: 2rem
                 
                 //CARD
                 .cardProduct
@@ -592,7 +592,6 @@ body
                     margin-top: 3rem
                     &:hover
                         background: variables.$color-primary
-
         ///////////////////////////END///////////////////////////
 
         //////////////////////SECTION REVIEW////////////////////// 
@@ -906,6 +905,11 @@ body
                         .detail
                             .product-price
                                 color: variables.$color-primary
+                
+            .seeMore
+                .btnSeeMore
+                    color: #fff
+
             //REVIEW
             &-review
                 //CUSTOMER'S CONTAINER
