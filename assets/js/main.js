@@ -435,5 +435,33 @@ function seeMore()
     renderProducts(qtd) 
 }
 
+//======================> FUNÇÃO SEARCH <=====================//
+function search()
+{
+    const search = document.querySelector("#search").value.toUpperCase();
+    const productList = document.querySelector(".containerProducts")
+    const productItems = document.querySelectorAll(".cardProduct")
+    const pName = productList.querySelectorAll(".nameProduct")
+
+    for(i = 0; i < pName.length; i++)
+    {
+        let math = productItems[i].querySelectorAll(".nameProduct")[0]
+
+        if(math)
+        {
+            let textvalue = math.textContent || math.innerHTML
+
+            if(textvalue.toUpperCase().indexOf(search) > -1)
+            {
+                productItems[i].style.display = "";
+            }
+            else
+            {
+                productItems[i].style.display = "none";
+            }
+        }
+    }
+}
+//==============================================================
 // Call renderCartProducts on page load
 window.addEventListener('load', renderCartProducts);

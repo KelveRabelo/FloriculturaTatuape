@@ -472,13 +472,64 @@ body
             //SUB
             span
                 @include mixins.sub
-            
+            //SEARCH PRODUCTS
+
+            .search
+                display: flex
+                justify-content: flex-end
+                align-items: center
+                .search-box
+                    position: absolute
+                    background: #666
+                    height: 40px
+                    border-radius: 40px
+                    padding-right: 2rem
+                    padding-left: 2rem
+
+                    &:hover 
+                        padding-right: 0rem
+                        .search-txt
+                            width: 240px
+                            padding: 0 6px
+                        .search-btn
+                            background: #fff
+                            i
+                                color: variables.$color-primary
+                        
+                    .search-btn
+                        cursor: pointer
+                        color: variables.$color-primary
+                        float: right
+                        width: 40px
+                        height: 40px
+                        border-radius: 50%
+                        background: #666
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        transition: 2s
+                        padding: 0
+
+                    .search-txt
+                        border: none
+                        background: none
+                        outline: none
+                        float: left
+                        padding: 0
+                        color: #fff
+                        font: 16px
+                        line-height: 40px
+                        width: 0px
+                        transition: .4s
+                        
+                 
             //PRODUCTS CONTAINER
             .containerProducts
                 //background-color: variables.$bg-color
                 display: flex
                 flex-wrap: wrap
                 gap: 1.5rem
+                margin-top: 5rem
                 
                 //CARD
                 .cardProduct
@@ -489,10 +540,11 @@ body
                     position: relative
                     display: flex
                     flex-direction: column
+                    max-width: 20%
 
                     .imgProduct
                         height: 25rem
-                        width: 100%
+                        max-width: 100%
                         aspect-ratio: 1/1
                         //HOVER IMAGE
                         &:hover
