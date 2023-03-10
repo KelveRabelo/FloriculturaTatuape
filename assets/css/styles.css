@@ -721,11 +721,11 @@ body .main-products .search .search-box:hover {
   padding-right: 0rem;
 }
 body .main-products .search .search-box:hover .search-txt {
-  width: 250px;
+  width: 245px;
   padding: 0 6px;
 }
 body .main-products .search .search-box:hover .search-btn {
-  background: #e90808;
+  background: #fff;
 }
 body .main-products .search .search-box:hover .search-btn i {
   color: #dc56d6;
