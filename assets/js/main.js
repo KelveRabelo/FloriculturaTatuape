@@ -345,23 +345,22 @@ function checkout()
     //.map(item => `| ${item.name.padEnd(14)} ${item.quantity.toString()}x ${"".padEnd(10)}R$${item.price.toFixed(2)}`).join("%0A");
 
     let message =
-    "%2B+---------------------------------------------%2B+" +
-    `%0A |  *❁ Floricultura Tatuapé ❁*${"".padEnd(4)}|` +
-    "%0A%2B+---------------------------------------------%2B+" +
-    `%0A *Dados do cliente:*` +
-    `%0A` +
-    `%0A Nome: ${userName.value.toString()}` +
-    `%0A Número: ${userNumber.value}` +
-    `%0A Pagamento: ${userPayment.value}` +
-    `%0A Order: ${order.toString()}` +
-    `%0A Data: ${data}` +
-   
-    `%0A *\nLista de produtos:\n* ${"".padEnd(19)}` +
-   
-    `%0A ${"".padStart(2)}Nome${"".padEnd(14)}Qtd${"".padEnd(9)}Preço`+  
-    `%0A${productListText}` +
-    "%0A%2B+---------------------------------------------%2B+" +
-    `%0A | *Total:* R$ ${cartTotal.toFixed(2).toString().padEnd(27)}|` +
+    "%2B+---------------------------------------------%2B+"             +
+    `%0A |  *❁ Floricultura Tatuapé ❁*${"".padEnd(4)}|`                +
+    "%0A%2B+---------------------------------------------%2B+"          +
+    `%0A`                                                               +
+    `%0A *Dados do cliente:*`                                           +
+    `%0A Nome: ${userName.value.toString()}`                            +
+    `%0A Número: ${userNumber.value}`                                   +
+    `%0A Pagamento: ${userPayment.value}`                               +
+    `%0A Order: ${order.toString()}`                                    +
+    `%0A Data: ${data}`                                                 +
+    `%0A`                                                               +
+    `%0A *\nLista de produtos:\n* ${"".padEnd(19)}`                     +
+    `%0A ${"".padStart(2)}Nome${"".padEnd(14)}Qtd${"".padEnd(9)}Preço`  +  
+    `%0A${productListText}`                                             +
+    "%0A%2B+---------------------------------------------%2B+"          +
+    `%0A | *Total:* R$ ${cartTotal.toFixed(2).toString().padEnd(26)}|`  +
     "%0A%2B+---------------------------------------------%2B+";
 
     let url = "https://wa.me/5511953604803?text=" + message;
