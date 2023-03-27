@@ -338,7 +338,7 @@ function checkout()
         return {...item, name: paddedName};
       });
       
-      let productListText = cartProductsListFormatted.map(item => `| ${item.name} ${item.quantity.toString()}x ${"".padEnd(5)}R$${item.price.toFixed(2)}`).join("%0A");
+      let productListText = cartProductsListFormatted.map(item => `${item.name} ${item.quantity.toString()}x ${"".padEnd(5)}R$${item.price.toFixed(2)}`).join("%0A");
 
     
     //let productListText = cartProductsList
@@ -348,8 +348,8 @@ function checkout()
     "%2B+---------------------------------------------%2B+" +
     `%0A|  ❁ Floricultura Tatuapé ❁${"".padEnd(6)}|` +
     "%0A%2B+---------------------------------------------%2B+" +
-    `%0A| Dados do cliente${"".padEnd(21)}|` +
-    "%0A%2B+---------------------------------------------%2B+" +
+    `%0A Dados do cliente:` +
+
     `%0A Nome: ${userName.value.toString()}` +
     `%0A Número: ${userNumber.value}` +
     `%0A Pagamento: ${userPayment.value}` +
