@@ -7,7 +7,6 @@ else
 {
     update()
 }
-
 //=================> VARIABLES GLOBALS <=================//
 //Selecionando elementos do menu
 const hamburguer        = document.querySelector("#hamburguer")
@@ -33,8 +32,8 @@ const submitButton = document.querySelector('.btnSendForm');
 //=================> FUNCTION UPDATE <=================//
 function update()
 {
-    
-    let qtd = 4
+
+    let qtd = Number(localStorage.getItem('qtd')) || 4;
     renderCartProductsHistory()
     renderCartProducts()
     renderProducts(qtd)
@@ -203,8 +202,6 @@ function renderCartProductsHistory()
       `;
     });
 }
-
-
 //=================> FUNÇÃO ADD PRODUCT TO CART <=================//
 function addProductCart(id)
 {
@@ -388,8 +385,6 @@ function checkout()
     update();
 }
 //======================> FUNÇÃO VALIDADE FORM <=====================//
-
-// Adicionando o evento de clique ao botão de envio
 submitButton.addEventListener("click", contactWhatsApp)
 function contactWhatsApp(e) 
 {
@@ -433,11 +428,16 @@ function contactWhatsApp(e)
     document.querySelector('#msgForm').value = "";
 }
 
-let qtd = 4
-function seeMore()
+function seeMore() 
 {
-    qtd = qtd + 2
-    renderProducts(qtd) 
+    console.log(products.length)
+    let qtd = Number(localStorage.getItem('qtd')) || 4;
+    if (qtd < products.length)
+    {
+        qtd += 2;
+        localStorage.setItem('qtd', qtd);
+    }
+    renderProducts(qtd);
 }
 
 //======================> FUNÇÃO SEARCH <=====================//
