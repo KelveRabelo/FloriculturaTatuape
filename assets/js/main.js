@@ -338,7 +338,7 @@ function checkout()
         return {...item, name: paddedName};
       });
       
-      let productListText = cartProductsListFormatted.map(item => `${item.name} ${item.quantity.toString()}x ${"".padEnd(5)}R$${item.price.toFixed(2)}`).join("%0A");
+      let productListText = cartProductsListFormatted.map(item => `${"".padStart(3)} ${item.name} ${item.quantity.toString()}x ${"".padEnd(5)}R$${item.price.toFixed(2)}`).join("%0A");
 
     
     //let productListText = cartProductsList
@@ -346,7 +346,7 @@ function checkout()
 
     let message =
     "%2B+---------------------------------------------%2B+" +
-    `%0A|  ❁ Floricultura Tatuapé ❁${"".padEnd(6)}|` +
+    `%0A|  *❁ Floricultura Tatuapé ❁*${"".padEnd(6)}|` +
     "%0A%2B+---------------------------------------------%2B+" +
     `%0A Dados do cliente:` +
 
