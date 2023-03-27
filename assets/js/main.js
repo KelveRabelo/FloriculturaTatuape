@@ -203,10 +203,10 @@ function renderCartProductsHistory()
 {
     const cartProductsListHistory = JSON.parse(localStorage.getItem("cartProductsListHistory")) || [];
 
-    // ordenando os pedidos pela data
+    // ordenando os pedidos pela data e revertendo a ordem
     cartProductsListHistory.sort(function(a, b) {
       return new Date(b.data) - new Date(a.data);
-    });
+    }).reverse();
 
     // atualizando o conteúdo do elemento ".cardHistory"
     const cartProductsHistory = document.querySelector(".cardHistory");
@@ -241,6 +241,7 @@ function renderCartProductsHistory()
       `;
     });
 }
+
 
 //=================> FUNÇÃO ADD PRODUCT TO CART <=================//
 function addProductCart(id)
