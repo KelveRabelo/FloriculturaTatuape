@@ -338,7 +338,7 @@ function checkout()
         return {...item, name: paddedName};
       });
       
-      let productListText = cartProductsListFormatted.map(item => `${"".padStart(1)} ${item.name} ${item.quantity.toString()}x ${"".padEnd(5)}R$${item.price.toFixed(2)}`).join("%0A");
+      let productListText = cartProductsListFormatted.map(item => `${item.name} ${item.quantity.toString()}x ${"".padEnd(5)}R$${item.price.toFixed(2)}`).join("%0A");
 
     
     //let productListText = cartProductsList
