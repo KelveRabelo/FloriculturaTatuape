@@ -161,44 +161,6 @@ function renderCartProducts()
     });
 }
 //=================> FUNÇÃO RENDER PRODUCTS HISTORY <=================//
-/* function renderCartProductsHistory()
-{
-    const cartProductsListHistory = JSON.parse(localStorage.getItem("cartProductsListHistory")) || [];
-
-    // atualizando o conteúdo do elemento ".cardHistory"
-    const cartProductsHistory = document.querySelector(".cardHistory");
-    cartProductsHistory.innerHTML = "";
-  
-    cartProductsListHistory.forEach((pedido) => {
-      // cria um loop para renderizar cada produto do pedido
-      let produtosHtml = "";
-      pedido.produtos.forEach((produto) => {
-        produtosHtml += `
-          <div class="bodyCardHistory">
-            <img src=${produto.img} alt="">
-            <p>${produto.name}</p>
-            <p>${produto.quantity}x</p>
-            <p>R$${produto.price.toFixed(2).replace(".", ",")}</p>
-          </div>
-        `;
-      });
-  
-      cartProductsHistory.innerHTML += `
-        <div class="pedidoCardHistory">
-          <div class="headerCardHistory">
-            <p>Nº Pedido: <span>${pedido.order}</span></p>
-            <p>Data: <span>${pedido.data}</span></p>
-          </div>
-          ${produtosHtml}
-          <div class="footerCardHistory">
-            <p>Total: </p>
-            <p>R$${pedido.total.toFixed(2).replace(".", ",")}</p>
-          </div>
-        </div>
-      `;
-    });
-} */
-
 function renderCartProductsHistory()
 {
     const cartProductsListHistory = JSON.parse(localStorage.getItem("cartProductsListHistory")) || [];
