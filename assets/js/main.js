@@ -346,10 +346,10 @@ function checkout()
 
     let message =
     "%2B+---------------------------------------------%2B+" +
-    `%0A |  *❁ Floricultura Tatuapé ❁*${"".padEnd(5)}|` +
+    `%0A |  *❁ Floricultura Tatuapé ❁*${"".padEnd(4)}|` +
     "%0A%2B+---------------------------------------------%2B+" +
-    `%0A Dados do cliente:\u200B\n` +
-
+    `%0A *Dados do cliente:*` +
+    `%0A` +
     `%0A Nome: ${userName.value.toString()}` +
     `%0A Número: ${userNumber.value}` +
     `%0A Pagamento: ${userPayment.value}` +
