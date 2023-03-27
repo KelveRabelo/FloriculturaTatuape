@@ -338,7 +338,7 @@ function checkout()
         return {...item, name: paddedName};
       });
       
-      let productListText = cartProductsListFormatted.map(item => `${item.name} ${item.quantity.toString()}x ${"".padEnd(5)}R$${item.price.toFixed(2)}`).join("%0A");
+      let productListText = cartProductsListFormatted.map(item => `${"".padStart(1)} ${item.name} ${item.quantity.toString()}x ${"".padEnd(5)}R$${item.price.toFixed(2)}`).join("%0A");
 
     
     //let productListText = cartProductsList
@@ -356,9 +356,9 @@ function checkout()
     `%0A Order: ${order.toString()}`                                    +
     `%0A Data: ${data}`                                                 +
     `%0A`                                                               +
-    `%0A *\nLista de produtos:\n* ${"".padEnd(19)}`                     +
+    `%0A *Lista de produtos:* ${"".padEnd(19)}`                     +
     `%0A Nome${"".padEnd(14)}Qtd${"".padEnd(9)}Preço`  +  
-    `%0A${productListText}`                                             +
+    `%0A ${productListText}`                                             +
     "%0A%2B+---------------------------------------------%2B+"          +
     `%0A | *Total:* R$ ${cartTotal.toFixed(2).toString().padEnd(26)}|`  +
     "%0A%2B+---------------------------------------------%2B+";
