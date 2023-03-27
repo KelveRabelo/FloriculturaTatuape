@@ -93,7 +93,7 @@
                 <input id="userName" class="boxUserInfo" type="text" placeholder="Nome"  minlenght="3" maxlength="50" required>
                 <input id="userNumber" class="boxUserInfo" type="tel" placeholder="Número" minlenght="10" maxlength="11" required>
                 <select id="userPayment" class="boxUserInfo">
-                    <option value="">forma de pagamento</option >
+                    <option value="" disabled selected>forma de pagamento</option >
                     <option value="Credito">credito</option>
                     <option value="Debito">débito</option>
                     <option value="Pix">pix</option>
@@ -165,7 +165,7 @@
             <div class="home-content">
                 <h2 class="sub-title">flores frescas</h2>
                 <span class="sub-home">flores bonitas & natural</span>
-                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor, illo praesentium ipsa unde reiciendis ducimus corrupti nesciunt aspernatur, quod ipsum labore quidem reprehenderit enim! Corrupti sequi odio magni quidem?</p>
+                <p class="text">Bem-vindo à nossa floricultura, onde cada flor é uma obra de arte. Nós somos apaixonados por flores e plantas, e estamos comprometidos em oferecer aos nossos clientes a melhor seleção de flores frescas e de qualidade superior.</p>
                 <a href="#products" class="btn">comprar agora</a>
             </div>
         </section>
@@ -183,7 +183,11 @@
                 <!--TEXTO SOBRE-->
                 <div class="about-text">
                     <h3 class="sub-title">porque escolhe nos?</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae enim, architecto ipsam commodi reprehenderit dolor quaerat ipsum repellendus iusto praesentium suscipit dolore obcaecati in quasi neque nam, accusamus sapiente? Consequuntur?</p>
+                    <p>Com anos de experiência e conhecimento em design floral, nossos floristas são verdadeiros artistas que colocam paixão em cada arranjo. Nós trabalhamos com uma ampla variedade de flores, incluindo rosas, orquídeas, lírios, margaridas, cravos e muito mais. Além disso, nós também oferecemos uma seleção de plantas e suculentas para aqueles que preferem uma opção mais duradoura.</p>
+
+                    <p>Nós nos orgulhamos de oferecer um serviço excepcional aos nossos clientes. Seja para um buquê de aniversário, um arranjo de casamento ou um presente para um ente querido, estamos comprometidos em garantir que cada arranjo seja criado com a mais alta qualidade de flores e cuidado.</p>
+                        
+                    <p>Obrigado por visitar nossa floricultura e permita-nos compartilhar nossa paixão por flores com você.</p>
                     <a href="#about" class="btn">saiba mais</a>
                 </div>
             </div>
@@ -258,6 +262,7 @@
             <h2 class="sub-title">avaliações
             <span class="sub">clientes</span></h2>
             <div class="box-container">
+                
                 <div class="box">
                     <!--Estrelas-->
                     <div class="stars">
@@ -267,7 +272,7 @@
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-half"></i>
                     </div>
-                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatum optio dolorem fugiat dignissimos magnam itaque. Minus sapiente eaque, dolor aperiam dolorum obcaecati eligendi magni? Beatae dolore libero aspernatur in.</p>
+                    <p class="text">"Eu encomendei um buquê de flores para minha esposa no aniversário dela e fiquei muito satisfeito com o resultado final. As flores eram frescas e o arranjo era lindo. Minha esposa ficou muito feliz com o presente. Obrigado por tornar o dia dela especial."</p>
                     <div class="user">
                         <img src="assets/img/cliente.jpg" alt="">
                         <div class="user-info">
@@ -287,7 +292,7 @@
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                     </div>
-                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatum optio dolorem fugiat dignissimos magnam itaque. Minus sapiente eaque, dolor aperiam dolorum obcaecati eligendi magni? Beatae dolore libero aspernatur in.</p>
+                    <p class="text">"Eu precisava de um arranjo floral de última hora para um evento e entrei em contato com essa floricultura. Eles foram muito prestativos e conseguiram preparar um arranjo incrível em tempo recorde. Fiquei impressionado com o atendimento ao cliente e a qualidade das flores. Definitivamente vou comprar novamente."</p>
                     <div class="user">
                         <img src="assets/img/cliente.jpg" alt="">
                         <div class="user-info">
@@ -307,7 +312,7 @@
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-half"></i>
                     </div>
-                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatum optio dolorem fugiat dignissimos magnam itaque. Minus sapiente eaque, dolor aperiam dolorum obcaecati eligendi magni? Beatae dolore libero aspernatur in.</p>
+                    <p class="text">"Esta floricultura é minha preferida! Eu sempre encontro flores lindas e diferentes aqui, e o serviço é sempre excepcional. Eu também adoro que eles ofereçam opções de plantas e suculentas para aqueles que procuram algo mais duradouro. Eu definitivamente recomendo esta floricultura para qualquer pessoa que esteja procurando por flores frescas e arranjos excepcionais."</p>
                     <div class="user">
                         <img src="assets/img/cliente.jpg" alt="">
                         <div class="user-info">
@@ -330,7 +335,7 @@
                 <form action="" id="form">
                     <input id="nameForm" class="box" type="text" placeholder="Nome"  minlenght="3" maxlength="50" required>
                     <input id="emailForm" class="box" type="email" placeholder="Email" minlenght="13" maxlength="150" required>
-                    <input id="numberForm" class="box" type="number" placeholder="Número" minlenght="10" maxlength="11" required>
+                    <input id="numberForm" class="box" type="tel" placeholder="Número" minlenght="10" maxlength="11" required>
                     <select id="servicesForm" class="box">
                         <option value="" disabled selected>Escolha um serviço</option >
                         <option value="translado">translado</option>
@@ -371,20 +376,20 @@
             <!------------LINKS RAPIDOS----------->
             <div class="footer-links">
                 <h3>informações</h3>
-                <a href="#home">sobre nós</a>
-                <a href="#about">entre em contato</a>
-                <a href="#products">política de privacidade</a>
-                <a href="#review">pedidos e devoluções</a>
-                <a href="#contact">termos e condições</a>
+                <a href="#about">sobre nós</a>
+                <a href="#contact">entre em contato</a>
+                <a href="assets/Info/Floricultura - Política de Privacidade.pdf" download>política de privacidade</a>
+                <a href="assets/Info/Floricultura - Pedidos e Devoluções.pdf" download>pedidos e devoluções</a>
+                <a href="assets/Info/Floricultura - Termos e Condições.pdf" download>termos e condições</a>
             </div>
             <!------------------------------------->
 
             <!------------LINKS CONTATO------------->
             <div class="footer-contato footer-links">
                 <h3>contato</h3>
-                <a href="#">+55 11 99999-9999</a>
-                <a href="#">floricultura@gmail.com</a>
-                <a href="#">rua das flores, 9999 - tatuapé</a>
+                <a href="https://wa.me/5511954384530" target="_blank">+55 11 95438-4530</a>
+                <a href="mailto:kelve.rabelo@gmail.com" target="_blank">floricultura@gmail.com</a>
+                <a href="https://goo.gl/maps/t7ms9dFDrNDck4Ce7" target="_blank">r. david zeiger, 306 - tatuapé, são paulo - sp, 03303-010</a>
             </div>
             <!------------------------------------->
 
