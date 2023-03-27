@@ -356,9 +356,9 @@ function checkout()
     `%0A Order: ${order.toString()}`                                    +
     `%0A Data: ${data}`                                                 +
     `%0A`                                                               +
-    `%0A *Lista de produtos:* ${"".padEnd(19)}`                     +
-    `%0A Nome${"".padEnd(14)}Qtd${"".padEnd(9)}Preço`  +  
-    `%0A ${productListText}`                                             +
+    `%0A *Lista de produtos:* ${"".padEnd(19)}`                         +
+    `%0A Nome${"".padEnd(14)}Qtd${"".padEnd(9)}Preço`                   +  
+    `%0A${productListText.padStart(1)}`                                 +
     "%0A%2B+---------------------------------------------%2B+"          +
     `%0A | *Total:* R$ ${cartTotal.toFixed(2).toString().padEnd(26)}|`  +
     "%0A%2B+---------------------------------------------%2B+";
