@@ -1087,12 +1087,11 @@ body .footer-container .footer-pagamentos h3 {
   margin-bottom: 1rem;
 }
 body .footer-container .footer-pagamentos .iconsPayment {
-  display: flex;
-  gap: 0.6rem;
+  font-size: 3rem;
+  cursor: pointer;
 }
-body .footer-container .footer-pagamentos .iconsPayment .pix {
-  width: 3rem;
-  height: 3rem;
+body .footer-container .footer-pagamentos .iconsPayment .card:hover {
+  color: #dc56d6;
 }
 body .footer-container .footer-localidade h3 {
   margin-bottom: 1rem;
